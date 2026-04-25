@@ -1,20 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" fill="none" aria-label="Cranes Consulting">
-  <!-- Flying crane, elegant minimalist silhouette, neck extended forward, wings up, legs trailing -->
-  <g stroke="#0F2444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Upper wing (near) -->
-    <path d="M36 34 L48 14 L62 28" />
-    <!-- Lower wing / underside hint -->
-    <path d="M40 34 L52 26" />
-    <!-- Body to neck, long forward-extended neck -->
-    <path d="M36 34 C 30 33, 22 32, 12 30" />
-    <!-- Head / beak tip -->
-    <path d="M12 30 L4 28" />
-    <!-- Trailing legs -->
-    <path d="M60 32 L78 46" />
-    <path d="M62 32 L82 44" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" fill="none" aria-label="Cranes Consulting">
+  <g stroke="#0F2444" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main origami body silhouette -->
+    <path d="M 25 65 L 75 22 L 132 28 L 158 50 L 128 84 L 78 87 Z" />
+    <!-- Internal fold lines (origami facets) -->
+    <line x1="75"  y1="22" x2="98" y2="55"/>
+    <line x1="132" y1="28" x2="98" y2="55"/>
+    <line x1="158" y1="50" x2="98" y2="55"/>
+    <line x1="25"  y1="65" x2="98" y2="55"/>
+    <line x1="78"  y1="87" x2="98" y2="55"/>
+    <line x1="128" y1="84" x2="98" y2="55"/>
+    <!-- Neck curving to head -->
+    <path d="M 158 50 Q 175 38, 192 30" />
+    <!-- Legs trailing -->
+    <line x1="83"  y1="85"  x2="62" y2="116"/>
+    <line x1="105" y1="84"  x2="93" y2="126"/>
+    <!-- Foot ticks -->
+    <line x1="58" y1="116" x2="66" y2="115"/>
+    <line x1="89" y1="126" x2="97" y2="125"/>
   </g>
-  <!-- Amber accent: beak tip -->
-  <path d="M4 28 L8 28.8 L6 26.6 Z" fill="#E8A838" />
-  <!-- Subtle eye -->
-  <circle cx="13.5" cy="29.5" r="0.9" fill="#0F2444" />
+  <!-- Head -->
+  <circle cx="194" cy="29" r="4" fill="#0F2444"/>
+  <!-- Amber beak -->
+  <path d="M 197 27 L 224 22 L 197 33 Z" fill="#E8A838"/>
 </svg>
