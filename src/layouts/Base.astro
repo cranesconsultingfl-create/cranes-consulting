@@ -11,8 +11,8 @@ interface Props {
 }
 
 const {
-  title = 'Cranes Consulting — Operations Partner | Tampa, FL',
-  description = 'Tampa Bay operations partner for small businesses. Lean Six Sigma Black Belt. Margin recovery, program management, software adoption, grant programs.',
+  title = 'Cranes Consulting | Tampa Operations Consulting',
+  description = 'Operations consulting for Tampa Bay small businesses. Lean Six Sigma, program management, software adoption, and grant program help.',
   canonical,
   ogImage = '/og-default.png',
 } = Astro.props;
@@ -63,7 +63,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       description,
       url: Astro.site?.toString(),
       telephone: '',
-      email: 'cranesconsultingfl@gmail.com',
+      email: 'tyler@cranesconsultingfl.com',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Tampa',
