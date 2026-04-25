@@ -44,7 +44,7 @@ const svg = `
 
     <!-- Wordmark -->
     <text x="170" y="32" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="800" font-size="36" fill="#FAFAF7" letter-spacing="-1">Cranes Consulting</text>
-    <text x="170" y="62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="#F0C55A" letter-spacing="3" text-transform="uppercase">TAMPA, FL · OPERATIONS PARTNER</text>
+    <text x="170" y="62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="#F0C55A" letter-spacing="3" text-transform="uppercase">TAMPA, FL · OPERATIONS PARTNERS</text>
   </g>
 
   <!-- Amber accent line -->
