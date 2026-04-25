@@ -33,7 +33,7 @@ const industries = [
     name: 'Logistics & 3PL',
     stat: '+28%',
     statLabel: 'Port Tampa Bay container volume growth (YoY)',
-    body: "Port Tampa Bay is the fastest-growing port in Florida. Industrial pre-leasing at 75%, new facilities opening monthly, and 17 active 3PLs in the metro. Capacity is growing faster than process discipline — warehouse throughput, putaway, picking, and labor productivity are the margin leak.",
+    body: "Port Tampa Bay is the fastest-growing port in Florida. Industrial pre-leasing sits at 75%, new facilities open monthly, and there are 17 active 3PLs in the metro. The catch: capacity is growing faster than process discipline. Warehouse throughput, putaway, picking, and labor productivity are where the margin leaks out.",
     works: [
       'Warehouse DMAIC projects (dock-to-stock, pick accuracy, shrink)',
       'Labor productivity KPI design and Power BI dashboards',
@@ -46,7 +46,7 @@ const industries = [
     name: 'Professional Services',
     stat: '5–7%',
     statLabel: 'Typical net margin at small-firm scale',
-    body: "Accounting practices, legal firms, engineering consultancies, marketing agencies. Revenue is up but profit isn't — utilization is soft, intake is leaky, and delivery varies by partner. Standardized process and governance close the gap.",
+    body: "Accounting practices, law firms, engineering consultancies, marketing agencies. Revenue is up but profit isn't. Utilization is soft, intake is leaky, delivery varies by partner. Standardized process and governance close the gap.",
     works: [
       'Intake-to-delivery value-stream mapping',
       'Utilization and realization KPI dashboards',
@@ -70,17 +70,17 @@ const industries = [
 ];
 ---
 <Base
-  title="Industries — Cranes Consulting | Tampa Operations Partner"
+  title="Industries | Cranes Consulting Tampa"
   description="Construction, healthcare, logistics, professional services, government and nonprofit. Lean Six Sigma and program management applied where process matters most."
 >
   <section class="border-b border-navy-100">
     <div class="container-x py-20 md:py-24">
       <span class="eyebrow">Industries</span>
       <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-        Proven where process, margin, and compliance collide.
+        Wherever process, margin, and compliance collide.
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-        The Lean Six Sigma and program-governance toolkit is industry-agnostic. Judgement about <em>which</em> lever to pull is not.
+        The Lean Six Sigma and program-governance toolkit works across industries. The judgement about <em>which</em> lever to pull is what changes from one to the next.
       </p>
     </div>
   </section>
@@ -100,7 +100,7 @@ const industries = [
           <h2 class="text-3xl md:text-4xl font-extrabold leading-[1.1]">{ind.name}</h2>
           <p class="mt-5 text-ink-soft leading-relaxed text-[17px]">{ind.body}</p>
 
-          <p class="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">How we help</p>
+          <p class="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">How I help</p>
           <ul class="mt-4 grid sm:grid-cols-2 gap-3">
             {ind.works.map((w) => (
               <li class="flex items-start gap-2.5 rounded-lg bg-bone-200/60 border border-navy-100 p-3 text-sm text-ink-soft">
