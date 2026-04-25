@@ -3,6 +3,14 @@ import Base from '../../layouts/Base.astro';
 
 const posts = [
   {
+    href: '/insights/shelfware-software-audit',
+    title: 'The Shelfware Construction Software Audit',
+    summary: "A 10-question audit for small GCs paying $6–12K/year for Procore, Buildertrend, or JobTread but only using a fraction of what they bought. Diagnose the gap in 20 minutes.",
+    category: 'Software & Tech',
+    read: '9 min read',
+    date: 'April 2026',
+  },
+  {
     href: '/insights/margin-leak-checklist',
     title: 'The Small Contractor Margin Leak Checklist',
     summary: "Seven operating pains quietly costing a $5M contractor two points of net margin every year. Each one has a 30-day fix.",
@@ -36,7 +44,7 @@ const posts = [
     </div>
   </section>
 
-  <section class="container-x py-20 md:py-24 grid md:grid-cols-2 gap-6">
+  <section class="container-x py-20 md:py-24 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {posts.map((p) => (
       <a href={p.href} class="card p-8 group flex flex-col">
         <div class="flex items-center gap-3">
