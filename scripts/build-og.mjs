@@ -30,30 +30,21 @@ const svg = `
   <rect width="1200" height="630" fill="url(#glow)"/>
 
   <!-- Top bar with logo + brand -->
-  <g transform="translate(80, 60)">
-    <!-- Origami crane mark, scaled (source viewBox 240x140 -> 144x84) -->
-    <g transform="scale(0.6)">
-      <g stroke="#FAFAF7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-        <path d="M 25 65 L 75 22 L 132 28 L 158 50 L 128 84 L 78 87 Z"/>
-        <line x1="75"  y1="22" x2="98" y2="55"/>
-        <line x1="132" y1="28" x2="98" y2="55"/>
-        <line x1="158" y1="50" x2="98" y2="55"/>
-        <line x1="25"  y1="65" x2="98" y2="55"/>
-        <line x1="78"  y1="87" x2="98" y2="55"/>
-        <line x1="128" y1="84" x2="98" y2="55"/>
-        <path d="M 158 50 Q 175 38, 192 30"/>
-        <line x1="83"  y1="85" x2="62" y2="116"/>
-        <line x1="105" y1="84" x2="93" y2="126"/>
-        <line x1="58" y1="116" x2="66" y2="115"/>
-        <line x1="89" y1="126" x2="97" y2="125"/>
-      </g>
-      <circle cx="194" cy="29" r="4" fill="#FAFAF7"/>
-      <path d="M 197 27 L 224 22 L 197 33 Z" fill="#E8A838"/>
+  <g transform="translate(80, 80)">
+    <!-- Crane mark (matches site logo: line-art bird in flight) -->
+    <g stroke="#FAFAF7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 60 30 L 80 4 L 102 22"/>
+      <path d="M 60 30 C 50 29, 36 28, 18 26"/>
+      <path d="M 18 26 L 4 24"/>
+      <path d="M 100 28 L 130 50"/>
+      <path d="M 103 28 L 134 47"/>
     </g>
+    <path d="M 4 24 L 12 25 L 8 17 Z" fill="#E8A838"/>
+    <circle cx="20.5" cy="25" r="1.6" fill="#FAFAF7"/>
 
     <!-- Wordmark -->
-    <text x="160" y="50" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="800" font-size="36" fill="#FAFAF7" letter-spacing="-1">Cranes Consulting</text>
-    <text x="160" y="80" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="#F0C55A" letter-spacing="3" text-transform="uppercase">TAMPA, FL · OPERATIONS PARTNERS</text>
+    <text x="170" y="32" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="800" font-size="36" fill="#FAFAF7" letter-spacing="-1">Cranes Consulting</text>
+    <text x="170" y="62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="#F0C55A" letter-spacing="3" text-transform="uppercase">TAMPA, FL · OPERATIONS PARTNERS</text>
   </g>
 
   <!-- Amber accent line -->

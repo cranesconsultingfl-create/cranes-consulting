@@ -5,15 +5,8 @@ const year = new Date().getFullYear();
   <div class="container-x py-16 grid gap-12 md:grid-cols-4">
     <div class="md:col-span-2 max-w-md">
       <div class="flex items-center gap-3">
-        <!-- Full logo on dark footer: invert luminance so navy → near-white, then re-tint amber stays amber-ish -->
-        <img
-          src="/logo.png"
-          onerror="this.onerror=null;this.src='/logo.svg';"
-          alt="Cranes Consulting"
-          width="800"
-          height="436"
-          class="h-10 w-auto invert brightness-150"
-        />
+        <img src="/logo.svg" alt="" width="96" height="64" class="h-9 w-auto invert-[0.95] brightness-150" />
+        <span class="text-base font-bold tracking-tight">Cranes Consulting</span>
       </div>
       <p class="mt-4 text-sm leading-relaxed text-navy-200">
         Operations and program management for Tampa Bay small businesses. Lean Six Sigma, plus a decade of running federal programs at scale. Sprint-based, fixed-fee engagements.
