@@ -14,7 +14,15 @@ const nav = [
   <div class="container-x flex h-20 items-center justify-between py-4">
     <a href="/" class="flex items-center gap-3 group" aria-label="Cranes Consulting home">
       <span class="block">
-        <img src="/logo.svg" alt="" width="96" height="56" class="h-11 w-auto transition-transform group-hover:-translate-y-0.5" />
+        <!-- Tries /logo.png first (drop your generated PNG into public/ for pixel-perfect fidelity), falls back to /logo.svg if missing. -->
+        <img
+          src="/logo.png"
+          onerror="this.onerror=null;this.src='/logo.svg';"
+          alt=""
+          width="96"
+          height="56"
+          class="h-11 w-auto transition-transform group-hover:-translate-y-0.5"
+        />
       </span>
       <span class="flex flex-col leading-none">
         <span class="text-base font-bold tracking-tight text-navy-800">Cranes Consulting</span>
