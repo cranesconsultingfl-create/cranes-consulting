@@ -1,0 +1,54 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="mt-24 border-t border-navy-100 bg-navy-900 text-bone-100">
+  <div class="container-x py-16 grid gap-12 md:grid-cols-4">
+    <div class="md:col-span-2 max-w-md">
+      <div class="flex items-center gap-3">
+        <img src="/logo.svg" alt="" width="72" height="48" class="h-9 w-auto invert-[0.95] brightness-150" />
+        <span class="text-base font-bold tracking-tight">Cranes Consulting</span>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-navy-200">
+        Operations &amp; program management for Tampa Bay small businesses.
+        Lean Six Sigma Black Belt. Federal-grade program discipline. No retainer bloat.
+      </p>
+      <a href="mailto:cranesconsultingfl@gmail.com" class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-amber-300 hover:text-amber-200">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        cranesconsultingfl@gmail.com
+      </a>
+    </div>
+
+    <div>
+      <h4 class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Services</h4>
+      <ul class="mt-4 space-y-2 text-sm text-navy-100">
+        <li><a href="/services#margin-recovery" class="hover:text-white">Margin Recovery</a></li>
+        <li><a href="/services#fractional-pmo" class="hover:text-white">Fractional PMO</a></li>
+        <li><a href="/services#software-adoption" class="hover:text-white">Software Adoption</a></li>
+        <li><a href="/services#grant-programs" class="hover:text-white">Grant &amp; Rebuild Programs</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Company</h4>
+      <ul class="mt-4 space-y-2 text-sm text-navy-100">
+        <li><a href="/about" class="hover:text-white">About</a></li>
+        <li><a href="/industries" class="hover:text-white">Industries</a></li>
+        <li><a href="/insights" class="hover:text-white">Insights</a></li>
+        <li><a href="/contact" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-navy-700">
+    <div class="container-x py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-navy-300">
+      <p>&copy; {year} Cranes Consulting. Tampa, Florida.</p>
+      <p class="flex items-center gap-4">
+        <span>Lean Six Sigma Black Belt</span>
+        <span class="h-1 w-1 rounded-full bg-navy-500"></span>
+        <span>Prosci Change Management</span>
+        <span class="h-1 w-1 rounded-full bg-navy-500"></span>
+        <span>HL7 FHIR</span>
+      </p>
+    </div>
+  </div>
+</footer>

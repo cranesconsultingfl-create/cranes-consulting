@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const posts = [
+  {
+    href: '/insights/margin-leak-checklist',
+    title: 'The Small Contractor Margin Leak Checklist',
+    summary: "Seven operating pains quietly costing a $5M contractor two points of net margin every year. Each one has a 30-day fix.",
+    category: 'Operations',
+    read: '8 min read',
+    date: 'April 2026',
+  },
+  {
+    href: '/insights/cdbg-dr-readiness-guide',
+    title: 'CDBG-DR Contractor Readiness Guide',
+    summary: "What small Tampa GCs need to have in place before bidding federally-funded Helene / Milton rebuild work — and the three mistakes that stop payment.",
+    category: 'Grants & Compliance',
+    read: '10 min read',
+    date: 'April 2026',
+  },
+];
+---
+<Base
+  title="Insights — Cranes Consulting"
+  description="Operating playbooks, Lean Six Sigma field notes, and grant-program guides for Tampa Bay small businesses."
+>
+  <section class="border-b border-navy-100">
+    <div class="container-x py-20 md:py-24">
+      <span class="eyebrow">Insights</span>
+      <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+        Field notes from small-business operations.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+        Short, specific, and written to be useful without a sales call. If you find yourself referencing one back to a team member, that's the goal.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-x py-20 md:py-24 grid md:grid-cols-2 gap-6">
+    {posts.map((p) => (
+      <a href={p.href} class="card p-8 group flex flex-col">
+        <div class="flex items-center gap-3">
+          <span class="label-chip">{p.category}</span>
+          <span class="text-xs text-ink-mute">{p.read} · {p.date}</span>
+        </div>
+        <h2 class="mt-5 text-xl md:text-2xl font-bold text-navy-800 group-hover:text-amber-600 transition-colors">{p.title}</h2>
+        <p class="mt-3 text-sm text-ink-soft leading-relaxed flex-1">{p.summary}</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-600">
+          Read more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    ))}
+  </section>
+</Base>

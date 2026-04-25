@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+
+const industries = [
+  {
+    id: 'construction',
+    name: 'Construction & Trades',
+    stat: '$211M',
+    statLabel: 'Hillsborough Rebuilding for Tomorrow fund (2026)',
+    body: "Tampa leads Florida in residential permits and is deep into an 18–24 month Helene / Milton rebuild cycle. Small contractors are squeezed between a 38% overhead rate, labor time variance of ~$4,285/worker/year, and shelfware Procore or Buildertrend subscriptions.",
+    works: [
+      'Margin Recovery Sprints for GCs ($2–20M revenue)',
+      'Trade contractor SOP + KPI packages (HVAC, electrical, plumbing, framing)',
+      'Procore / Buildertrend / JobTread implementation and adoption',
+      'CDBG-DR and FEMA program management for rebuild work',
+    ],
+  },
+  {
+    id: 'healthcare',
+    name: 'Healthcare',
+    stat: 'Jan 2027',
+    statLabel: 'CMS-0057-F FHIR API compliance deadline',
+    body: "Mid-market providers, FQHCs, specialty practices, and regional payers need enterprise-grade analytics and interoperability discipline at a price that isn't benchmarked against Big-4. The CMS-0057-F rule is forcing the single biggest interoperability transformation in a decade.",
+    works: [
+      'CMS-0057-F readiness assessments for payers and providers',
+      'HL7 FHIR implementation governance',
+      'Clinical workflow optimization using Lean Six Sigma',
+      'Healthcare analytics and KPI dashboard design',
+    ],
+  },
+  {
+    id: 'logistics',
+    name: 'Logistics & 3PL',
+    stat: '+28%',
+    statLabel: 'Port Tampa Bay container volume growth (YoY)',
+    body: "Port Tampa Bay is the fastest-growing port in Florida. Industrial pre-leasing at 75%, new facilities opening monthly, and 17 active 3PLs in the metro. Capacity is growing faster than process discipline — warehouse throughput, putaway, picking, and labor productivity are the margin leak.",
+    works: [
+      'Warehouse DMAIC projects (dock-to-stock, pick accuracy, shrink)',
+      'Labor productivity KPI design and Power BI dashboards',
+      'Transportation and routing process improvement',
+      'Fractional CI lead for growing 3PLs',
+    ],
+  },
+  {
+    id: 'professional-services',
+    name: 'Professional Services',
+    stat: '5–7%',
+    statLabel: 'Typical net margin at small-firm scale',
+    body: "Accounting practices, legal firms, engineering consultancies, marketing agencies. Revenue is up but profit isn't — utilization is soft, intake is leaky, and delivery varies by partner. Standardized process and governance close the gap.",
+    works: [
+      'Intake-to-delivery value-stream mapping',
+      'Utilization and realization KPI dashboards',
+      'Engagement delivery standardization',
+      'Fractional PMO for partner-led firms',
+    ],
+  },
+  {
+    id: 'government',
+    name: 'Government & Nonprofit',
+    stat: '67',
+    statLabel: 'Florida counties with recurring EM / grant needs',
+    body: "County emergency management, municipal subrecipients, small cities, and nonprofits managing federal pass-through funds. Federal-scale discipline applied at a budget and pace that fits a county EM office or a $5M nonprofit.",
+    works: [
+      'Post-event After-Action Reviews (AARs)',
+      'EMPG and Public Assistance grant compliance',
+      'Hazard mitigation and continuity-of-operations planning',
+      'Federal program management for HUD, HHS, and FEMA pass-through funds',
+    ],
+  },
+];
+---
+<Base
+  title="Industries — Cranes Consulting | Tampa Operations Partner"
+  description="Construction, healthcare, logistics, professional services, government and nonprofit. Lean Six Sigma and program management applied where process matters most."
+>
+  <section class="border-b border-navy-100">
+    <div class="container-x py-20 md:py-24">
+      <span class="eyebrow">Industries</span>
+      <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+        Proven where process, margin, and compliance collide.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+        The Lean Six Sigma and program-governance toolkit is industry-agnostic. Judgement about <em>which</em> lever to pull is not.
+      </p>
+    </div>
+  </section>
+
+  <div class="container-x py-20 md:py-24 space-y-20">
+    {industries.map((ind) => (
+      <section id={ind.id} class="scroll-mt-24 grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-navy-900 text-white p-8 relative overflow-hidden">
+            <div aria-hidden="true" class="absolute -right-12 -bottom-12 h-48 w-48 rounded-full bg-amber-400/10 blur-2xl"></div>
+            <p class="relative text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-300">Signal</p>
+            <p class="relative mt-3 text-5xl md:text-6xl font-extrabold tracking-tightest text-amber-300">{ind.stat}</p>
+            <p class="relative mt-3 text-sm text-navy-100 leading-relaxed">{ind.statLabel}</p>
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <h2 class="text-3xl md:text-4xl font-extrabold leading-[1.1]">{ind.name}</h2>
+          <p class="mt-5 text-ink-soft leading-relaxed text-[17px]">{ind.body}</p>
+
+          <p class="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">How we help</p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-3">
+            {ind.works.map((w) => (
+              <li class="flex items-start gap-2.5 rounded-lg bg-bone-200/60 border border-navy-100 p-3 text-sm text-ink-soft">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="text-amber-600 mt-0.5 shrink-0"><path d="m5 12 5 5L20 7"/></svg>
+                {w}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <section class="container-x pb-24">
+    <div class="rounded-2xl bg-amber-400 text-navy-900 px-8 py-12 md:px-14 md:py-16 flex flex-col md:flex-row md:items-center gap-6 justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-2xl md:text-3xl font-extrabold">Don't see your industry?</h2>
+        <p class="mt-2 text-navy-800">If you have a process, a P&amp;L, and a willingness to measure, the toolkit applies. Bring a real problem.</p>
+      </div>
+      <a href="/contact" class="btn-primary shrink-0">Start a conversation</a>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,176 @@
+---
+import Base from '../layouts/Base.astro';
+
+const services = [
+  {
+    id: 'margin-recovery',
+    number: '01',
+    title: 'Margin Recovery',
+    kicker: '90-Day Lean Six Sigma DMAIC Sprint',
+    summary: "A packaged DMAIC engagement built for small businesses where 1-2 points of margin is the difference between reinvesting and running lean. Starts with a real baseline, ends with a P&L-visible change — and optional gainshare so you only pay for outcomes.",
+    phases: [
+      { weeks: 'Weeks 1–2', name: 'Measure', what: 'Baseline labor time variance, RFI cycle time, change-order leakage, material waste, estimate-vs-actual.' },
+      { weeks: 'Weeks 3–4', name: 'Analyze', what: 'Value-stream map 2–3 core workflows. Identify the top 3 leverage points and quantify expected savings.' },
+      { weeks: 'Weeks 5–10', name: 'Improve', what: 'Standardize SOPs, deploy a daily huddle cadence, implement KPI dashboard in Power BI or your existing stack.' },
+      { weeks: 'Weeks 11–13', name: 'Control', what: 'Train leads, document standard work, establish 30/60/90 checkpoints, transition to your team.' },
+    ],
+    bestFor: ['Contractors at 4–7% net margin', 'Service businesses with labor-productivity leaks', 'Operations where "tribal knowledge" is the single point of failure'],
+    pricing: 'Fixed fee $25–50K. Optional performance gainshare of 15–20% on documented savings for 12 months.',
+  },
+  {
+    id: 'fractional-pmo',
+    number: '02',
+    title: 'Fractional PMO',
+    kicker: 'Program Governance on Retainer',
+    summary: "When you're running 5 initiatives simultaneously and nothing is moving fast enough, the problem is usually governance — not effort. A fractional PMO brings portfolio visibility, steering cadence, risk management, and stage-gate discipline without a full-time hire.",
+    phases: [
+      { weeks: 'Month 1', name: 'Build', what: 'Portfolio intake, initiative scoring, RACI definition, reporting schema, dashboard setup.' },
+      { weeks: 'Ongoing', name: 'Run', what: 'Biweekly steering committee facilitation, risk register upkeep, dependency mapping, escalation management.' },
+      { weeks: 'Quarterly', name: 'Rebalance', what: 'Portfolio review, prioritization against strategy, resource reallocation, KPI check.' },
+      { weeks: 'Exit', name: 'Transition', what: 'Transition to internal PMO lead or hire, documented operating model, training.' },
+    ],
+    bestFor: ['Companies running 3–8 concurrent initiatives', 'Post-acquisition integrations', 'ERP, CRM, or technology rollouts', 'Owners who are the de facto project manager'],
+    pricing: '$6–15K/month based on scope. 3-month minimum, quarterly reviews.',
+  },
+  {
+    id: 'software-adoption',
+    number: '03',
+    title: 'Software Implementation & Adoption',
+    kicker: 'Make What You Bought Actually Work',
+    summary: "Procore, Buildertrend, JobTread, HubSpot, Salesforce, ERP, BI — most teams use 30% of what they pay for. The software is rarely the problem. Workflow design, data migration, training, and change management are. That's the gap we close.",
+    phases: [
+      { weeks: 'Weeks 1–2', name: 'Discover', what: 'Audit current workflows, identify gaps vs. platform capability, define success metrics.' },
+      { weeks: 'Weeks 3–5', name: 'Design', what: 'Future-state workflow maps, role-based access, data model, integration points.' },
+      { weeks: 'Weeks 6–10', name: 'Deploy', what: 'Configuration, data migration from spreadsheets/QuickBooks, role-based training, parallel run.' },
+      { weeks: 'Weeks 11–12', name: 'Adopt', what: 'Usage KPIs, coaching, dashboard layer, documented playbooks.' },
+    ],
+    bestFor: ['Teams with shelfware subscriptions', 'Post-purchase implementations stuck at <40% adoption', 'Migrations from spreadsheets and email to a system of record'],
+    pricing: 'Fixed fee $15–35K depending on scope. Optional admin retainer $2–4K/month after go-live.',
+  },
+  {
+    id: 'grant-programs',
+    number: '04',
+    title: 'Grant & Rebuild Program Management',
+    kicker: 'CDBG-DR · FEMA · Federal Compliance',
+    summary: "Hillsborough County alone just opened a $211M Rebuilding for Tomorrow homeowner repair program — part of a $709M HUD CDBG-DR allocation for Helene and Milton recovery. Federal money comes with Davis-Bacon, environmental review, and documentation requirements most contractors and homeowners have never touched. We navigate it end-to-end.",
+    phases: [
+      { weeks: 'Week 1', name: 'Assess', what: 'Eligibility review, program mapping (CDBG-DR, FEMA PA, HMGP, private insurance), documentation gap analysis.' },
+      { weeks: 'Weeks 2–4', name: 'Prepare', what: 'Application package, elevation certs, contractor compliance binder, Davis-Bacon wage determinations, draw schedule.' },
+      { weeks: 'Ongoing', name: 'Execute', what: 'Draw submission, change control, environmental review tracking, stakeholder communication, audit-ready documentation.' },
+      { weeks: 'Closeout', name: 'Close', what: 'Final inspection package, reimbursement reconciliation, lessons-learned documentation.' },
+    ],
+    bestFor: ['Homeowners navigating Rebuilding for Tomorrow or similar HUD programs', 'Small GCs taking on federally-funded rebuild work', 'Municipal subrecipients needing PA grant closeout support', 'NGOs managing federal pass-through funds'],
+    pricing: 'Homeowner navigation packages from $2,500. Contractor compliance PMO $4–10K/month. Municipal engagements scoped individually.',
+  },
+];
+---
+<Base
+  title="Services — Cranes Consulting | Tampa Operations Partner"
+  description="Four service lanes: Margin Recovery Sprints, Fractional PMO, Software Adoption, and Grant & Rebuild Program Management. Lean Six Sigma Black Belt. Tampa, FL."
+>
+  <!-- Hero -->
+  <section class="border-b border-navy-100">
+    <div class="container-x py-20 md:py-24">
+      <span class="eyebrow">Services</span>
+      <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+        Sprint-based engagements. Defined deliverables. Visible in the P&amp;L.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+        Four lanes, designed to compose. Most clients start with a Margin Recovery sprint or a targeted Software Adoption engagement, then graduate into a Fractional PMO retainer as the operating rhythm matures.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  {services.map((s, idx) => (
+    <section
+      id={s.id}
+      class:list={['scroll-mt-24 py-20 md:py-28', idx % 2 === 1 ? 'bg-bone-200/60 border-y border-navy-100' : '']}
+    >
+      <div class="container-x grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5">
+          <p class="font-mono text-sm text-amber-600 font-bold tracking-widest">{s.number}</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-[1.1] text-balance">{s.title}</h2>
+          <p class="mt-2 text-sm uppercase tracking-[0.18em] text-ink-mute font-semibold">{s.kicker}</p>
+          <p class="mt-6 text-ink-soft leading-relaxed text-[17px]">{s.summary}</p>
+
+          <div class="mt-8 rounded-xl bg-navy-50 border border-navy-100 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">Best fit for</p>
+            <ul class="mt-3 space-y-2">
+              {s.bestFor.map((b) => (
+                <li class="flex items-start gap-2 text-sm text-ink-soft">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="text-amber-600 mt-0.5 shrink-0"><path d="m5 12 5 5L20 7"/></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mt-5 rounded-xl border border-navy-100 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">Pricing anchor</p>
+            <p class="mt-2 text-sm text-ink-soft">{s.pricing}</p>
+          </div>
+
+          <a href="/contact" class="btn-primary mt-7">
+            Start with {s.title}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="space-y-3">
+            {s.phases.map((p, i) => (
+              <div class="card p-6 flex gap-5 items-start">
+                <div class="shrink-0 w-14 text-center">
+                  <p class="text-[10px] uppercase tracking-widest text-ink-mute font-semibold">{p.weeks}</p>
+                  <div class="mt-2 h-10 w-10 mx-auto rounded-lg bg-amber-100 text-amber-700 grid place-items-center font-mono font-bold text-sm">
+                    {i + 1}
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-navy-800">{p.name}</h3>
+                  <p class="mt-1.5 text-sm text-ink-soft leading-relaxed">{p.what}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- FAQ / Methodology -->
+  <section class="container-x py-20 md:py-24 border-t border-navy-100">
+    <div class="max-w-3xl">
+      <span class="eyebrow">Engagement principles</span>
+      <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-[1.1]">How we work together.</h2>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-lg font-bold">Fixed-fee by default</h3>
+        <p class="mt-2 text-ink-soft leading-relaxed">
+          Hourly billing creates perverse incentives. Every engagement is scoped to a fixed fee with clearly-defined deliverables and timeline. If scope changes, we re-scope — not re-bill.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold">Performance gainshare available</h3>
+        <p class="mt-2 text-ink-soft leading-relaxed">
+          On Margin Recovery sprints, you can elect a lower fixed fee plus 15–20% of documented savings for 12 months. Aligns incentives — we only win when you do.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold">Your tools, not ours</h3>
+        <p class="mt-2 text-ink-soft leading-relaxed">
+          Dashboards are built in Power BI, Google Sheets, Procore, or whatever you already run. No proprietary platform lock-in. Deliverables are yours on day one.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold">Knowledge transfer, not dependency</h3>
+        <p class="mt-2 text-ink-soft leading-relaxed">
+          The goal of every engagement is a team that can run the new operating rhythm without us. Documented SOPs, trained leads, and a clean handoff — not a permanent retainer.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

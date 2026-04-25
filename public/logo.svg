@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" fill="none" aria-label="Cranes Consulting">
+  <!-- Flying crane, elegant minimalist silhouette, neck extended forward, wings up, legs trailing -->
+  <g stroke="#0F2444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Upper wing (near) -->
+    <path d="M36 34 L48 14 L62 28" />
+    <!-- Lower wing / underside hint -->
+    <path d="M40 34 L52 26" />
+    <!-- Body to neck, long forward-extended neck -->
+    <path d="M36 34 C 30 33, 22 32, 12 30" />
+    <!-- Head / beak tip -->
+    <path d="M12 30 L4 28" />
+    <!-- Trailing legs -->
+    <path d="M60 32 L78 46" />
+    <path d="M62 32 L82 44" />
+  </g>
+  <!-- Amber accent: beak tip -->
+  <path d="M4 28 L8 28.8 L6 26.6 Z" fill="#E8A838" />
+  <!-- Subtle eye -->
+  <circle cx="13.5" cy="29.5" r="0.9" fill="#0F2444" />
+</svg>

@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="About — Cranes Consulting | Tyler Alexander, Tampa FL"
+  description="Cranes Consulting is led by Tyler Alexander, a Lean Six Sigma Black Belt and program manager with 10+ years leading enterprise programs at the Veterans Health Administration."
+>
+  <section class="border-b border-navy-100">
+    <div class="container-x py-20 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-7">
+        <span class="eyebrow">About</span>
+        <h1 class="mt-6 text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+          Federal-grade program discipline, brought to Tampa's small businesses.
+        </h1>
+        <p class="mt-6 text-lg text-ink-soft leading-relaxed">
+          Cranes Consulting was founded on a simple observation: the operating rigor that runs a $100M federal healthcare program doesn't need to cost $100M to implement. The frameworks are the same — risk registers, stage gates, KPI governance, standard work — the difference is how you scale them down without losing the discipline.
+        </p>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="rounded-2xl bg-navy-900 text-white p-8 relative overflow-hidden">
+          <div aria-hidden="true" class="absolute -right-16 -bottom-16 h-56 w-56 rounded-full bg-amber-400/10 blur-3xl"></div>
+          <p class="relative text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-300">Founder</p>
+          <p class="relative mt-3 text-2xl font-bold">Tyler Alexander</p>
+          <p class="relative mt-1 text-sm text-navy-100">Program Manager · Lean Six Sigma Black Belt</p>
+
+          <div class="relative mt-8 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-navy-300">Based</p>
+              <p class="mt-1 text-white">Tampa, FL</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-navy-300">Experience</p>
+              <p class="mt-1 text-white">10+ years</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-navy-300">Sector depth</p>
+              <p class="mt-1 text-white">Federal healthcare, IT modernization, emergency response</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-navy-300">Methodology</p>
+              <p class="mt-1 text-white">DMAIC, Agile, Prosci ADKAR</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section class="container-x py-20 md:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <span class="eyebrow">Background</span>
+      <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-[1.1]">A decade running programs that can't fail.</h2>
+    </div>
+    <div class="lg:col-span-8 prose-custom">
+      <p>
+        Most of my career has been spent inside the Veterans Health Administration, leading enterprise-scale programs where the failure mode wasn't a missed quarter — it was a national headline. That environment forces a particular kind of rigor: every initiative has a risk register, every deliverable has an audit trail, every system integration has a compliance sign-off.
+      </p>
+      <p>
+        At the VA Office of Emergency Management, I led the design and implementation of an enterprise analytics program supporting nationwide emergency operations — the kind of program where governance, secure data infrastructure, and cross-functional alignment aren't "nice to have," they're the job. Before that, at the Office of Healthcare Transformation, I managed enterprise programs integrating multiple systems for 10+ national program offices, tracking 75+ KPIs across federal healthcare operations.
+      </p>
+      <p>
+        What I kept noticing: small businesses have the exact same operational failure modes as federal programs — shelfware technology, missed handoffs, invisible margin leaks, runaway change orders, no single source of truth — but they rarely have access to the discipline that prevents them. <strong>That's the gap Cranes Consulting exists to close.</strong>
+      </p>
+
+      <h3>Methodology</h3>
+      <p>
+        The core toolkit is Lean Six Sigma — specifically, the DMAIC cycle for measurable improvement work, and Prosci's ADKAR framework for the change management side. Program governance uses standard PMP-aligned practices: risk registers, stage-gate reviews, stakeholder mapping, and clearly-defined RACIs. Data and reporting are built in Power BI, SQL, or whatever stack the client already runs.
+      </p>
+      <p>
+        None of this is proprietary. The frameworks are public; the value is in the judgement about which lever to pull, when, and how to scale it to a small-business context without creating the bureaucracy of the frameworks' original settings.
+      </p>
+
+      <h3>Why "Cranes"</h3>
+      <p>
+        Cranes are known for precision, patience, and unusual lift capacity — traits that describe both the work and the outcome we want for our clients. The logo is a flying crane, neck extended forward, because the best operating improvements come from looking ahead, not behind.
+      </p>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="bg-bone-200/60 border-y border-navy-100">
+    <div class="container-x py-20 md:py-24">
+      <span class="eyebrow">Credentials</span>
+      <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-[1.1]">Certifications &amp; training.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { name: 'Lean Six Sigma Black Belt', issuer: 'Certified' },
+          { name: 'Prosci Change Management', issuer: 'Certified Practitioner' },
+          { name: 'Project Management Professional (PMP)', issuer: 'In progress' },
+          { name: 'HL7 FHIR Fundamentals', issuer: 'Health Level 7 International' },
+          { name: 'Healthcare Analytics Certificate', issuer: 'Nebraska Methodist College' },
+          { name: 'SimLEARN Simulation Champion', issuer: 'VA' },
+          { name: 'VA Human Subjects Protection', issuer: 'VA' },
+          { name: 'B.S. Kinesiology', issuer: 'Southeastern Louisiana University' },
+        ].map((c) => (
+          <div class="card p-5">
+            <p class="text-sm font-semibold text-navy-800">{c.name}</p>
+            <p class="mt-1 text-xs text-ink-mute">{c.issuer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="container-x py-20 md:py-24">
+    <div class="max-w-3xl">
+      <span class="eyebrow">How I work</span>
+      <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-[1.1]">Principles that show up in every engagement.</h2>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-8">
+      {[
+        { t: 'Evidence, not opinions', d: 'Every recommendation is grounded in a measured baseline. If a claim can\'t be supported by data, it gets flagged as a hypothesis, not a finding.' },
+        { t: 'Scope discipline', d: 'I only build what\'s asked. MVP first, iterate based on signal. No enterprise bloat. No speculative features. You aren\'t going to need it.' },
+        { t: 'Respect the team', d: "The people running your operation daily know things I don't. The first week of any engagement is mostly listening." },
+        { t: 'Clean exits', d: 'Every engagement ends with a team that can run the new operating rhythm without me. That\'s the measure of success.' },
+      ].map((p) => (
+        <div>
+          <h3 class="text-lg font-bold text-navy-800">{p.t}</h3>
+          <p class="mt-2 text-ink-soft leading-relaxed">{p.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-x pb-24">
+    <div class="rounded-2xl bg-navy-900 text-white px-8 py-14 md:px-14 md:py-20 flex flex-col md:flex-row md:items-center gap-6 justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-2xl md:text-3xl font-extrabold">Let's see if we're a fit.</h2>
+        <p class="mt-2 text-navy-100">30 minutes. No deck. Bring a real problem.</p>
+      </div>
+      <a href="/contact" class="btn-accent shrink-0">Book a fit call</a>
+    </div>
+  </section>
+</Base>

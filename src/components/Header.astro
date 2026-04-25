@@ -1,0 +1,83 @@
+---
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  pathname === href || (href !== '/' && pathname.startsWith(href));
+
+const nav = [
+  { href: '/services', label: 'Services' },
+  { href: '/industries', label: 'Industries' },
+  { href: '/insights', label: 'Insights' },
+  { href: '/about', label: 'About' },
+];
+---
+<header class="sticky top-0 z-40 border-b border-navy-100 bg-bone-100/85 backdrop-blur-md">
+  <div class="container-x flex h-20 items-center justify-between py-4">
+    <a href="/" class="flex items-center gap-3 group" aria-label="Cranes Consulting — home">
+      <span class="block">
+        <img src="/logo.svg" alt="" width="72" height="48" class="h-10 w-auto transition-transform group-hover:-translate-y-0.5" />
+      </span>
+      <span class="flex flex-col leading-none">
+        <span class="text-base font-bold tracking-tight text-navy-800">Cranes Consulting</span>
+        <span class="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Tampa, FL</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+            isActive(item.href)
+              ? 'text-navy-900 bg-navy-50'
+              : 'text-ink-soft hover:text-navy-900 hover:bg-navy-50',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="/contact" class="btn-accent hidden sm:inline-flex">
+        Book a fit call
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button
+        type="button"
+        class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-navy-800 hover:bg-navy-50"
+        aria-label="Open menu"
+        data-menu-toggle
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="md:hidden hidden border-t border-navy-100 bg-bone-100" data-menu-panel>
+    <nav class="container-x py-4 flex flex-col" aria-label="Mobile">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'rounded-md px-3 py-3 text-sm font-medium',
+            isActive(item.href) ? 'text-navy-900 bg-navy-50' : 'text-ink-soft hover:bg-navy-50',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href="/contact" class="btn-accent mt-3 w-full">Book a fit call</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const panel = document.querySelector<HTMLDivElement>('[data-menu-panel]');
+  toggle?.addEventListener('click', () => {
+    if (!panel) return;
+    panel.classList.toggle('hidden');
+  });
+</script>

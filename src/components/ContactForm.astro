@@ -1,0 +1,91 @@
+---
+// Netlify-compatible contact form.
+// If deploying elsewhere, swap action to Formspree, Basin, or a serverless endpoint.
+---
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  class="space-y-5"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden">
+    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-5">
+    <div>
+      <label for="name" class="block text-sm font-medium text-navy-800 mb-1.5">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required
+        class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm text-ink-soft placeholder:text-ink-mute/60 focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20"
+        placeholder="Jane Doe"
+      />
+    </div>
+    <div>
+      <label for="company" class="block text-sm font-medium text-navy-800 mb-1.5">Company</label>
+      <input
+        id="company"
+        name="company"
+        type="text"
+        class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm text-ink-soft placeholder:text-ink-mute/60 focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20"
+        placeholder="Acme Contracting"
+      />
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-5">
+    <div>
+      <label for="email" class="block text-sm font-medium text-navy-800 mb-1.5">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm text-ink-soft placeholder:text-ink-mute/60 focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20"
+        placeholder="jane@acme.com"
+      />
+    </div>
+    <div>
+      <label for="interest" class="block text-sm font-medium text-navy-800 mb-1.5">What are you interested in?</label>
+      <select
+        id="interest"
+        name="interest"
+        class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm text-ink-soft focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20"
+      >
+        <option value="">Select one…</option>
+        <option>Margin Recovery Sprint</option>
+        <option>Fractional PMO</option>
+        <option>Software Implementation</option>
+        <option>Grant / Rebuild Program Management</option>
+        <option>Something else / Not sure</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-navy-800 mb-1.5">What's going on?</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      required
+      class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm text-ink-soft placeholder:text-ink-mute/60 focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20"
+      placeholder="Tell me about your business, what's working, and where you're stuck."
+    ></textarea>
+  </div>
+
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+    <button type="submit" class="btn-accent">
+      Send message
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </button>
+    <p class="text-xs text-ink-mute">
+      Replies within one business day. No spam, no sales sequences.
+    </p>
+  </div>
+</form>
