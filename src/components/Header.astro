@@ -13,21 +13,16 @@ const nav = [
 <header class="sticky top-0 z-40 border-b border-navy-100 bg-bone-100/85 backdrop-blur-md">
   <div class="container-x flex h-20 items-center justify-between py-4">
     <a href="/" class="flex items-center gap-3 group" aria-label="Cranes Consulting home">
-      <span class="block">
-        <!-- Tries /logo.png first (drop your generated PNG into public/ for pixel-perfect fidelity), falls back to /logo.svg if missing. -->
-        <img
-          src="/logo.png"
-          onerror="this.onerror=null;this.src='/logo.svg';"
-          alt=""
-          width="96"
-          height="56"
-          class="h-11 w-auto transition-transform group-hover:-translate-y-0.5"
-        />
-      </span>
-      <span class="flex flex-col leading-none">
-        <span class="text-base font-bold tracking-tight text-navy-800">Cranes Consulting</span>
-        <span class="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Tampa, FL</span>
-      </span>
+      <!-- Full logo (bird + wordmark) -->
+      <img
+        src="/logo.png"
+        onerror="this.onerror=null;this.src='/logo.svg';"
+        alt="Cranes Consulting"
+        width="800"
+        height="436"
+        class="h-12 sm:h-14 w-auto transition-transform group-hover:-translate-y-0.5"
+      />
+      <span class="hidden sm:inline-flex text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute pl-1 self-end pb-1.5">Tampa, FL</span>
     </a>
 
     <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
