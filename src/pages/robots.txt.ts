@@ -7,6 +7,6 @@ Sitemap: ${site}sitemap-index.xml
 `;
 
 export const GET: APIRoute = ({ site }) =>
-  new Response(robotsTxt(site?.toString() ?? 'https://cranesconsulting.com/'), {
+  new Response(robotsTxt(site?.toString() ?? 'https://cranesconsultingfl.com/'), {
     headers: { 'Content-Type': 'text/plain' },
   });

@@ -43,7 +43,7 @@ Build output goes to `dist/`.
 3. Select the `cranes-consulting` repo.
 4. Netlify auto-detects Astro — build command `npm run build`, publish directory `dist`. Just click **Deploy**.
 5. **Enable Forms:** Netlify Forms is on by default. Submissions show up under *Forms* in the dashboard. Configure email notifications under *Site settings → Forms → Form notifications* so contact submissions land in your inbox.
-6. **Custom domain:** Go to *Domain management* and point `cranesconsulting.com` at Netlify (Netlify will give you the DNS records to set at your registrar).
+6. **Custom domain:** Go to *Domain management* and point `cranesconsultingfl.com` at Netlify (Netlify will give you the DNS records to set at your registrar).
 
 ### Option B — Vercel
 
@@ -109,13 +109,13 @@ All pages are plain Astro files with HTML + inline data. No CMS.
 
 ## Before launch checklist
 
-- [ ] Update site URL in `astro.config.mjs` (currently `https://cranesconsulting.com`)
+- [ ] Update site URL in `astro.config.mjs` (currently `https://cranesconsultingfl.com`)
 - [ ] Create an OG image at `/public/og-default.png` (1200×630) — a simple navy background with the logo + tagline is fine
 - [ ] Add your business email as a Netlify Form notification recipient
 - [ ] Set up Google Business Profile for Tampa — listed as "Cranes Consulting"
 - [ ] Add analytics (Plausible, Fathom, or GA4) — edit `src/layouts/Base.astro` to include the snippet
 - [ ] Point the domain at Netlify
-- [ ] Submit `https://cranesconsulting.com/sitemap-index.xml` to Google Search Console
+- [ ] Submit `https://cranesconsultingfl.com/sitemap-index.xml` to Google Search Console
 
 ## License
 

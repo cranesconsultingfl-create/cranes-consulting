@@ -81,7 +81,7 @@ const svg = `
   </g>
 
   <!-- URL bottom right -->
-  <text x="1120" y="595" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="16" fill="#7F94B5" letter-spacing="0.5" text-anchor="end">cranesconsulting.com</text>
+  <text x="1120" y="595" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="16" fill="#7F94B5" letter-spacing="0.5" text-anchor="end">cranesconsultingfl.com</text>
 </svg>
 `;
 

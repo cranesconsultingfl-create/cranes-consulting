@@ -3,10 +3,11 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
-// NOTE: Update `site` to https://cranesconsulting.com once the custom domain
-// is pointed at Netlify and HTTPS is provisioned. Until then, the live
-// hostname must be set here so absolute URLs (og:image, sitemap, canonical)
-// resolve correctly when scraped by social platforms and search engines.
+// NOTE: `site` controls absolute URLs (og:image, sitemap, canonical).
+// Currently set to the netlify.app subdomain so social-card scrapers can
+// resolve assets while DNS for cranesconsultingfl.com is being propagated.
+// Once `cranesconsultingfl.com` resolves to this Netlify site and HTTPS is
+// auto-provisioned, change to: site: 'https://cranesconsultingfl.com',
 export default defineConfig({
   site: 'https://cranes-consulting.netlify.app',
   integrations: [
