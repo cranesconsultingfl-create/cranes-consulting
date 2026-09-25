@@ -47,7 +47,7 @@ const industries = [
 const stats = [
   { value: '10+', label: 'Years leading enterprise programs' },
   { value: '75+', label: 'KPIs governed across federal operations' },
-  { value: '$2–4pt', label: 'Typical margin recovery target' },
+  { value: '2–4 pts', label: 'Typical margin recovery target' },
   { value: '90-day', label: 'Sprint-based engagements' },
 ];
 
@@ -74,23 +74,8 @@ const process = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: 'Cranes pulled three points of margin out of our operation in a single quarter. We thought we were running tight. We were not.',
-    name: 'Owner, residential GC',
-    detail: 'Tampa, FL · 18-person crew',
-  },
-  {
-    quote: 'We had been paying for Procore for two years and our team used about a third of it. Tyler\'s team rebuilt our workflow and got real adoption inside 60 days.',
-    name: 'Operations director',
-    detail: 'Light-commercial contractor',
-  },
-  {
-    quote: 'Federal-grade discipline applied to a small-business problem. Our weekly cadence is unrecognizable from where we were six months ago.',
-    name: 'Practice administrator',
-    detail: 'Multi-site healthcare practice',
-  },
-];
+// Real, client-approved quotes only (the FTC bans invented testimonials). The section stays hidden while this is empty.
+const testimonials: { quote: string; name: string; detail: string }[] = [];
 
 const faqs = [
   {
@@ -139,11 +124,11 @@ const faqs = [
           </p>
 
           <div class="mt-9 flex flex-wrap items-center gap-4">
-            <a href="/contact" class="btn-accent">
+            <a href="/contact/" class="btn-accent">
               Get a free 30-min audit
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a href="/services" class="btn-ghost">
+            <a href="/services/" class="btn-ghost">
               See how we work
             </a>
           </div>
@@ -176,7 +161,7 @@ const faqs = [
               <div>
                 <div class="flex items-baseline justify-between">
                   <p class="text-sm font-medium text-ink-soft">Labor time variance</p>
-                  <p class="text-sm font-semibold text-amber-600">−42%</p>
+                  <p class="text-sm font-semibold text-amber-700">−42%</p>
                 </div>
                 <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-navy-50">
                   <div class="h-full w-[58%] rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
@@ -186,7 +171,7 @@ const faqs = [
               <div>
                 <div class="flex items-baseline justify-between">
                   <p class="text-sm font-medium text-ink-soft">Change-order cycle time</p>
-                  <p class="text-sm font-semibold text-amber-600">−61%</p>
+                  <p class="text-sm font-semibold text-amber-700">−61%</p>
                 </div>
                 <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-navy-50">
                   <div class="h-full w-[39%] rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
@@ -196,7 +181,7 @@ const faqs = [
               <div>
                 <div class="flex items-baseline justify-between">
                   <p class="text-sm font-medium text-ink-soft">Net margin lift</p>
-                  <p class="text-sm font-semibold text-amber-600">+3.1 pts</p>
+                  <p class="text-sm font-semibold text-amber-700">+3.1 pts</p>
                 </div>
                 <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-navy-50">
                   <div class="h-full w-[72%] rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
@@ -307,10 +292,10 @@ const faqs = [
 
       <div class="mt-12 grid md:grid-cols-2 gap-6">
         {services.map((s) => (
-          <a href={`/services#${s.id}`} class="card p-7 group block">
+          <a href={`/services/#${s.id}`} class="card p-7 group block">
             <div class="flex items-start justify-between gap-6">
               <div>
-                <p class="font-mono text-xs text-amber-600 font-bold tracking-widest">{s.number}</p>
+                <p class="font-mono text-xs text-amber-700 font-bold tracking-widest">{s.number}</p>
                 <h3 class="mt-2 text-xl md:text-2xl font-bold">{s.title}</h3>
                 <p class="mt-1 text-xs uppercase tracking-[0.18em] text-ink-mute font-semibold">{s.kicker}</p>
               </div>
@@ -391,39 +376,37 @@ const faqs = [
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="container-x py-20 md:py-28">
-    <div class="max-w-2xl">
-      <span class="eyebrow">What clients say</span>
-      <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
-        Outcomes you can put in a P&amp;L.
-      </h2>
-      <p class="mt-4 text-ink-soft text-lg">
-        We measure success in points of margin recovered, hours saved, and software actually being used. The work shows up in your numbers.
-      </p>
-    </div>
+  {testimonials.length > 0 && (
+    <section class="container-x py-20 md:py-28">
+      <div class="max-w-2xl">
+        <span class="eyebrow">What clients say</span>
+        <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
+          Outcomes you can put in a P&amp;L.
+        </h2>
+        <p class="mt-4 text-ink-soft text-lg">
+          We measure success in points of margin recovered, hours saved, and software actually being used. The work shows up in your numbers.
+        </p>
+      </div>
 
-    <div class="mt-12 grid md:grid-cols-3 gap-6">
-      {testimonials.map((t) => (
-        <figure class="card p-7 flex flex-col">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-amber-500" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-          <blockquote class="mt-5 text-ink-soft leading-relaxed flex-1">
-            "{t.quote}"
-          </blockquote>
-          <figcaption class="mt-6 pt-5 border-t border-navy-100">
-            <p class="text-sm font-semibold text-navy-800">{t.name}</p>
-            <p class="text-xs text-ink-mute mt-0.5">{t.detail}</p>
-          </figcaption>
-        </figure>
-      ))}
-    </div>
-
-    <p class="mt-10 text-xs text-ink-mute italic max-w-prose-tight">
-      Quotes condensed and identifying detail trimmed at clients' request. Real engagements, real numbers.
-    </p>
-  </section>
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        {testimonials.map((t) => (
+          <figure class="card p-7 flex flex-col">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-amber-500" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+            <blockquote class="mt-5 text-ink-soft leading-relaxed flex-1">
+              "{t.quote}"
+            </blockquote>
+            <figcaption class="mt-6 pt-5 border-t border-navy-100">
+              <p class="text-sm font-semibold text-navy-800">{t.name}</p>
+              <p class="text-xs text-ink-mute mt-0.5">{t.detail}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- FAQ -->
-  <section class="bg-bone-200/60 border-y border-navy-100">
+  <section>
     <div class="container-x py-20 md:py-28 grid lg:grid-cols-12 gap-12">
       <div class="lg:col-span-4">
         <span class="eyebrow">Frequently asked</span>
@@ -466,7 +449,7 @@ const faqs = [
           Bring something real you're stuck on. We'll bring ten years of running federal programs and a Lean Six Sigma playbook. If there's a fit, we'll talk scope. If not, you walk away with two or three ideas you can run with yourself.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/contact" class="btn-accent">Get a free 30-min audit</a>
+          <a href="/contact/" class="btn-accent">Get a free 30-min audit</a>
           <a href="mailto:cranesconsultingfl@gmail.com" class="btn-ghost !border-navy-600 !text-white hover:!bg-navy-800">Email us directly</a>
         </div>
       </div>

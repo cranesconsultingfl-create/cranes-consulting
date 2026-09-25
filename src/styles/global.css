@@ -82,7 +82,7 @@
   }
 
   .prose-custom a {
-    @apply text-amber-600 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500;
+    @apply text-amber-700 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500;
   }
 
   .prose-custom blockquote {

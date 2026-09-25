@@ -8,13 +8,15 @@ interface Props {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
-  title = 'Cranes Consulting | Tampa Operations Consulting',
-  description = 'Operations consulting for Tampa Bay small businesses. Lean Six Sigma, program management, software adoption, and grant program help.',
+  title = 'Tampa Operations Consulting | Cranes Consulting',
+  description = 'Tampa Bay operations consulting: Lean Six Sigma margin recovery, fractional PMO, software adoption, and CDBG-DR grant help. Book a free 30-minute audit.',
   canonical,
   ogImage = '/og-default.png',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
@@ -30,6 +32,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <meta name="author" content="Cranes Consulting" />
 
     <!-- Open Graph -->
@@ -60,9 +63,9 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       name: 'Cranes Consulting',
-      description,
+      description: 'Operations and program management consulting for Tampa Bay small businesses: Lean Six Sigma margin recovery, fractional PMO, software adoption, and federal grant program management.',
       url: Astro.site?.toString(),
-      telephone: '',
+      image: new URL('/og-default.png', Astro.site).toString(),
       email: 'cranesconsultingfl@gmail.com',
       address: {
         '@type': 'PostalAddress',

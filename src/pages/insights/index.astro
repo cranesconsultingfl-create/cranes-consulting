@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 
 const posts = [
   {
-    href: '/insights/shelfware-software-audit',
+    href: '/insights/shelfware-software-audit/',
     title: 'The Shelfware Construction Software Audit',
     summary: "A 10-question audit for small GCs paying $6–12K/year for Procore, Buildertrend, or JobTread but only using a fraction of what they bought. Diagnose the gap in 20 minutes.",
     category: 'Software & Tech',
@@ -11,7 +11,7 @@ const posts = [
     date: 'April 2026',
   },
   {
-    href: '/insights/margin-leak-checklist',
+    href: '/insights/margin-leak-checklist/',
     title: 'The Small Contractor Margin Leak Checklist',
     summary: "Seven operating pains quietly costing a $5M contractor two points of net margin every year. Each one has a 30-day fix.",
     category: 'Operations',
@@ -19,7 +19,7 @@ const posts = [
     date: 'April 2026',
   },
   {
-    href: '/insights/cdbg-dr-readiness-guide',
+    href: '/insights/cdbg-dr-readiness-guide/',
     title: 'CDBG-DR Contractor Readiness Guide',
     summary: "What small Tampa GCs need to have in place before bidding federally-funded Helene / Milton rebuild work, and the three mistakes that stop payment.",
     category: 'Grants & Compliance',
@@ -29,7 +29,7 @@ const posts = [
 ];
 ---
 <Base
-  title="Insights | Cranes Consulting Tampa"
+  title="Operations Insights for Small Businesses | Cranes Consulting"
   description="Operating playbooks, Lean Six Sigma field notes, and grant-program guides for Tampa Bay small businesses."
 >
   <section class="border-b border-navy-100">
@@ -51,9 +51,9 @@ const posts = [
           <span class="label-chip">{p.category}</span>
           <span class="text-xs text-ink-mute">{p.read} · {p.date}</span>
         </div>
-        <h2 class="mt-5 text-xl md:text-2xl font-bold text-navy-800 group-hover:text-amber-600 transition-colors">{p.title}</h2>
+        <h2 class="mt-5 text-xl md:text-2xl font-bold text-navy-800 group-hover:text-amber-700 transition-colors">{p.title}</h2>
         <p class="mt-3 text-sm text-ink-soft leading-relaxed flex-1">{p.summary}</p>
-        <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-600">
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-700">
           Read more
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </span>

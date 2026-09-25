@@ -4,10 +4,10 @@ const isActive = (href: string) =>
   pathname === href || (href !== '/' && pathname.startsWith(href));
 
 const nav = [
-  { href: '/services', label: 'Services' },
-  { href: '/industries', label: 'Industries' },
-  { href: '/insights', label: 'Insights' },
-  { href: '/about', label: 'About' },
+  { href: '/services/', label: 'Services' },
+  { href: '/industries/', label: 'Industries' },
+  { href: '/insights/', label: 'Insights' },
+  { href: '/about/', label: 'About' },
 ];
 ---
 <header class="sticky top-0 z-40 border-b border-navy-100 bg-bone-100/85 backdrop-blur-md">
@@ -39,14 +39,16 @@ const nav = [
     </nav>
 
     <div class="flex items-center gap-3">
-      <a href="/contact" class="btn-accent hidden sm:inline-flex">
+      <a href="/contact/" class="btn-accent hidden sm:inline-flex">
         Get in touch
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
       <button
         type="button"
         class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-navy-800 hover:bg-navy-50"
-        aria-label="Open menu"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
         data-menu-toggle
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -55,7 +57,7 @@ const nav = [
   </div>
 
   <!-- Mobile menu -->
-  <div class="md:hidden hidden border-t border-navy-100 bg-bone-100" data-menu-panel>
+  <div id="mobile-menu" class="md:hidden hidden border-t border-navy-100 bg-bone-100" data-menu-panel>
     <nav class="container-x py-4 flex flex-col" aria-label="Mobile">
       {nav.map((item) => (
         <a
@@ -68,7 +70,7 @@ const nav = [
           {item.label}
         </a>
       ))}
-      <a href="/contact" class="btn-accent mt-3 w-full">Get in touch</a>
+      <a href="/contact/" class="btn-accent mt-3 w-full">Get in touch</a>
     </nav>
   </div>
 </header>
@@ -78,6 +80,7 @@ const nav = [
   const panel = document.querySelector<HTMLDivElement>('[data-menu-panel]');
   toggle?.addEventListener('click', () => {
     if (!panel) return;
-    panel.classList.toggle('hidden');
+    const isOpen = !panel.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(isOpen));
   });
 </script>
