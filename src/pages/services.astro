@@ -62,11 +62,26 @@ const services = [
     bestFor: ['Homeowners navigating Rebuilding for Tomorrow or similar HUD programs', 'Small GCs taking on federally-funded rebuild work', 'Municipal subrecipients needing PA grant closeout support', 'NGOs managing federal pass-through funds'],
     pricing: 'Homeowner navigation packages from $2,500. Contractor compliance PMO $4–10K/month. Municipal engagements scoped individually.',
   },
+  {
+    id: 'ai-adoption',
+    number: '05',
+    title: 'AI Training & Implementation',
+    kicker: 'Practical AI, Measured in Hours Saved',
+    summary: "Your team is probably already using ChatGPT, Claude, or Copilot, with or without a policy. The real question is whether it's saving hours or quietly creating risk. We find the workflows where AI actually pays off, set up the tools and guardrails, train your people by role, and measure the time saved so you know it's working.",
+    phases: [
+      { weeks: 'Weeks 1–2', name: 'Assess', what: 'Map where the hours go today, inventory the AI tools already in use, and rank use cases by time saved and risk.' },
+      { weeks: 'Weeks 3–4', name: 'Pilot', what: 'Stand up two or three high-value use cases (proposals, estimating support, document review, reporting) with a small pilot group.' },
+      { weeks: 'Weeks 5–8', name: 'Train', what: 'Role-based training, a shared prompt library, and an acceptable-use policy covering client data, accuracy checks, and approved tools.' },
+      { weeks: 'Weeks 9–10', name: 'Measure', what: 'Track time saved and adoption against the baseline, then document the playbook your team runs without us.' },
+    ],
+    bestFor: ['Teams already using AI tools with no policy or training', 'Owners who want hours back from proposals, reporting, and admin work', 'Firms handling client data that need guardrails before scaling AI use', 'Companies whose software just added AI features nobody uses'],
+    pricing: 'Scoped after the free 30-minute audit. Fixed fee, like every engagement.',
+  },
 ];
 ---
 <Base
   title="Operations Consulting Services in Tampa | Cranes Consulting"
-  description="Four service lanes: Margin Recovery Sprints, Fractional PMO, Software Adoption, and Grant & Rebuild Program Management. Lean Six Sigma Black Belt. Tampa, FL."
+  description="Five service lanes: Margin Recovery Sprints, Fractional PMO, Software Adoption, Grant & Rebuild Program Management, and AI Training & Implementation. Tampa, FL."
 >
   <!-- Hero -->
   <section class="border-b border-navy-100">
@@ -76,7 +91,7 @@ const services = [
         Sprint-based engagements. Clear deliverables. Visible in your P&amp;L.
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-        These four lanes are designed to stack. Most clients start with a Margin Recovery sprint or a focused Software Adoption engagement, then move into a Fractional PMO retainer once the operating rhythm is settled.
+        These five lanes are designed to stack. Most clients start with a Margin Recovery sprint or a focused Software Adoption engagement, then move into a Fractional PMO retainer once the operating rhythm is settled.
       </p>
     </div>
   </section>

@@ -13,7 +13,7 @@ interface Props {
 
 const {
   title = 'Tampa Operations Consulting | Cranes Consulting',
-  description = 'Tampa Bay operations consulting: Lean Six Sigma margin recovery, fractional PMO, software adoption, and CDBG-DR grant help. Book a free 30-minute audit.',
+  description = 'Tampa Bay operations consulting: Lean Six Sigma margin recovery, fractional PMO, software and AI adoption, and CDBG-DR grant help. Book a free 30-minute audit.',
   canonical,
   ogImage = '/og-default.png',
   noindex = false,
@@ -63,7 +63,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       name: 'Cranes Consulting',
-      description: 'Operations and program management consulting for Tampa Bay small businesses: Lean Six Sigma margin recovery, fractional PMO, software adoption, and federal grant program management.',
+      description: 'Operations and program management consulting for Tampa Bay small businesses: Lean Six Sigma margin recovery, fractional PMO, software adoption, AI training and implementation, and federal grant program management.',
       url: Astro.site?.toString(),
       image: new URL('/og-default.png', Astro.site).toString(),
       email: 'cranesconsultingfl@gmail.com',

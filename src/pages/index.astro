@@ -34,6 +34,14 @@ const services = [
     body: 'Help navigating Helene and Milton recovery funds and other federal grant flows. Davis-Bacon, environmental review, draw schedules, and the audit-ready documentation that gets you paid.',
     bullets: ['Eligibility + readiness', 'Contractor compliance PMO', 'Draw + documentation', 'Closeout support'],
   },
+  {
+    id: 'ai-adoption',
+    number: '05',
+    title: 'AI Training & Implementation',
+    kicker: 'Practical AI, Measured in Hours Saved',
+    body: 'ChatGPT, Claude, Copilot, and the AI features already inside your software. We find the workflows where AI actually saves time, set up the tools and a usage policy that protects client data, train each role, and measure the hours you get back.',
+    bullets: ['Use-case assessment', 'Tool setup + guardrails', 'Role-based training', 'Time-saved tracking'],
+  },
 ];
 
 const industries = [
@@ -97,6 +105,10 @@ const faqs = [
   {
     q: 'Are you Lean Six Sigma certified?',
     a: 'Yes. Lean Six Sigma Black Belt, Prosci change-management certified, and PMP. We use those frameworks because they work, not as marketing.',
+  },
+  {
+    q: 'Can you help our team use AI tools like ChatGPT, Claude, or Copilot?',
+    a: 'Yes. We start by finding the two or three workflows where AI saves real hours, then set up the tools, write a usage policy that protects client data, and train each role. Time saved gets measured against a baseline so you can see whether it is paying off.',
   },
   {
     q: 'Will you work with our existing tools, or do we have to switch?',
@@ -283,16 +295,16 @@ const faqs = [
       <div class="max-w-2xl">
         <span class="eyebrow">Services</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
-          Four lanes. One operating system for growing businesses.
+          Five lanes. One operating system for growing businesses.
         </h2>
         <p class="mt-4 text-ink-soft text-lg">
-          Start where the pain is sharpest. Margin, overload, a shelfware system, a grant deadline. Then layer from there.
+          Start where the pain is sharpest. Margin, overload, a shelfware system, a grant deadline, an AI rollout nobody was trained for. Then layer from there.
         </p>
       </div>
 
       <div class="mt-12 grid md:grid-cols-2 gap-6">
-        {services.map((s) => (
-          <a href={`/services/#${s.id}`} class="card p-7 group block">
+        {services.map((s, i) => (
+          <a href={`/services/#${s.id}`} class:list={['card p-7 group block', i === services.length - 1 && services.length % 2 === 1 && 'md:col-span-2']}>
             <div class="flex items-start justify-between gap-6">
               <div>
                 <p class="font-mono text-xs text-amber-700 font-bold tracking-widest">{s.number}</p>
