@@ -75,7 +75,7 @@ const services = [
       { weeks: 'Weeks 9–10', name: 'Measure', what: 'Track time saved and adoption against the baseline, then document the playbook your team runs without us.' },
     ],
     bestFor: ['Teams already using AI tools with no policy or training', 'Owners who want hours back from proposals, reporting, and admin work', 'Firms handling client data that need guardrails before scaling AI use', 'Companies whose software just added AI features nobody uses'],
-    pricing: 'Scoped after the free 30-minute audit. Fixed fee, like every engagement.',
+    pricing: 'Fixed fee $10–25K depending on team size and number of use cases.',
   },
 ];
 ---
@@ -136,8 +136,11 @@ const services = [
           <div class="space-y-3">
             {s.phases.map((p, i) => (
               <div class="card p-6 flex gap-5 items-start">
-                <div class="shrink-0 w-14 text-center">
-                  <p class="text-[10px] uppercase tracking-widest text-ink-mute font-semibold">{p.weeks}</p>
+                <div class="shrink-0 w-20 text-center">
+                  <p class="text-[10px] uppercase tracking-widest text-ink-mute font-semibold leading-snug">
+                    {p.weeks.split(' ')[0]}
+                    {p.weeks.includes(' ') && <span class="block whitespace-nowrap">{p.weeks.split(' ').slice(1).join(' ')}</span>}
+                  </p>
                   <div class="mt-2 h-10 w-10 mx-auto rounded-lg bg-amber-100 text-amber-700 grid place-items-center font-mono font-bold text-sm">
                     {i + 1}
                   </div>
