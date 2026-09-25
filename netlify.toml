@@ -5,6 +5,11 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
