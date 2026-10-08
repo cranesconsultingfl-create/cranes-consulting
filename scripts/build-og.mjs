@@ -44,7 +44,7 @@ const svg = `
 
     <!-- Wordmark -->
     <text x="170" y="32" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="800" font-size="36" fill="#FAFAF7" letter-spacing="-1">Cranes Consulting</text>
-    <text x="170" y="62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="#F0C55A" letter-spacing="3" text-transform="uppercase">TAMPA, FL · OPERATIONS PARTNERS</text>
+    <text x="170" y="62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="#F0C55A" letter-spacing="3" text-transform="uppercase">TAMPA BAY · NAPLES · SUBS &amp; SMALL BUSINESSES</text>
   </g>
 
   <!-- Amber accent line -->
@@ -52,31 +52,31 @@ const svg = `
 
   <!-- Headline -->
   <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="800" letter-spacing="-3">
-    <text x="80" y="320" font-size="86" fill="#FAFAF7">Operations that scale.</text>
-    <text x="80" y="420" font-size="86" fill="#E8A838">Margin that holds.</text>
+    <text x="80" y="318" font-size="80" fill="#FAFAF7">Less time in the office.</text>
+    <text x="80" y="412" font-size="80" fill="#E8A838">More time on the job.</text>
   </g>
 
   <!-- Subtagline -->
   <text x="80" y="490" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="26" fill="#B3C2D9" letter-spacing="-0.3">
-    Lean Six Sigma. Federal-grade program discipline.
+    We teach subcontractors and small businesses to use AI
   </text>
   <text x="80" y="525" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="26" fill="#B3C2D9" letter-spacing="-0.3">
-    No retainer bloat.
+    for change orders, pay apps, invoices and insurance.
   </text>
 
   <!-- Bottom credential chips -->
   <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing="1.6">
     <g transform="translate(80, 575)">
-      <rect width="280" height="34" rx="17" fill="none" stroke="#475569" stroke-width="1"/>
-      <text x="140" y="22" fill="#F0C55A" text-anchor="middle">LEAN SIX SIGMA BLACK BELT</text>
+      <rect width="230" height="34" rx="17" fill="none" stroke="#475569" stroke-width="1"/>
+      <text x="115" y="22" fill="#F0C55A" text-anchor="middle">AI OFFICE TRAINING</text>
     </g>
-    <g transform="translate(376, 575)">
-      <rect width="190" height="34" rx="17" fill="none" stroke="#475569" stroke-width="1"/>
-      <text x="95" y="22" fill="#F0C55A" text-anchor="middle">PROSCI ADKAR</text>
+    <g transform="translate(326, 575)">
+      <rect width="170" height="34" rx="17" fill="none" stroke="#475569" stroke-width="1"/>
+      <text x="85" y="22" fill="#F0C55A" text-anchor="middle">MONEY AUDIT</text>
     </g>
-    <g transform="translate(582, 575)">
-      <rect width="190" height="34" rx="17" fill="none" stroke="#475569" stroke-width="1"/>
-      <text x="95" y="22" fill="#F0C55A" text-anchor="middle">PMP · HL7 FHIR</text>
+    <g transform="translate(512, 575)">
+      <rect width="250" height="34" rx="17" fill="none" stroke="#475569" stroke-width="1"/>
+      <text x="125" y="22" fill="#F0C55A" text-anchor="middle">FLORIDA GC CO-OWNER</text>
     </g>
   </g>
 
