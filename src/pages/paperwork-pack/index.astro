@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+import { packPrompts } from '../../data/paperwork-pack';
+
+const trades = ['HVAC', 'Electrical', 'Plumbing', 'Framing or carpentry', 'Drywall or paint', 'Concrete or masonry', 'Roofing', 'Pool', 'Landscape or irrigation', 'Tile or flooring', 'Other trade', 'General contractor', 'Not in construction'];
+---
+<Base
+  title="Free AI Prompt Pack for Subcontractors | Cranes Consulting"
+  description="The GC-Approved Paperwork Pack: ten free copy-and-paste AI prompts for change orders, pay apps, insurance certificates, delay notices and GC replies."
+>
+  <section class="border-b border-navy-100">
+    <div class="container-x py-20 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-7">
+        <span class="eyebrow">Free download</span>
+        <h1 class="mt-6 text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+          The GC-Approved Paperwork Pack
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+          Ten copy-and-paste AI prompts for the paperwork GCs judge you on, written from the GC's side of the desk. Works in ChatGPT, Claude, Copilot or Gemini, free versions included. Dictate into your phone in the truck and get a draft you can send.
+        </p>
+
+        <h2 class="mt-12 text-xl font-bold">What's inside</h2>
+        <ol class="mt-5 grid sm:grid-cols-2 gap-3">
+          {packPrompts.map((p, i) => (
+            <li class="flex gap-3 rounded-lg bg-white border border-navy-100 p-4">
+              <span class="shrink-0 h-7 w-7 rounded-full bg-amber-100 text-amber-800 grid place-items-center text-xs font-bold">{i + 1}</span>
+              <span>
+                <span class="block text-sm font-semibold text-navy-800">{p.title}</span>
+                <span class="block mt-1 text-xs text-ink-mute leading-relaxed">{p.when}</span>
+              </span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="lg:col-span-5 lg:sticky lg:top-28">
+        <div class="card p-7">
+          <h2 class="text-xl font-bold">Get the pack</h2>
+          <p class="mt-2 text-sm text-ink-soft">It opens on the next screen. No cost, no sales sequence.</p>
+          <form
+            name="paperwork-pack"
+            method="POST"
+            action="/paperwork-pack/download/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            class="mt-6 space-y-4"
+          >
+            <input type="hidden" name="form-name" value="paperwork-pack" />
+            <p class="hidden"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+            <div>
+              <label for="pp-name" class="block text-sm font-medium text-navy-800 mb-1.5">Name</label>
+              <input id="pp-name" name="name" type="text" required autocomplete="name" class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20" />
+            </div>
+            <div>
+              <label for="pp-email" class="block text-sm font-medium text-navy-800 mb-1.5">Email</label>
+              <input id="pp-email" name="email" type="email" required autocomplete="email" class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20" />
+            </div>
+            <div>
+              <label for="pp-trade" class="block text-sm font-medium text-navy-800 mb-1.5">Your trade</label>
+              <select id="pp-trade" name="trade" class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20">
+                <option value="">Select one…</option>
+                {trades.map((t) => <option>{t}</option>)}
+              </select>
+            </div>
+            <div>
+              <label for="pp-company" class="block text-sm font-medium text-navy-800 mb-1.5">Company <span class="text-ink-mute font-normal">(optional)</span></label>
+              <input id="pp-company" name="company" type="text" autocomplete="organization" class="w-full rounded-md border border-navy-200 bg-white px-4 py-3 text-sm focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20" />
+            </div>
+            <button type="submit" class="btn-accent w-full">Send me the pack</button>
+            <p class="text-xs text-ink-mute">We may follow up once to ask if it helped. That's it.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x py-16 md:py-20">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-extrabold leading-[1.1]">Why "GC-approved"?</h2>
+      <p class="mt-4 text-ink-soft leading-relaxed">
+        We co-own <a href="https://www.a2constructionfl.com/" class="text-amber-700 underline decoration-amber-400/60 underline-offset-4">Alexander² Construction</a>, a general contractor building in Tampa and Naples, so we read subs' change orders, pay apps and insurance certificates every week. The ones that get approved fast all do the same few things. These prompts bake those things in.
+      </p>
+    </div>
+  </section>
+</Base>

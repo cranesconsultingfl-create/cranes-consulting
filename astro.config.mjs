@@ -11,7 +11,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     tailwind({ applyBaseStyles: false }),
-    sitemap({ filter: (page) => !/\/(thanks|404)\/$/.test(page) }),
+    sitemap({ filter: (page) => !/\/(thanks|404|download)\/$/.test(page) }),
   ],
   vite: {
     // Keep scripts and CSS as external files so the netlify.toml CSP can stay 'self'-only.
