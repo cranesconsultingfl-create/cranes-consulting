@@ -1,9 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { articleSchema } from '../../lib/schema';
 ---
 <Base
   title="The Shelfware Construction Software Audit | Cranes Consulting"
   description="A 10-question audit for small GCs paying for Procore, Buildertrend, or JobTread but only using a fraction of what they bought. Diagnose your gap in 20 minutes."
+  schema={[articleSchema({ headline: 'The Shelfware Construction Software Audit', description: 'A 10-question audit for small GCs paying for Procore, Buildertrend, or JobTread but only using a fraction of what they bought. Diagnose your gap in 20 minutes.', path: '/insights/shelfware-software-audit/', datePublished: '2026-04-24' })]}
 >
   <article>
     <header class="border-b border-navy-100">

@@ -2,6 +2,7 @@
 import '@fontsource-variable/inter';
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import '../styles/global.css';
+import { ORG_ID } from '../lib/schema';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -11,6 +12,7 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   noindex?: boolean;
+  schema?: Record<string, unknown>[];
 }
 
 const {
@@ -19,6 +21,7 @@ const {
   canonical,
   ogImage = '/og-default.png',
   noindex = false,
+  schema = [],
 } = Astro.props;
 
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
@@ -58,6 +61,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
+      '@id': ORG_ID,
       name: 'Cranes Consulting',
       description: 'Teaches subcontractors and small businesses in Tampa Bay and Naples to use AI to handle office work: change orders, pay apps, invoices, insurance certificates and follow-ups, so they run like the professional companies GCs, homeowners and customers want to hire.',
       url: Astro.site?.toString(),
@@ -76,6 +80,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
         worksFor: { '@type': 'GeneralContractor', name: 'Alexander² Construction', url: 'https://www.a2constructionfl.com/' },
       },
     })} />
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
   <body>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-navy-800 focus:px-4 focus:py-2 focus:text-white">

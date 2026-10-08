@@ -1,9 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { articleSchema } from '../../lib/schema';
 ---
 <Base
   title="The Small Contractor Margin Leak Checklist | Cranes Consulting"
   description="Seven operating pains quietly costing a $5M contractor two points of net margin every year. Each one has a 30-day fix."
+  schema={[articleSchema({ headline: 'The Small Contractor Margin Leak Checklist', description: 'Seven operating pains quietly costing a $5M contractor two points of net margin every year. Each one has a 30-day fix.', path: '/insights/margin-leak-checklist/', datePublished: '2026-04-24' })]}
 >
   <article>
     <header class="border-b border-navy-100">

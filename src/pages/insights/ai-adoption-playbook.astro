@@ -1,9 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { articleSchema } from '../../lib/schema';
 ---
 <Base
   title="The Small Business AI Adoption Playbook | Cranes Consulting"
   description="A five-step plan for getting real hours back from ChatGPT, Claude, and Copilot: find the right workflows, set guardrails, train by role, and measure what it saves."
+  schema={[articleSchema({ headline: 'The Small Business AI Adoption Playbook', description: 'A five-step plan for getting real hours back from ChatGPT, Claude, and Copilot: find the right workflows, set guardrails, train by role, and measure what it saves.', path: '/insights/ai-adoption-playbook/', datePublished: '2026-09-25' })]}
 >
   <article>
     <header class="border-b border-navy-100">

@@ -1,9 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { articleSchema } from '../../lib/schema';
 ---
 <Base
   title="How to Get Your Pay App Approved the First Time | Cranes Consulting"
   description="Why GCs bounce subcontractor pay applications, a first-submission checklist, and AI prompts that catch the problems before you hit send. Written from the GC's side of the desk."
+  schema={[articleSchema({ headline: 'How to Get Your Pay App Approved the First Time', description: "Why GCs bounce subcontractor pay applications, a first-submission checklist, and AI prompts that catch the problems before you hit send. Written from the GC's side of the desk.", path: '/insights/pay-app-approved-first-time/', datePublished: '2026-10-08' })]}
 >
   <article>
     <header class="border-b border-navy-100">
