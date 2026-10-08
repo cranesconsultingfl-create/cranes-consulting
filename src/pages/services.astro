@@ -3,34 +3,33 @@ import Base from '../layouts/Base.astro';
 
 const services = [
   {
-    id: 'margin-recovery',
+    id: 'money-audit',
     number: '01',
-    title: 'Margin Recovery',
-    kicker: '90-Day Lean Six Sigma DMAIC Sprint',
-    summary: "A packaged DMAIC engagement built for small businesses where one or two points of margin is the difference between reinvesting and running lean. Starts with a real baseline, ends with a P&L-visible change. Optional gainshare so you only pay for outcomes.",
+    title: 'Money Audit',
+    kicker: 'One Job, Every Dollar Traced',
+    summary: "We take one recent job and tie every invoice, change order, pay app and payment to what actually hit the bank. You get a list of money you're still owed, work that never got billed, change orders that were never signed, and the paperwork gaps that slow down your next payment. It's the fastest way to see what a cleaner back office is worth.",
     phases: [
-      { weeks: 'Weeks 1–2', name: 'Measure', what: 'Baseline labor time variance, RFI cycle time, change-order leakage, material waste, estimate-vs-actual.' },
-      { weeks: 'Weeks 3–4', name: 'Analyze', what: 'Value-stream map 2–3 core workflows. Identify the top 3 leverage points and quantify expected savings.' },
-      { weeks: 'Weeks 5–10', name: 'Improve', what: 'Standardize SOPs, deploy a daily huddle cadence, implement KPI dashboard in Power BI or your existing stack.' },
-      { weeks: 'Weeks 11–13', name: 'Control', what: 'Train leads, document standard work, establish 30/60/90 checkpoints, transition to your team.' },
+      { weeks: 'Step 1', name: 'Collect', what: 'Bank and card exports, invoices, change orders, pay apps, the contract and its schedule of values, and the text or email threads where approvals happened.' },
+      { weeks: 'Step 2', name: 'Tie out', what: 'Match every dollar in and out of the job. Flag released-but-unpaid funds, double payments, unbilled work and unsigned changes.' },
+      { weeks: 'Step 3', name: 'Report', what: 'A plain list of what you are owed and what to bill, the missing paperwork, and the top three fixes for the next job.' },
     ],
-    bestFor: ['Contractors at 4–7% net margin', 'Service businesses with labor-productivity leaks', 'Operations where "tribal knowledge" is the single point of failure'],
-    pricing: 'Fixed fee $25–50K. Optional performance gainshare of 15–20% on documented savings for 12 months.',
+    bestFor: ['Subs who finish jobs and still are not sure they got paid for everything', 'Owners who bill from memory or a text thread', 'Anyone about to bid bigger GC or federally funded work'],
+    pricing: 'Fixed fee, quoted after the free 30-minute call.',
   },
   {
-    id: 'fractional-pmo',
+    id: 'back-office',
     number: '02',
-    title: 'Fractional PMO',
-    kicker: 'Program Governance on Retainer',
-    summary: "When you're running five initiatives at once and nothing is moving fast enough, the problem is usually governance, not effort. A fractional PMO brings portfolio visibility, a steering cadence, risk management, and stage-gate discipline without a full-time hire.",
+    title: 'Back Office Setup',
+    kicker: 'AI-Assisted Systems Your Team Can Run',
+    summary: "The paperwork GCs, homeowners and customers judge you on: invoices and pay apps that go out clean and on time, change orders and approvals in writing before the work starts, insurance certificates and workers' comp that never lapse, and updates that answer questions before they're asked. We build it on the tools you already pay for, use AI to cut the office hours, and train your people to run it.",
     phases: [
-      { weeks: 'Month 1', name: 'Build', what: 'Portfolio intake, initiative scoring, RACI definition, reporting schema, dashboard setup.' },
-      { weeks: 'Ongoing', name: 'Run', what: 'Biweekly steering committee facilitation, risk register upkeep, dependency mapping, escalation management.' },
-      { weeks: 'Quarterly', name: 'Rebalance', what: 'Portfolio review, prioritization against strategy, resource reallocation, KPI check.' },
-      { weeks: 'Exit', name: 'Transition', what: 'Transition to internal PMO lead or hire, documented operating model, training.' },
+      { weeks: 'Weeks 1–2', name: 'Map', what: 'Walk through how jobs are quoted, approved, billed and closed today. Pick the workflows costing the most hours and money.' },
+      { weeks: 'Weeks 3–5', name: 'Build', what: 'Templates and checklists for change orders, invoices and pay apps, insurance and workers comp tracking, and client or GC updates.' },
+      { weeks: 'Weeks 6–8', name: 'Train', what: 'Role-based training for owners, office staff and PMs, a shared AI prompt library, and a one-page AI use policy that protects client data.' },
+      { weeks: 'Weeks 9–10', name: 'Measure', what: 'Track office hours and days-to-paid against the baseline, then hand off a playbook your team runs without us.' },
     ],
-    bestFor: ['Companies running 3–8 concurrent initiatives', 'Post-acquisition integrations', 'ERP, CRM, or technology rollouts', 'Owners who are the de facto project manager'],
-    pricing: '$6–15K/month based on scope. 3-month minimum, quarterly reviews.',
+    bestFor: ['Subcontractors who want to win bigger GC jobs', 'Small businesses where the owner is still the whole back office', 'Teams already using AI tools with no system around them', 'Companies that have lost work or money over paperwork'],
+    pricing: 'Fixed fee $10–25K depending on team size and number of workflows.',
   },
   {
     id: 'software-adoption',
@@ -48,8 +47,38 @@ const services = [
     pricing: 'Fixed fee $15–35K depending on scope. Optional admin retainer $2–4K/month after go-live.',
   },
   {
-    id: 'grant-programs',
+    id: 'margin-recovery',
     number: '04',
+    title: 'Margin Recovery',
+    kicker: '90-Day Lean Six Sigma DMAIC Sprint',
+    summary: "A packaged DMAIC engagement built for small businesses where one or two points of margin is the difference between reinvesting and running lean. Starts with a real baseline, ends with a P&L-visible change. Optional gainshare so you only pay for outcomes.",
+    phases: [
+      { weeks: 'Weeks 1–2', name: 'Measure', what: 'Baseline labor time variance, RFI cycle time, change-order leakage, material waste, estimate-vs-actual.' },
+      { weeks: 'Weeks 3–4', name: 'Analyze', what: 'Value-stream map 2–3 core workflows. Identify the top 3 leverage points and quantify expected savings.' },
+      { weeks: 'Weeks 5–10', name: 'Improve', what: 'Standardize SOPs, deploy a daily huddle cadence, implement KPI dashboard in Power BI or your existing stack.' },
+      { weeks: 'Weeks 11–13', name: 'Control', what: 'Train leads, document standard work, establish 30/60/90 checkpoints, transition to your team.' },
+    ],
+    bestFor: ['Contractors at 4–7% net margin', 'Service businesses with labor-productivity leaks', 'Operations where "tribal knowledge" is the single point of failure'],
+    pricing: 'Fixed fee $25–50K. Optional performance gainshare of 15–20% on documented savings for 12 months.',
+  },
+  {
+    id: 'fractional-pmo',
+    number: '05',
+    title: 'Fractional PMO',
+    kicker: 'Program Governance on Retainer',
+    summary: "When you're running five initiatives at once and nothing is moving fast enough, the problem is usually governance, not effort. A fractional PMO brings portfolio visibility, a steering cadence, risk management, and stage-gate discipline without a full-time hire.",
+    phases: [
+      { weeks: 'Month 1', name: 'Build', what: 'Portfolio intake, initiative scoring, RACI definition, reporting schema, dashboard setup.' },
+      { weeks: 'Ongoing', name: 'Run', what: 'Biweekly steering committee facilitation, risk register upkeep, dependency mapping, escalation management.' },
+      { weeks: 'Quarterly', name: 'Rebalance', what: 'Portfolio review, prioritization against strategy, resource reallocation, KPI check.' },
+      { weeks: 'Exit', name: 'Transition', what: 'Transition to internal PMO lead or hire, documented operating model, training.' },
+    ],
+    bestFor: ['Companies running 3–8 concurrent initiatives', 'Post-acquisition integrations', 'ERP, CRM, or technology rollouts', 'Owners who are the de facto project manager'],
+    pricing: '$6–15K/month based on scope. 3-month minimum, quarterly reviews.',
+  },
+  {
+    id: 'grant-programs',
+    number: '06',
     title: 'Grant & Rebuild Program Management',
     kicker: 'CDBG-DR · FEMA · Federal Compliance',
     summary: "Hillsborough County alone just opened a $211M Rebuilding for Tomorrow homeowner repair program, part of a $709M HUD CDBG-DR allocation for Helene and Milton recovery. Federal money comes with Davis-Bacon, environmental review, and documentation requirements most contractors and homeowners have never dealt with. We navigate it end to end.",
@@ -62,36 +91,21 @@ const services = [
     bestFor: ['Homeowners navigating Rebuilding for Tomorrow or similar HUD programs', 'Small GCs taking on federally-funded rebuild work', 'Municipal subrecipients needing PA grant closeout support', 'NGOs managing federal pass-through funds'],
     pricing: 'Homeowner navigation packages from $2,500. Contractor compliance PMO $4–10K/month. Municipal engagements scoped individually.',
   },
-  {
-    id: 'ai-adoption',
-    number: '05',
-    title: 'AI Training & Implementation',
-    kicker: 'Practical AI, Measured in Hours Saved',
-    summary: "Your team is probably already using ChatGPT, Claude, or Copilot, with or without a policy. The real question is whether it's saving hours or quietly creating risk. We find the workflows where AI actually pays off, set up the tools and guardrails, train your people by role, and measure the time saved so you know it's working.",
-    phases: [
-      { weeks: 'Weeks 1–2', name: 'Assess', what: 'Map where the hours go today, inventory the AI tools already in use, and rank use cases by time saved and risk.' },
-      { weeks: 'Weeks 3–4', name: 'Pilot', what: 'Stand up two or three high-value use cases (proposals, estimating support, document review, reporting) with a small pilot group.' },
-      { weeks: 'Weeks 5–8', name: 'Train', what: 'Role-based training, a shared prompt library, and an acceptable-use policy covering client data, accuracy checks, and approved tools.' },
-      { weeks: 'Weeks 9–10', name: 'Measure', what: 'Track time saved and adoption against the baseline, then document the playbook your team runs without us.' },
-    ],
-    bestFor: ['Teams already using AI tools with no policy or training', 'Owners who want hours back from proposals, reporting, and admin work', 'Firms handling client data that need guardrails before scaling AI use', 'Companies whose software just added AI features nobody uses'],
-    pricing: 'Fixed fee $10–25K depending on team size and number of use cases.',
-  },
 ];
 ---
 <Base
-  title="Operations Consulting Services in Tampa | Cranes Consulting"
-  description="Five service lanes: Margin Recovery Sprints, Fractional PMO, Software Adoption, Grant & Rebuild Program Management, and AI Training & Implementation. Tampa, FL."
+  title="Services for Subs & Small Businesses | Cranes Consulting"
+  description="Money Audits, AI-assisted Back Office Setup, software adoption, margin recovery, fractional PMO and grant program management for subcontractors and small businesses in Tampa Bay and Naples."
 >
   <!-- Hero -->
   <section class="border-b border-navy-100">
     <div class="container-x py-20 md:py-24">
       <span class="eyebrow">Services</span>
       <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-        Sprint-based engagements. Clear deliverables. Visible in your P&amp;L.
+        Fixed fees. Clear deliverables. Money you can see in the bank.
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-        These five lanes are designed to stack. Most clients start with a Margin Recovery sprint or a focused Software Adoption engagement, then move into a Fractional PMO retainer once the operating rhythm is settled.
+        These lanes are designed to stack. The usual starting point is a Money Audit on one recent job, then a Back Office Setup once you see where the money and hours go.
       </p>
     </div>
   </section>

@@ -3,60 +3,68 @@ import Base from '../layouts/Base.astro';
 
 const services = [
   {
-    id: 'margin-recovery',
+    id: 'money-audit',
     number: '01',
-    title: 'Margin Recovery',
-    kicker: 'Lean Six Sigma DMAIC Sprints',
-    body: 'A 90-day engagement going after the 2 to 4 points of net margin that hide in labor time variance, late change orders, material waste, and stale estimating assumptions.',
-    bullets: ['Value-stream mapping', 'Standard work + SOPs', 'KPI dashboards', 'Optional gainshare pricing'],
+    title: 'Money Audit',
+    kicker: 'One Job, Every Dollar Traced',
+    body: "We tie every invoice, change order, pay app and payment on a recent job to what actually hit the bank. You see what you're still owed, what never got billed, and the paperwork gaps slowing down your next payment.",
+    bullets: ['Invoice-to-bank tie-out', 'Unbilled change orders', 'Released but unpaid funds', 'Top three fixes'],
   },
   {
-    id: 'fractional-pmo',
+    id: 'back-office',
     number: '02',
-    title: 'Fractional PMO',
-    kicker: 'Program Governance on Retainer',
-    body: 'For owners running too many initiatives at once. Portfolio visibility, a steering cadence, risk and dependency tracking, and stage-gate reviews. Enterprise rigor at small-business scale.',
-    bullets: ['Portfolio dashboard', 'Biweekly steering', 'Risk + dependency mapping', 'Vendor / sub oversight'],
+    title: 'Back Office Setup',
+    kicker: 'AI-Assisted Systems Your Team Can Run',
+    body: "The paperwork GCs, homeowners and customers judge you on. Clean invoices and pay apps, change orders and approvals in writing, insurance that never lapses, and updates that answer questions first. Built on your tools, sped up with AI.",
+    bullets: ['Change order + pay app system', 'Insurance + WC tracking', 'Client and GC updates', 'AI training for office staff'],
   },
   {
     id: 'software-adoption',
     number: '03',
     title: 'Software Adoption',
     kicker: 'Make What You Bought Actually Work',
-    body: "Procore, Buildertrend, HubSpot, ERP, BI. Most teams use about 30% of what they pay for. We design the workflow, migrate the data, train the roles, and build the reporting layer that makes people want to use it.",
+    body: "Procore, Buildertrend, JobTread, QuickBooks, HubSpot. Most teams use a fraction of what they pay for. We design the workflow, migrate the data, train the roles, and build the reports that make people want to use it.",
     bullets: ['Workflow design', 'Data migration', 'Role-based training', 'Reporting & dashboards'],
   },
   {
-    id: 'grant-programs',
+    id: 'margin-recovery',
     number: '04',
-    title: 'Grant & Rebuild Programs',
-    kicker: 'CDBG-DR · FEMA · Federal Compliance',
-    body: 'Help navigating Helene and Milton recovery funds and other federal grant flows. Davis-Bacon, environmental review, draw schedules, and the audit-ready documentation that gets you paid.',
-    bullets: ['Eligibility + readiness', 'Contractor compliance PMO', 'Draw + documentation', 'Closeout support'],
+    title: 'Margin Recovery',
+    kicker: 'Lean Six Sigma DMAIC Sprints',
+    body: 'A 90-day engagement going after the points of net margin that hide in labor time, late change orders, material waste, and stale estimating assumptions.',
+    bullets: ['Value-stream mapping', 'Standard work + SOPs', 'KPI dashboards', 'Optional gainshare pricing'],
   },
   {
-    id: 'ai-adoption',
+    id: 'fractional-pmo',
     number: '05',
-    title: 'AI Training & Implementation',
-    kicker: 'Practical AI, Measured in Hours Saved',
-    body: 'ChatGPT, Claude, Copilot, and the AI features already inside your software. We find the workflows where AI actually saves time, set up the tools and a usage policy that protects client data, train each role, and measure the hours you get back.',
-    bullets: ['Use-case assessment', 'Tool setup + guardrails', 'Role-based training', 'Time-saved tracking'],
+    title: 'Fractional PMO',
+    kicker: 'Program Governance on Retainer',
+    body: 'For owners running too many initiatives at once. Portfolio visibility, a steering cadence, risk and dependency tracking, and stage-gate reviews at small-business scale.',
+    bullets: ['Portfolio dashboard', 'Biweekly steering', 'Risk + dependency mapping', 'Vendor / sub oversight'],
+  },
+  {
+    id: 'grant-programs',
+    number: '06',
+    title: 'Grant & Rebuild Programs',
+    kicker: 'CDBG-DR · FEMA · Federal Compliance',
+    body: 'Help navigating Helene and Milton recovery funds and other federal grant work. Davis-Bacon, environmental review, draw schedules, and the audit-ready documentation that gets you paid.',
+    bullets: ['Eligibility + readiness', 'Contractor compliance PMO', 'Draw + documentation', 'Closeout support'],
   },
 ];
 
 const industries = [
-  { label: 'Construction & Trades', icon: 'construction' },
-  { label: 'Healthcare', icon: 'health' },
-  { label: 'Logistics & 3PL', icon: 'logistics' },
+  { label: 'Subcontractors & Trades', icon: 'construction' },
   { label: 'Professional Services', icon: 'briefcase' },
+  { label: 'Healthcare Practices', icon: 'health' },
+  { label: 'Logistics & 3PL', icon: 'logistics' },
   { label: 'Government & Nonprofit', icon: 'gov' },
 ];
 
 const stats = [
   { value: '10+', label: 'Years leading enterprise programs' },
-  { value: '75+', label: 'KPIs governed across federal operations' },
-  { value: '2–4 pts', label: 'Typical margin recovery target' },
-  { value: '90-day', label: 'Sprint-based engagements' },
+  { value: 'Weekly', label: 'Hiring and managing subs on our own builds' },
+  { value: '2', label: 'Markets: Tampa Bay and Naples' },
+  { value: 'Fixed', label: 'Fee on every engagement, quoted up front' },
 ];
 
 const process = [
@@ -67,18 +75,18 @@ const process = [
   },
   {
     n: '02',
-    name: 'Measure',
-    body: 'A short discovery to get baseline numbers on the workflows that matter. Without a measured starting point, every claim of improvement is just an opinion.',
+    name: 'Audit',
+    body: 'A money audit on one recent job: every invoice, change order and payment tied to the bank. Without a measured starting point, every claim of improvement is just an opinion.',
   },
   {
     n: '03',
-    name: 'Improve',
-    body: 'A 90-day sprint with weekly checkpoints. Standard work, dashboards, and a daily cadence. We work alongside your people, not over them.',
+    name: 'Build',
+    body: 'The back office your customers judge you on, built on the tools you already pay for and sped up with AI. We work alongside your people, not over them.',
   },
   {
     n: '04',
     name: 'Hand off',
-    body: 'You finish with a team that can run the new operating rhythm without us. Documented SOPs, trained leads, and a clean exit. The goal is no permanent retainer.',
+    body: 'You finish with a team that can run the system without us. Templates, a short AI playbook, trained staff, and a clean exit. The goal is no permanent retainer.',
   },
 ];
 
@@ -87,32 +95,32 @@ const testimonials: { quote: string; name: string; detail: string }[] = [];
 
 const faqs = [
   {
-    q: 'How quickly can we start?',
-    a: 'Most engagements kick off within two weeks of a signed proposal. If you\'re inside a hurricane recovery deadline or a CDBG-DR draw cycle, we move faster.',
+    q: 'Do you only work with contractors?',
+    a: 'No. Subcontractors and trades are our focus because that is the world we work in every week, but the same back office problems show up in any small business: invoices that go out late, approvals that live in text threads, and an owner who is the whole office. If that sounds familiar, we can help.',
   },
   {
-    q: 'Do you work with companies outside Tampa Bay?',
-    a: 'Most of our clients are in Tampa, St. Petersburg, Clearwater, Lakeland, and the I-4 corridor. We do remote-first engagements for clients elsewhere in Florida and the Southeast when it fits the work.',
+    q: 'What does the Money Audit actually find?',
+    a: 'We take one recent job and tie every invoice, change order, pay app and payment to the bank. It looks for money you are still owed, work that never got billed, change orders that were never signed, and missing paperwork that slows down payment. It is the fastest way to see what a cleaner back office is worth.',
+  },
+  {
+    q: 'Why does the back office matter so much to GCs and customers?',
+    a: 'We co-own a general contracting company, so we hire subs every week. The ones who get the next job are not always the best in the field. They are the ones with clean pay apps, change orders signed before the work starts, current insurance, and fast answers. Homeowners and business customers judge you the same way.',
+  },
+  {
+    q: 'Do you work in Naples and Southwest Florida?',
+    a: 'Yes. We are based in Tampa and also work across Southwest Florida, including Naples, Marco Island, Bonita Springs and Fort Myers. Our construction company builds in both regions, so we are on the ground in each one.',
   },
   {
     q: 'How much do engagements typically cost?',
-    a: 'A 90-day Margin Recovery Sprint runs $25K to $50K with optional gainshare. Fractional PMO retainers run $6K to $15K per month. Software implementations run $15K to $35K. AI training and implementation runs $10K to $25K. See the Services page for specifics.',
+    a: 'Every engagement is a fixed fee quoted up front. A Back Office Setup runs $10K to $25K depending on team size and workflows. Software implementations run $15K to $35K. A 90-day Margin Recovery Sprint runs $25K to $50K with optional gainshare. Fractional PMO retainers run $6K to $15K per month. The Money Audit is quoted after the free 30-minute call.',
   },
   {
-    q: 'What happens on the free 30-minute audit?',
-    a: 'You bring a real operational problem. We bring a Lean Six Sigma playbook and ten years of program-management discipline. We talk for 30 minutes, then either propose a scope or send you off with two or three things you can fix yourself.',
-  },
-  {
-    q: 'Are you Lean Six Sigma certified?',
-    a: 'Yes. Lean Six Sigma Black Belt, Prosci change-management certified, and PMP. We use those frameworks because they work, not as marketing.',
-  },
-  {
-    q: 'Can you help our team use AI tools like ChatGPT, Claude, or Copilot?',
-    a: 'Yes. We start by finding the two or three workflows where AI saves real hours, then set up the tools, write a usage policy that protects client data, and train each role. Time saved gets measured against a baseline so you can see whether it is paying off.',
+    q: 'How do you use AI?',
+    a: 'To cut office hours, not to replace judgement. We set up AI inside tools you already pay for to draft change orders, invoices, updates and summaries, write a one-page usage policy that protects client data, and train your team. A person always reviews what goes to a customer.',
   },
   {
     q: 'Will you work with our existing tools, or do we have to switch?',
-    a: 'We work with your existing stack. Power BI, Procore, Buildertrend, HubSpot, QuickBooks, whatever you already run. We are not in the business of selling you new software.',
+    a: 'We work with what you already run: QuickBooks, Procore, Buildertrend, JobTread, Google Workspace, Microsoft 365. We are not in the business of selling you new software.',
   },
 ];
 ---
@@ -124,20 +132,20 @@ const faqs = [
     <div class="container-x relative py-20 md:py-28 lg:py-32">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-7">
-          <span class="eyebrow">Tampa Bay · Operations Partners</span>
+          <span class="eyebrow">Tampa Bay · Naples · Subs &amp; Small Businesses</span>
 
           <h1 class="mt-6 text-balance text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.05] tracking-tightest text-navy-900">
-            Operations that scale.
-            <span class="block text-amber-700">Margin that holds.</span>
+            Run like a pro.
+            <span class="block text-amber-700">Get paid like one.</span>
           </h1>
 
           <p class="mt-6 max-w-2xl text-lg md:text-xl text-pretty text-ink-soft leading-relaxed">
-            We're Cranes Consulting, a small team of operations partners helping Tampa Bay small businesses tighten up the operations side so growth doesn't eat your margin. The toolkit is Lean Six Sigma plus a decade of running federal programs at scale. Engagements are sprint-based with fixed fees, not open-ended retainers.
+            We help subcontractors and small businesses run like the professional companies GCs, homeowners and customers want to hire. Clean invoices and pay apps, change orders and approvals in writing, current insurance, and updates that answer questions before they're asked. We set it up with AI so it takes fewer office hours, then train your team to run it.
           </p>
 
           <div class="mt-9 flex flex-wrap items-center gap-4">
             <a href="/contact/" class="btn-accent">
-              Get a free 30-min audit
+              Book a free 30-min call
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
             <a href="/services/" class="btn-ghost">
@@ -152,7 +160,7 @@ const faqs = [
             </span>
             <span class="label-chip">
               <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
-              Prosci Change Management
+              Florida GC Co-Owner
             </span>
             <span class="label-chip">
               <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
@@ -165,62 +173,62 @@ const faqs = [
         <div class="lg:col-span-5 relative">
           <div class="relative rounded-2xl bg-white border border-navy-100 shadow-card-lg overflow-hidden">
             <div class="bg-navy-900 px-6 py-4 flex items-center justify-between">
-              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Margin Recovery Snapshot</span>
-              <span class="text-[10px] uppercase tracking-widest text-navy-300">Q2 · Illustrative</span>
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Money Audit Snapshot</span>
+              <span class="text-[10px] uppercase tracking-widest text-navy-300">Illustrative</span>
             </div>
 
             <div class="p-6 space-y-5">
               <div>
                 <div class="flex items-baseline justify-between">
-                  <p class="text-sm font-medium text-ink-soft">Labor time variance</p>
-                  <p class="text-sm font-semibold text-amber-700">−42%</p>
+                  <p class="text-sm font-medium text-ink-soft">Invoices tied to the bank</p>
+                  <p class="text-sm font-semibold text-amber-700">48 of 48</p>
                 </div>
                 <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-navy-50">
-                  <div class="h-full w-[58%] rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
+                  <div class="h-full w-full rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
                 </div>
               </div>
 
               <div>
                 <div class="flex items-baseline justify-between">
-                  <p class="text-sm font-medium text-ink-soft">Change-order cycle time</p>
-                  <p class="text-sm font-semibold text-amber-700">−61%</p>
+                  <p class="text-sm font-medium text-ink-soft">Change orders signed before work</p>
+                  <p class="text-sm font-semibold text-amber-700">5 of 9</p>
                 </div>
                 <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-navy-50">
-                  <div class="h-full w-[39%] rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
+                  <div class="h-full w-[56%] rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
                 </div>
               </div>
 
               <div>
                 <div class="flex items-baseline justify-between">
-                  <p class="text-sm font-medium text-ink-soft">Net margin lift</p>
-                  <p class="text-sm font-semibold text-amber-700">+3.1 pts</p>
+                  <p class="text-sm font-medium text-ink-soft">Insurance certificates current</p>
+                  <p class="text-sm font-semibold text-amber-700">3 of 4</p>
                 </div>
                 <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-navy-50">
-                  <div class="h-full w-[72%] rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
+                  <div class="h-full w-3/4 rounded-full bg-gradient-to-r from-amber-400 to-amber-500"></div>
                 </div>
               </div>
 
               <div class="pt-4 border-t border-navy-100 grid grid-cols-3 gap-3">
                 <div>
-                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Phase</p>
-                  <p class="text-sm font-semibold text-navy-800 mt-1">Improve</p>
+                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Owed to you</p>
+                  <p class="text-sm font-semibold text-navy-800 mt-1">$11.4K</p>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Weeks in</p>
-                  <p class="text-sm font-semibold text-navy-800 mt-1">7 / 13</p>
+                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Never billed</p>
+                  <p class="text-sm font-semibold text-navy-800 mt-1">$6.2K</p>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Savings</p>
-                  <p class="text-sm font-semibold text-navy-800 mt-1">$186K</p>
+                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Fixes</p>
+                  <p class="text-sm font-semibold text-navy-800 mt-1">Top 3</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="absolute -bottom-6 -left-6 hidden md:block rounded-xl bg-navy-800 text-white px-5 py-4 shadow-card-lg border border-navy-700">
-            <p class="text-[10px] uppercase tracking-widest text-amber-300 font-semibold">Anchor offer</p>
-            <p class="mt-1 text-sm font-semibold">90-Day Margin Recovery Sprint</p>
-            <p class="text-xs text-navy-200 mt-0.5">Fixed fee + optional gainshare.</p>
+            <p class="text-[10px] uppercase tracking-widest text-amber-300 font-semibold">Start here</p>
+            <p class="mt-1 text-sm font-semibold">Money Audit on one recent job</p>
+            <p class="text-xs text-navy-200 mt-0.5">Fixed fee. Every dollar traced.</p>
           </div>
         </div>
       </div>
@@ -245,7 +253,7 @@ const faqs = [
       <div class="lg:col-span-5">
         <span class="eyebrow">Why work with us</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
-          Big-firm operating discipline at small-firm economics.
+          We hire subs every week. We know what wins the next job.
         </h2>
       </div>
       <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
@@ -253,27 +261,27 @@ const faqs = [
           <div class="h-10 w-10 rounded-lg bg-amber-100 text-amber-600 grid place-items-center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
           </div>
-          <h3 class="mt-4 text-lg font-bold">Results show up in the P&amp;L</h3>
+          <h3 class="mt-4 text-lg font-bold">Built by a contractor</h3>
           <p class="mt-2 text-sm text-ink-soft leading-relaxed">
-            Every engagement starts with a measured baseline and ends with an improvement you can point to in your numbers. No vanity slides.
+            We co-own a Florida general contracting company building in Tampa and Naples. We see from the GC's side which subs get called back, and it's rarely about price.
           </p>
         </div>
         <div class="card p-6">
           <div class="h-10 w-10 rounded-lg bg-amber-100 text-amber-600 grid place-items-center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
           </div>
-          <h3 class="mt-4 text-lg font-bold">Real program rigor</h3>
+          <h3 class="mt-4 text-lg font-bold">Paperwork that gets you paid</h3>
           <p class="mt-2 text-sm text-ink-soft leading-relaxed">
-            A decade running enterprise programs at federal scale taught us how to use risk registers, stage gates, and audit-ready documentation without making the team hate us. That same discipline scales down to small businesses.
+            Change orders signed before the work, pay apps with the backup attached, insurance that never lapses. A decade of audit-ready federal programs taught us how to do it without burying your team.
           </p>
         </div>
         <div class="card p-6">
           <div class="h-10 w-10 rounded-lg bg-amber-100 text-amber-600 grid place-items-center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg>
           </div>
-          <h3 class="mt-4 text-lg font-bold">Multiple industries</h3>
+          <h3 class="mt-4 text-lg font-bold">AI that saves office hours</h3>
           <p class="mt-2 text-sm text-ink-soft leading-relaxed">
-            Construction, healthcare, logistics, professional services. The Lean Six Sigma toolkit works across all of them. The judgement about which lever to pull is what changes.
+            We use AI inside the tools you already pay for to draft change orders, invoices and updates, with a person reviewing anything that goes to a customer.
           </p>
         </div>
         <div class="card p-6">
@@ -282,7 +290,7 @@ const faqs = [
           </div>
           <h3 class="mt-4 text-lg font-bold">Defined start and end</h3>
           <p class="mt-2 text-sm text-ink-soft leading-relaxed">
-            Most engagements are 90-day sprints with fixed fees and clear deliverables. Scope changes, we re-scope. Nobody gets stuck on an open-ended retainer.
+            Fixed fees and clear deliverables, quoted up front. Scope changes, we re-scope. Nobody gets stuck on an open-ended retainer.
           </p>
         </div>
       </div>
@@ -295,10 +303,10 @@ const faqs = [
       <div class="max-w-2xl">
         <span class="eyebrow">Services</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
-          Five lanes. One operating system for growing businesses.
+          Start with the money. Then build the back office.
         </h2>
         <p class="mt-4 text-ink-soft text-lg">
-          Start where the pain is sharpest. Margin, overload, a shelfware system, a grant deadline, an AI rollout nobody was trained for. Then layer from there.
+          The Money Audit shows what one job really paid and where the paperwork is costing you. From there, pick the lane that fixes it.
         </p>
       </div>
 
@@ -335,7 +343,7 @@ const faqs = [
     <div class="max-w-2xl">
       <span class="eyebrow">Industries we work with</span>
       <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
-        Wherever process and margin collide.
+        Trades first. Any small business that runs on paperwork.
       </h2>
     </div>
 
@@ -364,7 +372,7 @@ const faqs = [
           A four-step process. No mystery, no theatrics.
         </h2>
         <p class="mt-4 text-ink-soft text-lg">
-          Most consultants make their methodology sound complicated. Ours is the opposite. Listen first, measure honestly, improve in a 90-day sprint, and hand off cleanly.
+          Listen first, audit one real job, build the back office around what it finds, and hand off cleanly.
         </p>
       </div>
 
@@ -458,10 +466,10 @@ const faqs = [
           30 minutes. No deck. Just the real problem.
         </h2>
         <p class="mt-5 text-navy-100 text-lg">
-          Bring something real you're stuck on. We'll bring ten years of running federal programs and a Lean Six Sigma playbook. If there's a fit, we'll talk scope. If not, you walk away with two or three ideas you can run with yourself.
+          Bring something real: a job that didn't pay what it should have, a change order fight, a GC asking for paperwork you don't have. If there's a fit, we'll talk scope. If not, you walk away with two or three fixes you can run with yourself.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/contact/" class="btn-accent">Get a free 30-min audit</a>
+          <a href="/contact/" class="btn-accent">Book a free 30-min call</a>
           <a href="mailto:cranesconsultingfl@gmail.com" class="btn-ghost !border-navy-600 !text-white hover:!bg-navy-800">Email us directly</a>
         </div>
       </div>

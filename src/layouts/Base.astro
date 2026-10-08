@@ -12,8 +12,8 @@ interface Props {
 }
 
 const {
-  title = 'Tampa Operations Consulting | Cranes Consulting',
-  description = 'Tampa Bay operations consulting: Lean Six Sigma margin recovery, fractional PMO, software and AI adoption, and CDBG-DR grant help. Book a free 30-minute audit.',
+  title = 'Back Office for Subs & Small Businesses | Cranes Consulting',
+  description = 'Subcontractors and small businesses in Tampa Bay and Naples: clean invoices and pay apps, signed change orders, current insurance, and AI that cuts office hours. Free 30-minute call.',
   canonical,
   ogImage = '/og-default.png',
   noindex = false,
@@ -63,7 +63,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       name: 'Cranes Consulting',
-      description: 'Operations and program management consulting for Tampa Bay small businesses: Lean Six Sigma margin recovery, fractional PMO, software adoption, AI training and implementation, and federal grant program management.',
+      description: 'Helps subcontractors and small businesses in Tampa Bay and Naples run like the professional companies GCs, homeowners and customers want to hire: invoices and pay apps, change orders and approvals in writing, insurance tracking, and AI-assisted back office systems.',
       url: Astro.site?.toString(),
       image: new URL('/og-default.png', Astro.site).toString(),
       email: 'cranesconsultingfl@gmail.com',
@@ -73,7 +73,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
         addressRegion: 'FL',
         addressCountry: 'US',
       },
-      areaServed: ['Tampa', 'St. Petersburg', 'Clearwater', 'Lakeland', 'Florida'],
+      areaServed: ['Tampa', 'St. Petersburg', 'Clearwater', 'Brandon', 'Lakeland', 'Naples', 'Marco Island', 'Bonita Springs', 'Fort Myers'],
       founder: { '@type': 'Person', name: 'Tyler Alexander' },
     })} />
   </head>
