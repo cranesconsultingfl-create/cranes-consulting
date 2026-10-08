@@ -1,0 +1,120 @@
+---
+import Base from '../../layouts/Base.astro';
+import { articleSchema } from '../../lib/schema';
+
+const title = 'Hurricane Delay Notices for Florida Subcontractors';
+const description = "How to send a written delay notice when a storm stops work: what to include, when to send it, and an AI prompt that drafts it in two minutes. Written from the GC's side of the desk.";
+---
+<Base
+  title={`${title} | Cranes Consulting`}
+  description={description}
+  schema={[articleSchema({ headline: title, description, path: '/insights/hurricane-delay-notice/', datePublished: '2026-10-08' })]}
+>
+  <article>
+    <header class="border-b border-navy-100">
+      <div class="container-x py-20 md:py-24">
+        <a href="/insights/" class="text-sm text-amber-700 font-semibold hover:text-amber-800 inline-flex items-center gap-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All insights
+        </a>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="label-chip">Getting Paid</span>
+          <span class="text-xs text-ink-mute">5 min read · October 2026</span>
+        </div>
+        <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+          {title}
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+          When a storm shuts down a job, most subs call the GC and figure the paperwork can wait. Then the schedule slips, the GC's own notice goes up the chain, and your verbal heads-up isn't anywhere in the file. A written notice takes two minutes and protects your time and your money.
+        </p>
+      </div>
+    </header>
+
+    <div class="container-x py-16 md:py-20 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-8 prose-custom max-w-prose-tight">
+        <h2>Why the written notice matters</h2>
+        <p>
+          Most subcontracts say you're entitled to more time for delays you didn't cause, but only if you give written notice within a set window. Miss the window and you can lose the extension, even when everyone knows the storm happened. Some subcontracts also tie extra cost for remobilizing or protecting work to the same notice.
+        </p>
+        <p>
+          From the GC's side, your notice is what lets us pass the delay up to the owner or lender. If you don't send one, we're left explaining your scope without your paper. Subs who send a clean notice the day work stops are the ones whose schedule changes get approved without a fight.
+        </p>
+
+        <h2>Before the storm</h2>
+        <ul>
+          <li><strong>Find your notice clause now.</strong> Look for "delay," "notice," "force majeure" or "extension of time" in your subcontract. Write down how many days you have and who the notice goes to.</li>
+          <li><strong>Photograph your work in place.</strong> Date-stamped photos of installed and stored materials help if you need to show what was done before the storm and what was damaged after.</li>
+          <li><strong>Know what you're expected to protect.</strong> Many subcontracts make you responsible for securing your own materials and work. Ask the GC what they expect before the watch becomes a warning.</li>
+        </ul>
+
+        <h2>What the notice should say</h2>
+        <ol>
+          <li>Project name and address, your company, and the date.</li>
+          <li>The cause: the named storm, the evacuation order or the site closure, with dates.</li>
+          <li>The work affected and the days lost so far.</li>
+          <li>What you're doing to limit the delay, such as remobilizing as soon as the site reopens.</li>
+          <li>Your expected new completion date for your scope, or when you'll update it.</li>
+          <li>A reference to the notice section of your subcontract, if you know it.</li>
+          <li>A request for written confirmation that the notice was received.</li>
+        </ol>
+        <p>
+          Keep it factual and calm. A notice isn't a claim for money. If you will have extra costs, say they'll follow separately, then track them from day one: crew standby, remobilization, damaged materials and extra protection.
+        </p>
+
+        <h2>The two-minute AI version</h2>
+        <p>
+          On your phone, open ChatGPT, Claude, Copilot or Gemini and paste this, then fill in the brackets by voice:
+        </p>
+        <blockquote>
+          Write a written delay notice to [GC] for [project]. Cause: [named storm, evacuation order or site closure]. Dates affected: [dates]. Work affected: [scope]. Include what we're doing to limit the delay, the expected new completion date for our scope, and a reference to the notice requirement in our subcontract [section, if known]. Keep it factual, calm and dated, and ask the GC to confirm receipt.
+        </blockquote>
+        <p>
+          Read it, fix anything that's wrong, and send it by the method your subcontract requires, usually email to the person named in the contract. Save a copy with the date you sent it. This prompt and nine others are in the free <a href="/paperwork-pack/">GC-Approved Paperwork Pack</a>.
+        </p>
+
+        <h2>After the storm</h2>
+        <ul>
+          <li>Send a short update when you know your remobilization date.</li>
+          <li>Photograph conditions before you start cleanup or repairs.</li>
+          <li>If you have extra costs, put them in a change order request with the backup, the same way you would for any other change.</li>
+        </ul>
+
+        <p class="mt-8 text-sm text-ink-mute">
+          This is general guidance from a GC's perspective, not legal advice. Notice requirements are set by your subcontract, and some situations involve Florida lien law deadlines. Check with your attorney when money or time is at stake.
+        </p>
+
+        <p class="mt-6 text-sm text-ink-mute">
+          <em>Tyler Alexander is the founder of Cranes Consulting and co-owner of Alexander² Construction, a general contractor in Tampa and Naples. He teaches subcontractors and small businesses to use AI to cut office time.</em>
+        </p>
+      </div>
+
+      <aside class="lg:col-span-4">
+        <div class="sticky top-24 space-y-6">
+          <div class="rounded-xl bg-amber-50 border border-amber-200 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-800">Free</p>
+            <p class="mt-3 text-sm font-semibold text-navy-800">The GC-Approved Paperwork Pack</p>
+            <p class="mt-2 text-sm text-navy-700 leading-relaxed">Delay notices, change orders, pay apps, insurance requests and GC replies, ready to copy and paste.</p>
+            <a href="/paperwork-pack/" class="btn-accent mt-4 w-full justify-center">Get the pack</a>
+          </div>
+          <div class="card p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Related reads</p>
+            <ul class="mt-4 space-y-3 text-sm">
+              <li>
+                <a href="/insights/pay-app-approved-first-time/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
+                  <p class="font-semibold text-navy-800">How to Get Your Pay App Approved the First Time</p>
+                  <p class="text-xs text-ink-mute mt-1">What a GC checks before releasing payment.</p>
+                </a>
+              </li>
+              <li>
+                <a href="/insights/certificate-of-insurance-gc-checklist/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
+                  <p class="font-semibold text-navy-800">What a GC Checks on Your Certificate of Insurance</p>
+                  <p class="text-xs text-ink-mute mt-1">Why certificates get rejected, and how to fix it in one email.</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,112 @@
+---
+import Base from '../../layouts/Base.astro';
+import { articleSchema } from '../../lib/schema';
+
+const title = 'What a GC Checks on Your Certificate of Insurance';
+const description = "Why general contractors reject subcontractor certificates of insurance, what they look for, and an AI prompt that gets the right certificate from your agent in one email.";
+---
+<Base
+  title={`${title} | Cranes Consulting`}
+  description={description}
+  schema={[articleSchema({ headline: title, description, path: '/insights/certificate-of-insurance-gc-checklist/', datePublished: '2026-10-08' })]}
+>
+  <article>
+    <header class="border-b border-navy-100">
+      <div class="container-x py-20 md:py-24">
+        <a href="/insights/" class="text-sm text-amber-700 font-semibold hover:text-amber-800 inline-flex items-center gap-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All insights
+        </a>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="label-chip">Paperwork</span>
+          <span class="text-xs text-ink-mute">5 min read · October 2026</span>
+        </div>
+        <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+          {title}
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+          An expired or incomplete certificate of insurance can hold up your payment or keep you off the next job, even when your coverage is fine. Here's what a GC actually checks, and how to get it right from your agent the first time.
+        </p>
+      </div>
+    </header>
+
+    <div class="container-x py-16 md:py-20 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-8 prose-custom max-w-prose-tight">
+        <h2>Why GCs care so much</h2>
+        <p>
+          If an uninsured or underinsured sub causes a loss on our job, it can land on the GC's policy and on the project. So before a sub mobilizes, and before we release payment, someone in our office checks the certificate against the subcontract. When it doesn't match, the job waits until it does.
+        </p>
+
+        <h2>The certificate isn't the coverage</h2>
+        <p>
+          A certificate of insurance, usually the standard ACORD 25 form, is a summary of your policies on one page. It doesn't change your coverage by itself. Things like additional insured status and a waiver of subrogation come from endorsements on your policy. That's why GCs often ask for the endorsement pages, not just the certificate.
+        </p>
+
+        <h2>What gets checked</h2>
+        <ul>
+          <li><strong>Dates.</strong> Every policy is current, and none expires before or soon after your work is scheduled.</li>
+          <li><strong>Limits.</strong> General liability, auto, umbrella and workers' comp limits meet or beat the numbers in the subcontract.</li>
+          <li><strong>Certificate holder.</strong> The GC's exact legal name and address, as written in the subcontract.</li>
+          <li><strong>Additional insured.</strong> The GC, and often the owner, named as additional insured, with the endorsement attached if the contract asks for it.</li>
+          <li><strong>Waiver of subrogation and primary, non-contributory wording</strong>, if the subcontract requires them.</li>
+          <li><strong>Workers' comp.</strong> Proof of coverage, or a valid state exemption. Florida requires most construction businesses with even one employee to carry workers' comp, and exemptions are limited to qualifying corporate officers. Confirm your situation with the Florida Division of Workers' Compensation.</li>
+          <li><strong>Project description.</strong> Some GCs want the project name and address on the certificate.</li>
+        </ul>
+
+        <h2>The fix: one complete email to your agent</h2>
+        <p>
+          Most rejected certificates come from a vague request like "can you send a COI to this GC." Your agent can only include what you ask for. Paste the insurance section of the subcontract into an AI tool and let it write a request that names every requirement:
+        </p>
+        <blockquote>
+          Write an email to my insurance agent [name] requesting a certificate of insurance for [GC company] on [project and address]. The GC's contract requires: [paste the insurance section]. Ask for each requirement by name, for example additional insured status, waiver of subrogation, primary and non-contributory wording, and the limits listed. Ask them to send it directly to [GC email] and copy me, and to tell me every policy expiration date so I can renew before anything lapses.
+        </blockquote>
+        <p>
+          That prompt and nine others are in the free <a href="/paperwork-pack/">GC-Approved Paperwork Pack</a>.
+        </p>
+
+        <h2>Never get caught by an expiration again</h2>
+        <ul>
+          <li>Put every policy expiration date in your phone calendar with a reminder 30 days before.</li>
+          <li>When a policy renews, ask your agent to send updated certificates to every GC you're working for, not just the one who asked.</li>
+          <li>Keep a simple list of active jobs and which GC needs which endorsements. An AI tool can build it from your subcontracts in a few minutes.</li>
+        </ul>
+
+        <p class="mt-8 text-sm text-ink-mute">
+          This is general guidance from a GC's perspective, not insurance or legal advice. Your agent and your subcontract decide what you need.
+        </p>
+
+        <p class="mt-6 text-sm text-ink-mute">
+          <em>Tyler Alexander is the founder of Cranes Consulting and co-owner of Alexander² Construction, a general contractor in Tampa and Naples. He teaches subcontractors and small businesses to use AI to cut office time.</em>
+        </p>
+      </div>
+
+      <aside class="lg:col-span-4">
+        <div class="sticky top-24 space-y-6">
+          <div class="rounded-xl bg-amber-50 border border-amber-200 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-800">Free</p>
+            <p class="mt-3 text-sm font-semibold text-navy-800">The GC-Approved Paperwork Pack</p>
+            <p class="mt-2 text-sm text-navy-700 leading-relaxed">Insurance requests, change orders, pay apps, delay notices and GC replies, ready to copy and paste.</p>
+            <a href="/paperwork-pack/" class="btn-accent mt-4 w-full justify-center">Get the pack</a>
+          </div>
+          <div class="card p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Related reads</p>
+            <ul class="mt-4 space-y-3 text-sm">
+              <li>
+                <a href="/insights/pay-app-approved-first-time/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
+                  <p class="font-semibold text-navy-800">How to Get Your Pay App Approved the First Time</p>
+                  <p class="text-xs text-ink-mute mt-1">What a GC checks before releasing payment.</p>
+                </a>
+              </li>
+              <li>
+                <a href="/insights/hurricane-delay-notice/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
+                  <p class="font-semibold text-navy-800">Hurricane Delay Notices for Florida Subcontractors</p>
+                  <p class="text-xs text-ink-mute mt-1">Protect your schedule and money when a storm stops work.</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+</Base>
