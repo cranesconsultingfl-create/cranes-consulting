@@ -13,10 +13,10 @@ const services = [
   {
     id: 'back-office',
     number: '02',
-    title: 'Back Office Setup',
-    kicker: 'AI-Assisted Systems Your Team Can Run',
-    body: "The paperwork GCs, homeowners and customers judge you on. Clean invoices and pay apps, change orders and approvals in writing, insurance that never lapses, and updates that answer questions first. Built on your tools, sped up with AI.",
-    bullets: ['Change order + pay app system', 'Insurance + WC tracking', 'Client and GC updates', 'AI training for office staff'],
+    title: 'AI Office Training',
+    kicker: 'We Teach You to Cut Office Time',
+    body: "Hands-on training on your real jobs. You learn to use AI to write change orders, pay apps, invoices, insurance requests and follow-ups in minutes instead of evenings, and you keep the skill after we leave.",
+    bullets: ['Change orders + pay apps', 'Invoices + follow-ups', 'Insurance + WC tracking', 'Templates and prompts you keep'],
   },
   {
     id: 'software-adoption',
@@ -67,6 +67,13 @@ const stats = [
   { value: 'Fixed', label: 'Fee on every engagement, quoted up front' },
 ];
 
+const pains = [
+  { t: 'Paid late', d: 'The pay app went out without the backup, or not at all, so it sits in someone\'s inbox for another cycle.' },
+  { t: 'Paid short', d: 'Extra work got done on a handshake. Without a signed change order, it never makes it onto the invoice.' },
+  { t: 'Not called back', d: 'The GC asked twice for a current insurance certificate. Next job, they call the sub who answers the first time.' },
+  { t: 'Evenings gone', d: 'Invoices, emails and paperwork at the kitchen table after a full day on the job. Every night.' },
+];
+
 const process = [
   {
     n: '01',
@@ -80,13 +87,13 @@ const process = [
   },
   {
     n: '03',
-    name: 'Build',
-    body: 'The back office your customers judge you on, built on the tools you already pay for and sped up with AI. We work alongside your people, not over them.',
+    name: 'Teach',
+    body: 'Hands-on AI training on your own jobs, inside the tools you already pay for. We build the templates and prompts with you, not for you, so it sticks.',
   },
   {
     n: '04',
     name: 'Hand off',
-    body: 'You finish with a team that can run the system without us. Templates, a short AI playbook, trained staff, and a clean exit. The goal is no permanent retainer.',
+    body: 'You finish able to do it yourself: templates, a prompt library, a one-page AI playbook, and fewer evenings at the kitchen table. The goal is no permanent retainer.',
   },
 ];
 
@@ -104,7 +111,7 @@ const faqs = [
   },
   {
     q: 'Why does the back office matter so much to GCs and customers?',
-    a: 'We co-own a general contracting company, so we hire subs every week. The ones who get the next job are not always the best in the field. They are the ones with clean pay apps, change orders signed before the work starts, current insurance, and fast answers. Homeowners and business customers judge you the same way.',
+    a: 'We co-own Alexander² Construction, a Florida general contractor, so we hire subs every week. The ones who get the next job are not always the best in the field. They are the ones who handle the minutiae: clean pay apps, change orders signed before the work starts, current insurance, and fast answers. Homeowners and business customers judge you the same way.',
   },
   {
     q: 'Do you work in Naples and Southwest Florida?',
@@ -112,11 +119,15 @@ const faqs = [
   },
   {
     q: 'How much do engagements typically cost?',
-    a: 'Every engagement is a fixed fee quoted up front. A Back Office Setup runs $10K to $25K depending on team size and workflows. Software implementations run $15K to $35K. A 90-day Margin Recovery Sprint runs $25K to $50K with optional gainshare. Fractional PMO retainers run $6K to $15K per month. The Money Audit is quoted after the free 30-minute call.',
+    a: 'Every engagement is a fixed fee quoted up front. AI Office Training runs $10K to $25K depending on team size and workflows. Software implementations run $15K to $35K. A 90-day Margin Recovery Sprint runs $25K to $50K with optional gainshare. Fractional PMO retainers run $6K to $15K per month. The Money Audit is quoted after the free 30-minute call.',
   },
   {
-    q: 'How do you use AI?',
-    a: 'To cut office hours, not to replace judgement. We set up AI inside tools you already pay for to draft change orders, invoices, updates and summaries, write a one-page usage policy that protects client data, and train your team. A person always reviews what goes to a customer.',
+    q: 'Do you do the paperwork for us?',
+    a: 'No. We teach you to do it faster. Most of the people we work with are in the field all day with no office staff, so we show the owner, or whoever helps with the books, how to use AI to draft change orders, pay apps, invoices, insurance requests and follow-ups in minutes. You stay in control, and you are not paying us every month to do it.',
+  },
+  {
+    q: 'Do I need to be good with computers?',
+    a: 'No. If you can send a text and an email, you can do this. We train on your phone and the tools you already use, with your own jobs as the examples, and we write down every step so you can repeat it.',
   },
   {
     q: 'Will you work with our existing tools, or do we have to switch?',
@@ -135,12 +146,12 @@ const faqs = [
           <span class="eyebrow">Tampa Bay · Naples · Subs &amp; Small Businesses</span>
 
           <h1 class="mt-6 text-balance text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.05] tracking-tightest text-navy-900">
-            Run like a pro.
-            <span class="block text-amber-700">Get paid like one.</span>
+            Less time in the office.
+            <span class="block text-amber-700">More time on the job.</span>
           </h1>
 
           <p class="mt-6 max-w-2xl text-lg md:text-xl text-pretty text-ink-soft leading-relaxed">
-            We help subcontractors and small businesses run like the professional companies GCs, homeowners and customers want to hire. Clean invoices and pay apps, change orders and approvals in writing, current insurance, and updates that answer questions before they're asked. We set it up with AI so it takes fewer office hours, then train your team to run it.
+            Most subcontractors and small business owners are in the field doing the work, with no one in the office to handle the minutiae: change orders, pay apps, invoices, insurance certificates, and the emails that come with them. We teach you to use AI to handle it in a fraction of the time, so you look like the professional company GCs, homeowners and customers want to hire.
           </p>
 
           <div class="mt-9 flex flex-wrap items-center gap-4">
@@ -247,6 +258,29 @@ const faqs = [
     </div>
   </section>
 
+  <!-- TRIGGER -->
+  <section class="bg-bone-200/60 border-b border-navy-100">
+    <div class="container-x py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <span class="eyebrow">Sound familiar?</span>
+        <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
+          The work is done. The paperwork isn't.
+        </h2>
+        <p class="mt-5 text-ink-soft text-lg leading-relaxed">
+          You spend the day in the field doing the work. There's no one in the office to write up the change order, send the pay app with the backup, renew the insurance certificate, or answer the GC's email. So it waits until night, or it doesn't happen.
+        </p>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+        {pains.map((x) => (
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-navy-800">{x.t}</h3>
+            <p class="mt-2 text-sm text-ink-soft leading-relaxed">{x.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- VALUE PROP -->
   <section class="container-x py-20 md:py-28">
     <div class="grid lg:grid-cols-12 gap-12">
@@ -263,7 +297,7 @@ const faqs = [
           </div>
           <h3 class="mt-4 text-lg font-bold">Built by a contractor</h3>
           <p class="mt-2 text-sm text-ink-soft leading-relaxed">
-            We co-own a Florida general contracting company building in Tampa and Naples. We see from the GC's side which subs get called back, and it's rarely about price.
+            We co-own <a href="https://www.a2constructionfl.com/" class="text-amber-700 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500">Alexander² Construction</a>, a Florida general contractor building in Tampa and Naples. We see from the GC's side which subs get called back, and it's rarely about price.
           </p>
         </div>
         <div class="card p-6">
@@ -279,9 +313,9 @@ const faqs = [
           <div class="h-10 w-10 rounded-lg bg-amber-100 text-amber-600 grid place-items-center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg>
           </div>
-          <h3 class="mt-4 text-lg font-bold">AI that saves office hours</h3>
+          <h3 class="mt-4 text-lg font-bold">We teach. You keep it.</h3>
           <p class="mt-2 text-sm text-ink-soft leading-relaxed">
-            We use AI inside the tools you already pay for to draft change orders, invoices and updates, with a person reviewing anything that goes to a customer.
+            We don't take over your office. We teach you to use AI inside the tools you already pay for, so the skill stays with you after we leave.
           </p>
         </div>
         <div class="card p-6">
@@ -303,10 +337,10 @@ const faqs = [
       <div class="max-w-2xl">
         <span class="eyebrow">Services</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
-          Start with the money. Then build the back office.
+          Start with the money. Then win back your evenings.
         </h2>
         <p class="mt-4 text-ink-soft text-lg">
-          The Money Audit shows what one job really paid and where the paperwork is costing you. From there, pick the lane that fixes it.
+          The Money Audit shows what one job really paid and where the paperwork is costing you. AI Office Training teaches you to close those gaps in minutes instead of nights.
         </p>
       </div>
 

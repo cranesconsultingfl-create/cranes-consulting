@@ -12,8 +12,8 @@ interface Props {
 }
 
 const {
-  title = 'Back Office for Subs & Small Businesses | Cranes Consulting',
-  description = 'Subcontractors and small businesses in Tampa Bay and Naples: clean invoices and pay apps, signed change orders, current insurance, and AI that cuts office hours. Free 30-minute call.',
+  title = 'AI Office Training for Subs & Small Businesses | Cranes Consulting',
+  description = 'Less time in the office, more time on the job. We teach subcontractors and small businesses in Tampa Bay and Naples to use AI for change orders, pay apps and invoices.',
   canonical,
   ogImage = '/og-default.png',
   noindex = false,
@@ -63,7 +63,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       name: 'Cranes Consulting',
-      description: 'Helps subcontractors and small businesses in Tampa Bay and Naples run like the professional companies GCs, homeowners and customers want to hire: invoices and pay apps, change orders and approvals in writing, insurance tracking, and AI-assisted back office systems.',
+      description: 'Teaches subcontractors and small businesses in Tampa Bay and Naples to use AI to handle office work: change orders, pay apps, invoices, insurance certificates and follow-ups, so they run like the professional companies GCs, homeowners and customers want to hire.',
       url: Astro.site?.toString(),
       image: new URL('/og-default.png', Astro.site).toString(),
       email: 'cranesconsultingfl@gmail.com',
@@ -74,7 +74,11 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
         addressCountry: 'US',
       },
       areaServed: ['Tampa', 'St. Petersburg', 'Clearwater', 'Brandon', 'Lakeland', 'Naples', 'Marco Island', 'Bonita Springs', 'Fort Myers'],
-      founder: { '@type': 'Person', name: 'Tyler Alexander' },
+      founder: {
+        '@type': 'Person',
+        name: 'Tyler Alexander',
+        worksFor: { '@type': 'GeneralContractor', name: 'Alexander² Construction', url: 'https://www.a2constructionfl.com/' },
+      },
     })} />
   </head>
   <body>
