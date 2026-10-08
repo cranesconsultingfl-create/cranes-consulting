@@ -79,6 +79,13 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
         name: 'Tyler Alexander',
         worksFor: { '@type': 'GeneralContractor', name: 'Alexander² Construction', url: 'https://www.a2constructionfl.com/' },
       },
+      employee: {
+        '@type': 'Person',
+        name: 'Collin Alexander',
+        jobTitle: 'Co-Trainer',
+        worksFor: { '@type': 'GeneralContractor', name: 'Alexander² Construction', url: 'https://www.a2constructionfl.com/' },
+        hasCredential: { '@type': 'EducationalOccupationalCredential', credentialCategory: 'license', name: 'Florida Certified Building Contractor CBC1266523' },
+      },
     })} />
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
