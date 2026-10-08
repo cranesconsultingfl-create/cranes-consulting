@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+
+const fields = [
+  { id: 'jobs', label: 'Jobs you finish per year', value: 20, step: 1, min: 0, prefix: '', suffix: 'jobs' },
+  { id: 'cos', label: 'Change orders per job, on average', value: 2, step: 0.5, min: 0, prefix: '', suffix: 'per job' },
+  { id: 'coValue', label: 'Average change order value', value: 1500, step: 100, min: 0, prefix: '$', suffix: '' },
+  { id: 'unsigned', label: 'Share of change orders done before they are signed', value: 40, step: 5, min: 0, max: 100, prefix: '', suffix: '%' },
+  { id: 'lost', label: 'Of that unsigned work, the share you never get paid for', value: 25, step: 5, min: 0, max: 100, prefix: '', suffix: '%' },
+  { id: 'hours', label: 'Hours per week you spend on paperwork', value: 8, step: 1, min: 0, prefix: '', suffix: 'hrs' },
+  { id: 'rate', label: 'What an hour of your time is worth', value: 75, step: 5, min: 0, prefix: '$', suffix: '/hr' },
+];
+---
+<Base
+  title="Money Leak Calculator for Subcontractors | Cranes Consulting"
+  description="Estimate what unsigned change orders and office hours cost your trade business each year. Free calculator for subcontractors and small businesses. Your numbers stay in your browser."
+>
+  <section class="border-b border-navy-100">
+    <div class="container-x py-20 md:py-24">
+      <span class="eyebrow">Free calculator</span>
+      <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+        What is the paperwork costing you?
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+        Two numbers decide it: extra work you never get paid for because the change order wasn't signed, and the evenings you spend in the office. Put in your own numbers. Nothing you type leaves your browser.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-x py-16 md:py-20 grid lg:grid-cols-12 gap-12 items-start">
+    <form class="lg:col-span-7 card p-7 md:p-8 space-y-6" data-calc novalidate>
+      <p class="text-sm text-ink-mute">The starting values are only examples. Replace them with yours.</p>
+      {fields.map((f) => (
+        <div>
+          <label for={`calc-${f.id}`} class="block text-sm font-medium text-navy-800 mb-1.5">{f.label}</label>
+          <div class="flex items-center gap-2">
+            {f.prefix && <span class="text-ink-mute text-sm">{f.prefix}</span>}
+            <input
+              id={`calc-${f.id}`}
+              name={f.id}
+              type="number"
+              inputmode="decimal"
+              value={f.value}
+              step={f.step}
+              min={f.min}
+              max={f.max}
+              class="w-40 rounded-md border border-navy-200 bg-white px-4 py-3 text-sm focus:border-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-800/20"
+            />
+            {f.suffix && <span class="text-ink-mute text-sm">{f.suffix}</span>}
+          </div>
+        </div>
+      ))}
+    </form>
+
+    <div class="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
+      <div class="rounded-2xl bg-navy-900 text-white p-8" aria-live="polite">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-300">Per year</p>
+        <dl class="mt-5 space-y-5">
+          <div>
+            <dt class="text-sm text-navy-200">Change order work you never get paid for</dt>
+            <dd class="mt-1 text-3xl font-extrabold tracking-tightest text-white" data-out="lostCo">$0</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-navy-200">Hours spent on paperwork</dt>
+            <dd class="mt-1 text-3xl font-extrabold tracking-tightest text-white" data-out="hoursYear">0</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-navy-200">What those hours are worth</dt>
+            <dd class="mt-1 text-3xl font-extrabold tracking-tightest text-white" data-out="hoursValue">$0</dd>
+          </div>
+          <div class="pt-5 border-t border-navy-700">
+            <dt class="text-sm text-amber-300 font-semibold">Total at stake</dt>
+            <dd class="mt-1 text-4xl md:text-5xl font-extrabold tracking-tightest text-amber-300" data-out="total">$0</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="text-lg font-bold">Want the real number?</h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">
+          This is an estimate from your memory. The Money Audit ties one real job's invoices, change orders and payments to the bank, so you see exactly what was missed.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="/contact/" class="btn-accent">Book a free 30-min call</a>
+          <a href="/services/#money-audit" class="btn-ghost">About the Money Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x pb-20">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-extrabold leading-[1.1]">How the math works</h2>
+      <ul class="mt-4 space-y-2 text-sm text-ink-soft leading-relaxed list-disc pl-5">
+        <li><strong class="text-navy-800">Unpaid change order work</strong> = jobs × change orders per job × average value × share done unsigned × share of that never paid.</li>
+        <li><strong class="text-navy-800">Paperwork hours</strong> = hours per week × 50 working weeks.</li>
+        <li><strong class="text-navy-800">Value of those hours</strong> = paperwork hours × what an hour of your time is worth.</li>
+      </ul>
+      <p class="mt-4 text-sm text-ink-mute">It doesn't count late payments, retainage held longer than it should be, or work lost to subs who answer faster, so the real number is usually higher than this estimate.</p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-calc]');
+  const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  const num = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+
+  const read = (name: string): number => {
+    const el = form?.elements.namedItem(name) as HTMLInputElement | null;
+    const v = el ? parseFloat(el.value) : NaN;
+    return Number.isFinite(v) && v > 0 ? v : 0;
+  };
+  const pct = (name: string): number => Math.min(read(name), 100) / 100;
+  const out = (key: string, text: string): void => {
+    const el = document.querySelector(`[data-out="${key}"]`);
+    if (el) el.textContent = text;
+  };
+
+  const update = (): void => {
+    const lostCo = read('jobs') * read('cos') * read('coValue') * pct('unsigned') * pct('lost');
+    const hoursYear = read('hours') * 50;
+    const hoursValue = hoursYear * read('rate');
+    out('lostCo', money.format(lostCo));
+    out('hoursYear', num.format(hoursYear));
+    out('hoursValue', money.format(hoursValue));
+    out('total', money.format(lostCo + hoursValue));
+  };
+
+  form?.addEventListener('input', update);
+  form?.addEventListener('submit', (e) => e.preventDefault());
+  update();
+</script>

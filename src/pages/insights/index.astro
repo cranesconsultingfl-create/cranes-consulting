@@ -3,6 +3,14 @@ import Base from '../../layouts/Base.astro';
 
 const posts = [
   {
+    href: '/insights/pay-app-approved-first-time/',
+    title: 'How to Get Your Pay App Approved the First Time',
+    summary: "Why GCs bounce subcontractor pay applications, a first-submission checklist, and AI prompts that catch the problems before you hit send.",
+    category: 'Getting Paid',
+    read: '6 min read',
+    date: 'October 2026',
+  },
+  {
     href: '/insights/ai-adoption-playbook/',
     title: 'The Small Business AI Adoption Playbook',
     summary: "A five-step plan for getting real hours back from ChatGPT, Claude, and Copilot: find the right workflows, set guardrails, train by role, and measure what it saves.",
@@ -53,8 +61,8 @@ const posts = [
   </section>
 
   <section class="container-x py-20 md:py-24 grid md:grid-cols-2 gap-6">
-    {posts.map((p) => (
-      <a href={p.href} class="card p-8 group flex flex-col">
+    {posts.map((p, i) => (
+      <a href={p.href} class:list={['card p-8 group flex flex-col', i === 0 && posts.length % 2 === 1 && 'md:col-span-2']}>
         <div class="flex items-center gap-3">
           <span class="label-chip">{p.category}</span>
           <span class="text-xs text-ink-mute">{p.read} · {p.date}</span>
