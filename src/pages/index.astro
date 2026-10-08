@@ -24,7 +24,7 @@ const services = [
     number: '03',
     title: 'Software Adoption',
     kicker: 'Make What You Bought Actually Work',
-    body: "Procore, Buildertrend, JobTread, QuickBooks, HubSpot. Most teams use a fraction of what they pay for. We design the workflow, migrate the data, train the roles, and build the reports that make people want to use it.",
+    body: "Procore, Buildertrend, JobTread, QuickBooks, HubSpot. Many teams use only a fraction of what they pay for. We design the workflow, migrate the data, train the roles, and build the reports that make people want to use it.",
     bullets: ['Workflow design', 'Data migration', 'Role-based training', 'Reporting & dashboards'],
   },
   {
@@ -54,7 +54,6 @@ const services = [
 ];
 
 const featured = services.slice(0, 2);
-const more = services.slice(2);
 
 const industries = [
   { label: 'Subcontractors & Trades', icon: 'construction' },
@@ -65,10 +64,10 @@ const industries = [
 ];
 
 const stats = [
-  { value: '10+', label: 'Years leading enterprise programs' },
-  { value: 'Weekly', label: 'Hiring and managing subs on our own builds' },
+  { value: '$0', label: 'For the first 30-minute call' },
+  { value: '10', label: 'Free AI prompts in the Paperwork Pack' },
   { value: '2', label: 'Markets: Tampa Bay and Naples' },
-  { value: 'Fixed', label: 'Fee on every engagement, quoted up front' },
+  { value: '10+', label: 'Years running enterprise programs' },
 ];
 
 const pains = [
@@ -107,7 +106,7 @@ const testimonials: { quote: string; name: string; detail: string }[] = [];
 const faqs = [
   {
     q: 'Do you only work with contractors?',
-    a: 'No. Subcontractors and trades are our focus because that is the world we work in every week, but the same back office problems show up in any small business: invoices that go out late, approvals that live in text threads, and an owner who is the whole office. If that sounds familiar, we can help.',
+    a: 'No. Subcontractors and trades are our focus because that is the world we work in on every build, but the same back office problems show up in any small business: invoices that go out late, approvals that live in text threads, and an owner who is the whole office. If that sounds familiar, we can help.',
   },
   {
     q: 'What does the Money Audit actually find?',
@@ -115,7 +114,7 @@ const faqs = [
   },
   {
     q: 'Why does the back office matter so much to GCs and customers?',
-    a: 'We co-own Alexander² Construction, a Florida general contractor, so we hire subs every week. The ones who get the next job are not always the best in the field. They are the ones who handle the minutiae: clean pay apps, change orders signed before the work starts, current insurance, and fast answers. Homeowners and business customers judge you the same way.',
+    a: 'Our founder, Tyler Alexander, co-owns Alexander² Construction, a Florida general contractor, so he hires and manages subs on every build. The ones who get the next job are not always the best in the field. They are the ones who handle the minutiae: clean pay apps, change orders signed before the work starts, current insurance, and fast answers. Homeowners and business customers judge you the same way.',
   },
   {
     q: 'Do you work in Naples and Southwest Florida?',
@@ -123,7 +122,7 @@ const faqs = [
   },
   {
     q: 'How much do engagements typically cost?',
-    a: 'Every engagement is a fixed fee quoted up front. AI Office Training runs $10K to $25K depending on team size and workflows. Software implementations run $15K to $35K. A 90-day Margin Recovery Sprint runs $25K to $50K with optional gainshare. Fractional PMO retainers run $6K to $15K per month. The Money Audit is quoted after the free 30-minute call.',
+    a: 'The first call is free. The Money Audit is a fixed fee quoted on that call, based on the job. AI Office Training is a fixed fee of $10K to $25K depending on team size and how many kinds of paperwork we cover. No monthly retainer.',
   },
   {
     q: 'Do you do the paperwork for us?',
@@ -160,7 +159,7 @@ const faqs = [
 
           <div class="mt-9 flex flex-wrap items-center gap-4">
             <a href="/contact/" class="btn-accent">
-              Book a free 30-min call
+              Request a free 30-min call
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
             <a href="/paperwork-pack/" class="btn-ghost">
@@ -189,7 +188,7 @@ const faqs = [
           <div class="relative rounded-2xl bg-white border border-navy-100 shadow-card-lg overflow-hidden">
             <div class="bg-navy-900 px-6 py-4 flex items-center justify-between">
               <span class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Money Audit Snapshot</span>
-              <span class="text-[10px] uppercase tracking-widest text-navy-300">Illustrative</span>
+              <span class="text-[11px] uppercase tracking-widest text-amber-300">Example, not a client</span>
             </div>
 
             <div class="p-6 space-y-5">
@@ -225,15 +224,15 @@ const faqs = [
 
               <div class="pt-4 border-t border-navy-100 grid grid-cols-3 gap-3">
                 <div>
-                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Owed to you</p>
+                  <p class="text-[11px] uppercase tracking-widest text-ink-mute">Owed to you</p>
                   <p class="text-sm font-semibold text-navy-800 mt-1">$11.4K</p>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Never billed</p>
+                  <p class="text-[11px] uppercase tracking-widest text-ink-mute">Never billed</p>
                   <p class="text-sm font-semibold text-navy-800 mt-1">$6.2K</p>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase tracking-widest text-ink-mute">Fixes</p>
+                  <p class="text-[11px] uppercase tracking-widest text-ink-mute">Fixes</p>
                   <p class="text-sm font-semibold text-navy-800 mt-1">Top 3</p>
                 </div>
               </div>
@@ -241,7 +240,7 @@ const faqs = [
           </div>
 
           <div class="absolute -bottom-6 -left-6 hidden md:block rounded-xl bg-navy-800 text-white px-5 py-4 shadow-card-lg border border-navy-700">
-            <p class="text-[10px] uppercase tracking-widest text-amber-300 font-semibold">Start here</p>
+            <p class="text-[11px] uppercase tracking-widest text-amber-300 font-semibold">Start here</p>
             <p class="mt-1 text-sm font-semibold">Money Audit on one recent job</p>
             <p class="text-xs text-navy-200 mt-0.5">Fixed fee. Every dollar traced.</p>
           </div>
@@ -295,7 +294,7 @@ const faqs = [
       <div class="lg:col-span-5">
         <span class="eyebrow">Why work with us</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
-          We hire subs every week. We know what wins the next job.
+          We hire subs on every build. We know what wins the next job.
         </h2>
       </div>
       <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
@@ -305,7 +304,7 @@ const faqs = [
           </div>
           <h3 class="mt-4 text-lg font-bold">Built by a contractor</h3>
           <p class="mt-2 text-sm text-ink-soft leading-relaxed">
-            We co-own <a href="https://www.a2constructionfl.com/" class="text-amber-700 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500">Alexander² Construction</a>, a Florida general contractor building in Tampa and Naples. We see from the GC's side which subs get called back, and it's rarely about price.
+            Our founder co-owns <a href="https://www.a2constructionfl.com/" class="text-amber-700 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500">Alexander² Construction</a>, a Florida general contractor building in Tampa and Naples. We see from the GC's side which subs get called back, and it's rarely about price.
           </p>
         </div>
         <div class="card p-6">
@@ -378,14 +377,9 @@ const faqs = [
         ))}
       </div>
 
-      <div class="mt-8 rounded-xl border border-navy-100 bg-white/60 p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-navy-700 shrink-0">Also available</p>
-        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          {more.map((s) => (
-            <li><a href={`/services/#${s.id}`} class="font-medium text-navy-800 underline decoration-navy-200 underline-offset-4 hover:decoration-amber-500">{s.title}</a></li>
-          ))}
-        </ul>
-      </div>
+      <p class="mt-8 text-sm text-ink-soft">
+        We also take on software adoption, margin recovery, fractional PMO and grant programs. <a href="/services/" class="font-medium text-navy-800 underline decoration-navy-200 underline-offset-4 hover:decoration-amber-500">See all services</a>
+      </p>
     </div>
   </section>
 
@@ -398,9 +392,9 @@ const faqs = [
       </h2>
     </div>
 
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-      {industries.map((i) => (
-        <div class="card p-6 text-center">
+    <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      {industries.map((i, idx) => (
+        <div class:list={['card p-6 text-center', idx === 0 && 'col-span-2 sm:col-span-1']}>
           <div class="mx-auto h-10 w-10 rounded-lg bg-navy-50 text-navy-700 grid place-items-center">
             {i.icon === 'construction' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6"/></svg>}
             {i.icon === 'health' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 6.5-7 11-7 11"/></svg>}
@@ -423,7 +417,7 @@ const faqs = [
           A four-step process. No mystery, no theatrics.
         </h2>
         <p class="mt-4 text-ink-soft text-lg">
-          Listen first, audit one real job, build the back office around what it finds, and hand off cleanly.
+          Listen first, audit one real job, learn to close the gaps it finds, and hand off cleanly.
         </p>
       </div>
 
@@ -455,7 +449,7 @@ const faqs = [
           Outcomes you can put in a P&amp;L.
         </h2>
         <p class="mt-4 text-ink-soft text-lg">
-          We measure success in points of margin recovered, hours saved, and software actually being used. The work shows up in your numbers.
+          We measure success in office hours saved and money recovered. The work shows up in your numbers.
         </p>
       </div>
 
@@ -498,7 +492,7 @@ const faqs = [
                 <svg class="group-open:rotate-45 transition-transform" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
               </span>
             </summary>
-            <p class="mt-3 text-sm text-ink-soft leading-relaxed pr-12">{f.a}</p>
+            <p class="mt-3 text-sm text-ink-soft leading-relaxed sm:pr-12">{f.a}</p>
           </details>
         ))}
       </div>
@@ -520,7 +514,7 @@ const faqs = [
           Bring something real: a job that didn't pay what it should have, a change order fight, a GC asking for paperwork you don't have. If there's a fit, we'll talk scope. If not, you walk away with two or three fixes you can run with yourself.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/contact/" class="btn-accent">Book a free 30-min call</a>
+          <a href="/contact/" class="btn-accent">Request a free 30-min call</a>
           <a href="mailto:cranesconsultingfl@gmail.com" class="btn-ghost !border-navy-600 !text-white hover:!bg-navy-800">Email us directly</a>
         </div>
       </div>

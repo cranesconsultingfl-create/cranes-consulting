@@ -5,14 +5,27 @@ const industries = [
   {
     id: 'construction',
     name: 'Subcontractors & Trades',
-    stat: '$211M',
-    statLabel: 'Hillsborough Rebuilding for Tomorrow fund (2026)',
+    stat: '$211M+',
+    statLabel: 'Set aside for homeowner rebuilding by Hillsborough County (2026)',
     body: "Tampa Bay and Naples are deep into a Helene and Milton rebuild cycle, and GCs are getting pickier about who they hire. The subs who get the next job are the ones with clean pay apps, change orders signed before the work, current insurance and fast answers. Most trade contractors are great in the field and stretched thin in the office. That's the gap we close.",
     works: [
       'Money Audits on recent jobs: every dollar tied to the bank',
       'Change order, pay app and insurance templates for HVAC, electrical, plumbing, framing, drywall and concrete trades',
       'AI Office Training: change orders, pay apps and follow-ups in minutes',
       'CDBG-DR and FEMA compliance for rebuild work',
+    ],
+  },
+  {
+    id: 'professional-services',
+    name: 'Professional Services',
+    stat: 'Utilization',
+    statLabel: 'The number that decides profit in a partner-led firm',
+    body: "Accounting practices, law firms, engineering consultancies, marketing agencies. Revenue is up but profit isn't. Utilization is soft, intake is leaky, delivery varies by partner. Standardized process and governance close the gap.",
+    works: [
+      'Intake-to-delivery value-stream mapping',
+      'Utilization and realization KPI dashboards',
+      'Engagement delivery standardization',
+      'Fractional PMO for partner-led firms',
     ],
   },
   {
@@ -31,9 +44,9 @@ const industries = [
   {
     id: 'logistics',
     name: 'Logistics & 3PL',
-    stat: '+28%',
-    statLabel: 'Port Tampa Bay container volume growth (YoY)',
-    body: "Port Tampa Bay is the fastest-growing port in Florida. Industrial pre-leasing sits at 75%, new facilities open monthly, and there are 17 active 3PLs in the metro. The catch: capacity is growing faster than process discipline. Warehouse throughput, putaway, picking, and labor productivity are where the margin leaks out.",
+    stat: 'Dock to stock',
+    statLabel: 'Where warehouse margin leaks: receiving, putaway, picking and labor',
+    body: "Tampa Bay is a growing distribution hub, and new warehouse space keeps coming online. When capacity grows faster than process discipline, throughput, putaway, picking and labor productivity are where the margin leaks out.",
     works: [
       'Warehouse DMAIC projects (dock-to-stock, pick accuracy, shrink)',
       'Labor productivity KPI design and Power BI dashboards',
@@ -42,23 +55,10 @@ const industries = [
     ],
   },
   {
-    id: 'professional-services',
-    name: 'Professional Services',
-    stat: '5–7%',
-    statLabel: 'Typical net margin at small-firm scale',
-    body: "Accounting practices, law firms, engineering consultancies, marketing agencies. Revenue is up but profit isn't. Utilization is soft, intake is leaky, delivery varies by partner. Standardized process and governance close the gap.",
-    works: [
-      'Intake-to-delivery value-stream mapping',
-      'Utilization and realization KPI dashboards',
-      'Engagement delivery standardization',
-      'Fractional PMO for partner-led firms',
-    ],
-  },
-  {
     id: 'government',
     name: 'Government & Nonprofit',
-    stat: '67',
-    statLabel: 'Florida counties with recurring EM / grant needs',
+    stat: 'Pass-through',
+    statLabel: 'Federal funds that come with federal paperwork',
     body: "County emergency management, municipal subrecipients, small cities, and nonprofits managing federal pass-through funds. Federal-scale discipline applied at a budget and pace that fits a county EM office or a $5M nonprofit.",
     works: [
       'Post-event After-Action Reviews (AARs)',
@@ -71,13 +71,13 @@ const industries = [
 ---
 <Base
   title="Industries We Serve in Tampa Bay & Naples | Cranes Consulting"
-  description="Subcontractors and trades first, plus professional services, healthcare practices, logistics, government and nonprofit. Back office systems for Tampa Bay and Naples."
+  description="Subcontractors and trades first, plus professional services, healthcare practices, logistics, government and nonprofit. AI office training in Tampa Bay and Naples."
 >
   <section class="border-b border-navy-100">
     <div class="container-x py-20 md:py-24">
       <span class="eyebrow">Industries</span>
       <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-        Wherever process, margin, and compliance collide.
+        Trades first. Any small business that runs on paperwork.
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
         The Lean Six Sigma and program-governance toolkit works across industries. The judgement about <em>which</em> lever to pull is what changes from one to the next.
@@ -91,7 +91,7 @@ const industries = [
         <div class="lg:col-span-5">
           <div class="rounded-2xl bg-navy-900 text-white p-8 relative overflow-hidden">
             <div aria-hidden="true" class="absolute -right-12 -bottom-12 h-48 w-48 rounded-full bg-amber-400/10 blur-2xl"></div>
-            <p class="relative text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-300">Signal</p>
+            <p class="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-300">Signal</p>
             <p class="relative mt-3 text-5xl md:text-6xl font-extrabold tracking-tightest text-amber-300">{ind.stat}</p>
             <p class="relative mt-3 text-sm text-navy-100 leading-relaxed">{ind.statLabel}</p>
           </div>

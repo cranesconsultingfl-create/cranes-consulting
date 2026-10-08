@@ -15,11 +15,11 @@ const nav = [
   <div class="container-x flex h-20 items-center justify-between py-4">
     <a href="/" class="flex items-center gap-3 group">
       <span class="block">
-        <img src="/logo.svg" alt="" width="96" height="64" class="h-10 w-auto transition-transform group-hover:-translate-y-0.5" />
+        <img src="/logo.svg" alt="" width="96" height="64" class="h-8 sm:h-10 w-auto transition-transform group-hover:-translate-y-0.5" />
       </span>
       <span class="flex flex-col leading-none">
-        <span class="text-base font-bold tracking-tight text-navy-800">Cranes Consulting</span>
-        <span class="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-mute">Tampa, FL</span>
+        <span class="text-base font-bold tracking-tight text-navy-800 whitespace-nowrap">Cranes Consulting</span>
+        <span class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-mute whitespace-nowrap">Tampa · Naples</span>
       </span>
     </a>
 
@@ -39,10 +39,10 @@ const nav = [
       ))}
     </nav>
 
-    <div class="flex items-center gap-3">
-      <a href="/contact/" class="btn-accent hidden sm:inline-flex">
-        Get in touch
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a href="/contact/" class="btn-accent whitespace-nowrap !px-3 !py-2 text-xs sm:!px-5 sm:!py-3 sm:text-sm">
+        <span class="sm:hidden">Contact</span><span class="hidden sm:inline">Get in touch</span>
+        <svg class="hidden sm:block" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
       <button
         type="button"
