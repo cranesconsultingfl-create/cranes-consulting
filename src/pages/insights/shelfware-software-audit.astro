@@ -1,11 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { articleSchema } from '../../lib/schema';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+import { getArticle, articleHref } from '../../data/articles';
+
+const a = getArticle('shelfware-software-audit');
+const path = articleHref(a.slug);
 ---
 <Base
-  title="The Shelfware Construction Software Audit | Cranes Consulting"
-  description="A 10-question audit for small GCs paying for Procore, Buildertrend, or JobTread but only using a fraction of what they bought. Diagnose your gap in 20 minutes."
-  schema={[articleSchema({ headline: 'The Shelfware Construction Software Audit', description: 'A 10-question audit for small GCs paying for Procore, Buildertrend, or JobTread but only using a fraction of what they bought. Diagnose your gap in 20 minutes.', path: '/insights/shelfware-software-audit/', datePublished: '2026-04-24' })]}
+  title={`${a.title} | Cranes Consulting`}
+  description={a.description}
+  schema={[
+    articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
+    breadcrumbSchema([{ name: 'Insights', path: '/insights/' }, { name: a.title, path }]),
+  ]}
 >
   <article>
     <header class="border-b border-navy-100">
@@ -226,26 +234,9 @@ import { articleSchema } from '../../lib/schema';
               Request the audit
             </a>
           </div>
-
-          <div class="card p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Related reads</p>
-            <ul class="mt-4 space-y-3 text-sm">
-              <li>
-                <a href="/insights/margin-leak-checklist/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">The Small Contractor Margin Leak Checklist</p>
-                  <p class="text-xs text-ink-mute mt-1">Seven operating leaks costing 2 points of margin a year.</p>
-                </a>
-              </li>
-              <li>
-                <a href="/insights/cdbg-dr-readiness-guide/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">CDBG-DR Contractor Readiness Guide</p>
-                  <p class="text-xs text-ink-mute mt-1">Federal rebuild work, and what it takes to get paid.</p>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </aside>
     </div>
   </article>
+  <RelatedArticles slug={a.slug} />
 </Base>

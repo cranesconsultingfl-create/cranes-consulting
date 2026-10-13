@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import { breadcrumbSchema } from '../lib/schema';
 ---
 <Base
+  schema={[breadcrumbSchema([{ name: 'About', path: '/about/' }])]}
   title="About Tyler Alexander, Founder | Cranes Consulting"
-  description="About Tyler Alexander, founder of Cranes Consulting and co-owner of Alexander² Construction. Lean Six Sigma Black Belt and PMP who teaches contractors to use AI to cut office time."
+  description="Tyler and Collin Alexander co-own Alexander² Construction (FL CBC1266523) and teach Tampa Bay and Naples subs to use AI to cut time spent on office work."
 >
   <section class="border-b border-navy-100">
     <div class="container-x py-20 md:py-24 grid lg:grid-cols-12 gap-12 items-start">

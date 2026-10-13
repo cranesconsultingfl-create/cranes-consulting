@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { breadcrumbSchema } from '../lib/schema';
 
 const fields = [
   { id: 'jobs', label: 'Jobs you finish per year', value: 20, step: 1, min: 0, prefix: '', suffix: 'jobs' },
@@ -12,8 +13,9 @@ const fields = [
 ];
 ---
 <Base
+  schema={[breadcrumbSchema([{ name: 'Money Leak Calculator', path: '/money-leak-calculator/' }])]}
   title="Money Leak Calculator for Subcontractors | Cranes Consulting"
-  description="Estimate what unsigned change orders and office hours cost your trade business each year. Free calculator for subcontractors and small businesses. Your numbers stay in your browser."
+  description="Free calculator for Tampa Bay and Naples subcontractors: estimate what unsigned change orders and paperwork hours cost you each year. Numbers stay private."
 >
   <section class="border-b border-navy-100">
     <div class="container-x py-20 md:py-24">

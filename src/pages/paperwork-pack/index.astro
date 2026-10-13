@@ -1,10 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { breadcrumbSchema } from '../../lib/schema';
 import { packPrompts } from '../../data/paperwork-pack';
 
 const trades = ['HVAC', 'Electrical', 'Plumbing', 'Framing or carpentry', 'Drywall or paint', 'Concrete or masonry', 'Roofing', 'Pool', 'Landscape or irrigation', 'Tile or flooring', 'Other trade', 'General contractor', 'Not in construction'];
 ---
 <Base
+  schema={[breadcrumbSchema([{ name: 'Paperwork Pack', path: '/paperwork-pack/' }])]}
   title="Free AI Prompt Pack for Subcontractors | Cranes Consulting"
   description="The GC-Approved Paperwork Pack: ten free copy-and-paste AI prompts for change orders, pay apps, insurance certificates, delay notices and GC replies."
 >

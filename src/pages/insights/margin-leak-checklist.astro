@@ -1,11 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { articleSchema } from '../../lib/schema';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+import { getArticle, articleHref } from '../../data/articles';
+
+const a = getArticle('margin-leak-checklist');
+const path = articleHref(a.slug);
 ---
 <Base
-  title="The Small Contractor Margin Leak Checklist | Cranes Consulting"
-  description="Seven operating pains quietly costing a $5M contractor two points of net margin every year. Each one has a 30-day fix."
-  schema={[articleSchema({ headline: 'The Small Contractor Margin Leak Checklist', description: 'Seven operating pains quietly costing a $5M contractor two points of net margin every year. Each one has a 30-day fix.', path: '/insights/margin-leak-checklist/', datePublished: '2026-04-24' })]}
+  title={`${a.title} | Cranes Consulting`}
+  description={a.description}
+  schema={[
+    articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
+    breadcrumbSchema([{ name: 'Insights', path: '/insights/' }, { name: a.title, path }]),
+  ]}
 >
   <article>
     <header class="border-b border-navy-100">
@@ -129,4 +137,5 @@ import { articleSchema } from '../../lib/schema';
       </aside>
     </div>
   </article>
+  <RelatedArticles slug={a.slug} />
 </Base>

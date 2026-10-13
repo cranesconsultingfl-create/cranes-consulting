@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { breadcrumbSchema } from '../lib/schema';
 
 const industries = [
   {
@@ -70,8 +71,9 @@ const industries = [
 ];
 ---
 <Base
+  schema={[breadcrumbSchema([{ name: 'Industries', path: '/industries/' }])]}
   title="Industries We Serve in Tampa Bay & Naples | Cranes Consulting"
-  description="Subcontractors and trades first, plus professional services, healthcare practices, logistics, government and nonprofit. AI office training in Tampa Bay and Naples."
+  description="Subcontractors and trades first, plus professional services, healthcare, logistics and government. Hands-on AI office training in Tampa Bay and Naples."
 >
   <section class="border-b border-navy-100">
     <div class="container-x py-20 md:py-24">

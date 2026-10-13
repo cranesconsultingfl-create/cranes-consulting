@@ -2,7 +2,7 @@
 import '@fontsource-variable/inter';
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import '../styles/global.css';
-import { ORG_ID } from '../lib/schema';
+import { ORG_ID, LOGO_URL } from '../lib/schema';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -17,7 +17,7 @@ interface Props {
 
 const {
   title = 'AI Office Training for Subs & Small Businesses | Cranes Consulting',
-  description = 'Less time in the office, more time on the job. We teach subcontractors and small businesses in Tampa Bay and Naples to use AI for change orders, pay apps and invoices.',
+  description = 'Less time in the office. We teach subcontractors and small businesses in Tampa Bay and Naples to use AI for change orders, pay apps and invoices.',
   canonical,
   ogImage = '/og-default.png',
   noindex = false,
@@ -66,6 +66,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       description: 'Teaches subcontractors and small businesses in Tampa Bay and Naples to use AI to handle office work: change orders, pay apps, invoices, insurance certificates and follow-ups, so they run like the professional companies GCs, homeowners and customers want to hire.',
       url: Astro.site?.toString(),
       image: new URL('/og-default.png', Astro.site).toString(),
+      logo: { '@type': 'ImageObject', url: LOGO_URL, width: 512, height: 512 },
       email: 'cranesconsultingfl@gmail.com',
       address: {
         '@type': 'PostalAddress',

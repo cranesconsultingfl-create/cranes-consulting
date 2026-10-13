@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE, ORG_ID } from '../lib/schema';
+import { SITE, ORG_ID, breadcrumbSchema } from '../lib/schema';
+import { articlesForService, articleHref, type ServiceAnchor } from '../data/articles';
 
 const services = [
   {
@@ -111,9 +112,9 @@ const serviceSchema = {
 };
 ---
 <Base
-  schema={[serviceSchema]}
+  schema={[serviceSchema, breadcrumbSchema([{ name: 'Services', path: '/services/' }])]}
   title="Services for Subs & Small Businesses | Cranes Consulting"
-  description="Money Audits and AI Office Training for subcontractors and small businesses in Tampa Bay and Naples, plus software adoption, margin recovery, fractional PMO and grant program management."
+  description="AI Office Training and Money Audits for subcontractors and small businesses in Tampa Bay and Naples, plus software adoption, margin and grant program help."
 >
   <!-- Hero -->
   <section class="border-b border-navy-100">
@@ -167,6 +168,19 @@ const serviceSchema = {
               <a href="/money-leak-calculator/" class="btn-ghost">Estimate it first</a>
             )}
           </div>
+
+          {articlesForService(s.id as ServiceAnchor).length > 0 && (
+            <div class="mt-7">
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">Read first</p>
+              <ul class="mt-3 space-y-2">
+                {articlesForService(s.id as ServiceAnchor).map((a) => (
+                  <li>
+                    <a href={articleHref(a.slug)} class="text-sm font-semibold text-amber-700 hover:text-amber-800 underline-offset-2 hover:underline">{a.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         <div class="lg:col-span-7">

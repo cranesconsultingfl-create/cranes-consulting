@@ -1,11 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { articleSchema } from '../../lib/schema';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+import { getArticle, articleHref } from '../../data/articles';
+
+const a = getArticle('cdbg-dr-readiness-guide');
+const path = articleHref(a.slug);
 ---
 <Base
-  title="CDBG-DR Contractor Readiness Guide | Cranes Consulting"
-  description="What small Tampa GCs need in place before bidding federally-funded Helene / Milton rebuild work, and the three mistakes that stop payment."
-  schema={[articleSchema({ headline: 'CDBG-DR Contractor Readiness Guide', description: 'What small Tampa GCs need in place before bidding federally-funded Helene / Milton rebuild work, and the three mistakes that stop payment.', path: '/insights/cdbg-dr-readiness-guide/', datePublished: '2026-04-24' })]}
+  title={`${a.title} | Cranes Consulting`}
+  description={a.description}
+  schema={[
+    articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
+    breadcrumbSchema([{ name: 'Insights', path: '/insights/' }, { name: a.title, path }]),
+  ]}
 >
   <article>
     <header class="border-b border-navy-100">
@@ -138,4 +146,5 @@ import { articleSchema } from '../../lib/schema';
       </aside>
     </div>
   </article>
+  <RelatedArticles slug={a.slug} />
 </Base>

@@ -1,0 +1,37 @@
+---
+import { getArticle, articleHref, SERVICE_LABELS } from '../data/articles';
+
+interface Props {
+  slug: string;
+}
+
+const article = getArticle(Astro.props.slug);
+const related = article.related.map(getArticle);
+const service = article.services[0];
+---
+<section class="border-t border-navy-100 bg-bone-200/60" aria-labelledby="keep-reading">
+  <div class="container-x py-16 md:py-20">
+    <h2 id="keep-reading" class="text-2xl md:text-3xl font-extrabold text-navy-900">Keep reading</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-5">
+      {related.map((r) => (
+        <a href={articleHref(r.slug)} class="card p-6 group flex flex-col">
+          <span class="label-chip self-start">{r.category}</span>
+          <h3 class="mt-4 text-lg font-bold text-navy-800 group-hover:text-amber-700 transition-colors">{r.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">{r.summary}</p>
+        </a>
+      ))}
+    </div>
+    <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-3 text-sm">
+      <a href={`/services/#${service}`} class="font-semibold text-amber-700 hover:text-amber-800 inline-flex items-center gap-2">
+        How we teach this: {SERVICE_LABELS[service]}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      {article.paperworkPack && (
+        <a href="/paperwork-pack/" class="font-semibold text-amber-700 hover:text-amber-800 inline-flex items-center gap-2">
+          Free: the GC-Approved Paperwork Pack
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      )}
+    </div>
+  </div>
+</section>

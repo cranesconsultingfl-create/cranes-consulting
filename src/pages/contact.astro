@@ -1,8 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import { breadcrumbSchema } from '../lib/schema';
 import ContactForm from '../components/ContactForm.astro';
 ---
 <Base
+  schema={[breadcrumbSchema([{ name: 'Contact', path: '/contact/' }])]}
   title="Contact Cranes Consulting | Free 30-Minute Call"
   description="Request a free 30-minute call with Cranes Consulting. AI office training for subcontractors and small businesses in Tampa Bay and Naples."
 >

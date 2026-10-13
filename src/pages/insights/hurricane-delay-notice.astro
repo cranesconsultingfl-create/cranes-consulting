@@ -1,14 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { articleSchema } from '../../lib/schema';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+import { getArticle, articleHref } from '../../data/articles';
 
-const title = 'Hurricane Delay Notices for Florida Subcontractors';
-const description = "How to send a written delay notice when a storm stops work: what to include, when to send it, and an AI prompt that drafts it in two minutes. Written from the GC's side of the desk.";
+const a = getArticle('hurricane-delay-notice');
+const path = articleHref(a.slug);
 ---
 <Base
-  title={`${title} | Cranes Consulting`}
-  description={description}
-  schema={[articleSchema({ headline: title, description, path: '/insights/hurricane-delay-notice/', datePublished: '2026-10-08' })]}
+  title={`${a.title} | Cranes Consulting`}
+  description={a.description}
+  schema={[
+    articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
+    breadcrumbSchema([{ name: 'Insights', path: '/insights/' }, { name: a.title, path }]),
+  ]}
 >
   <article>
     <header class="border-b border-navy-100">
@@ -22,7 +27,7 @@ const description = "How to send a written delay notice when a storm stops work:
           <span class="text-xs text-ink-mute">5 min read · October 2026</span>
         </div>
         <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-          {title}
+          {a.title}
         </h1>
         <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
           When a storm shuts down a job, most subs call the GC and figure the paperwork can wait. Then the schedule slips, the GC's own notice goes up the chain, and your verbal heads-up isn't anywhere in the file. A written notice takes two minutes and protects your time and your money.
@@ -96,25 +101,9 @@ const description = "How to send a written delay notice when a storm stops work:
             <p class="mt-2 text-sm text-navy-700 leading-relaxed">Delay notices, change orders, pay apps, insurance requests and GC replies, ready to copy and paste.</p>
             <a href="/paperwork-pack/" class="btn-accent mt-4 w-full justify-center">Get the pack</a>
           </div>
-          <div class="card p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Related reads</p>
-            <ul class="mt-4 space-y-3 text-sm">
-              <li>
-                <a href="/insights/pay-app-approved-first-time/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">How to Get Your Pay App Approved the First Time</p>
-                  <p class="text-xs text-ink-mute mt-1">What a GC checks before releasing payment.</p>
-                </a>
-              </li>
-              <li>
-                <a href="/insights/certificate-of-insurance-gc-checklist/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">What a GC Checks on Your Certificate of Insurance</p>
-                  <p class="text-xs text-ink-mute mt-1">Why certificates get rejected, and how to fix it in one email.</p>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </aside>
     </div>
   </article>
+  <RelatedArticles slug={a.slug} />
 </Base>

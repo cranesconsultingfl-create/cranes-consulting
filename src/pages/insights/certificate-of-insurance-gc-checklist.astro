@@ -1,14 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { articleSchema } from '../../lib/schema';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+import { getArticle, articleHref } from '../../data/articles';
 
-const title = 'What a GC Checks on Your Certificate of Insurance';
-const description = "Why general contractors reject subcontractor certificates of insurance, what they look for, and an AI prompt that gets the right certificate from your agent in one email.";
+const a = getArticle('certificate-of-insurance-gc-checklist');
+const path = articleHref(a.slug);
 ---
 <Base
-  title={`${title} | Cranes Consulting`}
-  description={description}
-  schema={[articleSchema({ headline: title, description, path: '/insights/certificate-of-insurance-gc-checklist/', datePublished: '2026-10-08' })]}
+  title={`${a.title} | Cranes Consulting`}
+  description={a.description}
+  schema={[
+    articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
+    breadcrumbSchema([{ name: 'Insights', path: '/insights/' }, { name: a.title, path }]),
+  ]}
 >
   <article>
     <header class="border-b border-navy-100">
@@ -22,7 +27,7 @@ const description = "Why general contractors reject subcontractor certificates o
           <span class="text-xs text-ink-mute">5 min read · October 2026</span>
         </div>
         <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-          {title}
+          {a.title}
         </h1>
         <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
           An expired or incomplete certificate of insurance can hold up your payment or keep you off the next job, even when your coverage is fine. Here's what a GC actually checks, and how to get it right from your agent the first time.
@@ -88,25 +93,9 @@ const description = "Why general contractors reject subcontractor certificates o
             <p class="mt-2 text-sm text-navy-700 leading-relaxed">Insurance requests, change orders, pay apps, delay notices and GC replies, ready to copy and paste.</p>
             <a href="/paperwork-pack/" class="btn-accent mt-4 w-full justify-center">Get the pack</a>
           </div>
-          <div class="card p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Related reads</p>
-            <ul class="mt-4 space-y-3 text-sm">
-              <li>
-                <a href="/insights/pay-app-approved-first-time/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">How to Get Your Pay App Approved the First Time</p>
-                  <p class="text-xs text-ink-mute mt-1">What a GC checks before releasing payment.</p>
-                </a>
-              </li>
-              <li>
-                <a href="/insights/hurricane-delay-notice/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">Hurricane Delay Notices for Florida Subcontractors</p>
-                  <p class="text-xs text-ink-mute mt-1">Protect your schedule and money when a storm stops work.</p>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </aside>
     </div>
   </article>
+  <RelatedArticles slug={a.slug} />
 </Base>

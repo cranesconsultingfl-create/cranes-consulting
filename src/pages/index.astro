@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { faqSchema } from '../lib/schema';
+import { latestArticles, articleHref, displayDate } from '../data/articles';
 
 const services = [
   {
@@ -435,6 +436,37 @@ const faqs = [
             <h3 class="mt-3 text-xl font-bold text-navy-800">{step.name}</h3>
             <p class="mt-3 text-sm text-ink-soft leading-relaxed">{step.body}</p>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FROM THE FIELD -->
+  <section class="border-b border-navy-100" aria-labelledby="from-the-field">
+    <div class="container-x py-20 md:py-28">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div class="max-w-2xl">
+          <span class="eyebrow">From the field</span>
+          <h2 id="from-the-field" class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
+            Written from the GC's side of the desk.
+          </h2>
+        </div>
+        <a href="/insights/" class="text-sm font-semibold text-amber-700 hover:text-amber-800 inline-flex items-center gap-2">
+          All insights
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        {latestArticles(3).map((a) => (
+          <a href={articleHref(a.slug)} class="card p-7 group flex flex-col">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+              <span class="label-chip whitespace-nowrap">{a.category}</span>
+              <span class="text-xs text-ink-mute whitespace-nowrap">{a.read} · {displayDate(a.datePublished)}</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-navy-800 group-hover:text-amber-700 transition-colors">{a.title}</h3>
+            <p class="mt-3 text-sm text-ink-soft leading-relaxed flex-1">{a.summary}</p>
+          </a>
         ))}
       </div>
     </div>

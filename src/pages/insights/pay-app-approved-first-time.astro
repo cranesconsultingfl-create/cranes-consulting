@@ -1,11 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { articleSchema } from '../../lib/schema';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+import { getArticle, articleHref } from '../../data/articles';
+
+const a = getArticle('pay-app-approved-first-time');
+const path = articleHref(a.slug);
 ---
 <Base
-  title="How to Get Your Pay App Approved the First Time | Cranes Consulting"
-  description="Why GCs bounce subcontractor pay applications, a first-submission checklist, and AI prompts that catch the problems before you hit send. Written from the GC's side of the desk."
-  schema={[articleSchema({ headline: 'How to Get Your Pay App Approved the First Time', description: "Why GCs bounce subcontractor pay applications, a first-submission checklist, and AI prompts that catch the problems before you hit send. Written from the GC's side of the desk.", path: '/insights/pay-app-approved-first-time/', datePublished: '2026-10-08' })]}
+  title={`${a.title} | Cranes Consulting`}
+  description={a.description}
+  schema={[
+    articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
+    breadcrumbSchema([{ name: 'Insights', path: '/insights/' }, { name: a.title, path }]),
+  ]}
 >
   <article>
     <header class="border-b border-navy-100">
@@ -108,26 +116,9 @@ import { articleSchema } from '../../lib/schema';
             </p>
             <a href="/services/#money-audit" class="btn-primary mt-5 w-full justify-center">See details</a>
           </div>
-
-          <div class="card p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Related reads</p>
-            <ul class="mt-4 space-y-3 text-sm">
-              <li>
-                <a href="/insights/ai-adoption-playbook/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">The Small Business AI Adoption Playbook</p>
-                  <p class="text-xs text-ink-mute mt-1">Five steps to real hours back from AI.</p>
-                </a>
-              </li>
-              <li>
-                <a href="/insights/margin-leak-checklist/" class="block hover:bg-navy-50 rounded-md p-2 -m-2">
-                  <p class="font-semibold text-navy-800">The Small Contractor Margin Leak Checklist</p>
-                  <p class="text-xs text-ink-mute mt-1">Seven operating leaks and their 30-day fixes.</p>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </aside>
     </div>
   </article>
+  <RelatedArticles slug={a.slug} />
 </Base>

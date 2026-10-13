@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { breadcrumbSchema } from '../lib/schema';
 
 const covers = [
   { t: 'Change orders signed before the work', d: 'Turn a voice memo from the job site into a one-page change order the GC can sign the same day.' },
@@ -15,8 +16,9 @@ const formats = [
 ];
 ---
 <Base
+  schema={[breadcrumbSchema([{ name: 'Workshops', path: '/workshops/' }])]}
   title="Free AI Paperwork Workshop for Contractors | Cranes Consulting"
-  description="Book a free Get Paid Faster workshop for your association, supply house, chamber or subcontractor base in Tampa Bay or Naples. AI for change orders, pay apps and insurance."
+  description="Free Get Paid Faster AI workshop for associations, supply houses and GCs in Tampa Bay and Naples, covering change orders, pay apps and insurance paperwork."
 >
   <section class="border-b border-navy-100">
     <div class="container-x py-20 md:py-24">
