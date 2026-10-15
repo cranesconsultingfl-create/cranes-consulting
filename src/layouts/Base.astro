@@ -57,6 +57,10 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
 
     <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
 
+    <!-- Google Ads tag. Loaded from files so the CSP can stay free of 'unsafe-inline'. -->
+    <script is:inline src="/gtag-init.js"></script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18515812650"></script>
+
     <!-- JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
