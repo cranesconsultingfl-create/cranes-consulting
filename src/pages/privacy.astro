@@ -1,0 +1,86 @@
+---
+import Base from '../layouts/Base.astro';
+import { breadcrumbSchema } from '../lib/schema';
+
+const updated = 'October 15, 2026';
+---
+<Base
+  title="Privacy Policy | Cranes Consulting"
+  description="How Cranes Consulting handles the information you send through cranesconsultingfl.com, how our Google Ads tag uses cookies, and how to opt out."
+  schema={[breadcrumbSchema([{ name: 'Privacy Policy', path: '/privacy/' }])]}
+>
+  <section class="border-b border-navy-100">
+    <div class="container-x py-20 md:py-24">
+      <span class="eyebrow">Privacy</span>
+      <h1 class="mt-6 max-w-4xl text-4xl md:text-5xl font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+        Privacy Policy
+      </h1>
+      <p class="mt-6 text-sm text-ink-mute">Last updated {updated}</p>
+    </div>
+  </section>
+
+  <section class="container-x py-16 md:py-20">
+    <div class="prose-custom max-w-3xl">
+      <p>
+        Cranes Consulting runs cranesconsultingfl.com. This page explains what information we collect through the site, what we do with it, and the choices you have.
+      </p>
+
+      <h2>What we collect</h2>
+      <p><strong>Information you send us.</strong> When you fill out a form, we receive what you type:</p>
+      <ul>
+        <li>Contact form: name, email, company, the service you're interested in, and your message.</li>
+        <li>Workshop request form: name, email, organization, group type, location, expected attendees, and notes.</li>
+        <li>Paperwork Pack form: name, email, company, and trade.</li>
+      </ul>
+      <p>
+        <strong>Advertising cookies.</strong> We use the Google Ads tag to measure whether our ads lead to inquiries and to show our ads to people who have visited this site. Google may set cookies and collect information such as the pages you visit, when you visit, your browser and device type, your IP address, and whether you arrived from one of our ads.
+      </p>
+      <p>
+        <strong>Technical logs.</strong> Our hosting provider, Netlify, records standard technical information (such as IP address, browser type and the pages requested) to deliver the site and protect it from abuse.
+      </p>
+      <p>
+        <strong>The Money Leak Calculator.</strong> The numbers you enter are calculated in your browser. They are not sent to us.
+      </p>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To reply to you, schedule calls and workshops, and send the Paperwork Pack you asked for.</li>
+        <li>To follow up about what you asked about. If you tell us to stop, we stop.</li>
+        <li>To measure how our ads perform and to show our ads to past visitors.</li>
+      </ul>
+      <p>
+        We do not sell your personal information. We share it only with the service providers that run the site and our email (Netlify and Google), or when the law requires it.
+      </p>
+
+      <h2>Remarketing and how to opt out</h2>
+      <p>
+        We use Google Ads remarketing. Third-party vendors, including Google, use cookies to show our ads on other websites based on your past visits to this site. Google's use of advertising cookies lets it and its partners serve ads based on your visits to this and other sites.
+      </p>
+      <p>You can opt out at any time:</p>
+      <ul>
+        <li>Turn off personalized ads in <a href="https://adssettings.google.com" rel="noopener">Google's My Ad Center</a>.</li>
+        <li>Opt out of personalized ads from many companies at <a href="https://optout.aboutads.info" rel="noopener">aboutads.info</a>.</li>
+        <li>Block or delete cookies in your browser settings. The site works without them.</li>
+      </ul>
+
+      <h2>How long we keep it</h2>
+      <p>
+        We keep form submissions as long as we need them to respond to you and keep normal business records. You can ask us to delete yours at any time.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        Email <a href="mailto:cranesconsultingfl@gmail.com">cranesconsultingfl@gmail.com</a> to see, correct or delete the information you've sent us, or to stop hearing from us.
+      </p>
+
+      <h2>Children</h2>
+      <p>This site is for businesses and is not directed to children under 13. We do not knowingly collect their information.</p>
+
+      <h2>Changes</h2>
+      <p>If we change this policy, we'll update it here and change the date at the top.</p>
+
+      <h2>Contact</h2>
+      <p>Cranes Consulting, Tampa, Florida. <a href="mailto:cranesconsultingfl@gmail.com">cranesconsultingfl@gmail.com</a></p>
+    </div>
+  </section>
+</Base>
