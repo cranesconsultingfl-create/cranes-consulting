@@ -40,6 +40,19 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'change-order-template-subcontractors',
+    title: 'Change Order Template for Subcontractors That GCs Approve',
+    description: 'A free change order template for subcontractors, what a GC checks before signing, and an AI prompt that turns a voice note into a change order in minutes.',
+    summary: 'A copy-and-paste change order template, the five reasons GCs push back, how to price a change so it gets signed, and an AI prompt that drafts it from a voice note.',
+    category: 'Getting Paid',
+    read: '7 min read',
+    datePublished: '2026-10-15',
+    dateModified: '2026-10-15',
+    services: ['back-office', 'money-audit'],
+    related: ['pay-app-approved-first-time', 'margin-leak-checklist', 'hurricane-delay-notice'],
+    paperworkPack: true,
+  },
+  {
     slug: 'certificate-of-insurance-gc-checklist',
     title: 'What a GC Checks on Your Certificate of Insurance',
     description: 'What GCs check on a subcontractor certificate of insurance, why certificates get rejected, and an AI prompt that gets the right one in one email.',
@@ -62,7 +75,7 @@ export const articles: Article[] = [
     datePublished: '2026-10-08',
     dateModified: '2026-10-08',
     services: ['back-office'],
-    related: ['pay-app-approved-first-time', 'certificate-of-insurance-gc-checklist', 'margin-leak-checklist'],
+    related: ['change-order-template-subcontractors', 'pay-app-approved-first-time', 'certificate-of-insurance-gc-checklist'],
     paperworkPack: true,
   },
   {
@@ -75,7 +88,7 @@ export const articles: Article[] = [
     datePublished: '2026-10-08',
     dateModified: '2026-10-08',
     services: ['back-office', 'money-audit'],
-    related: ['certificate-of-insurance-gc-checklist', 'hurricane-delay-notice', 'margin-leak-checklist'],
+    related: ['change-order-template-subcontractors', 'certificate-of-insurance-gc-checklist', 'hurricane-delay-notice'],
     paperworkPack: true,
   },
   {
@@ -113,7 +126,7 @@ export const articles: Article[] = [
     datePublished: '2026-04-24',
     dateModified: '2026-10-08',
     services: ['margin-recovery', 'money-audit', 'fractional-pmo'],
-    related: ['pay-app-approved-first-time', 'shelfware-software-audit', 'cdbg-dr-readiness-guide'],
+    related: ['change-order-template-subcontractors', 'pay-app-approved-first-time', 'shelfware-software-audit'],
   },
   {
     slug: 'cdbg-dr-readiness-guide',

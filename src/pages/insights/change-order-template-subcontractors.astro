@@ -1,0 +1,223 @@
+---
+import Base from '../../layouts/Base.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+import { getArticle, articleHref, displayDate } from '../../data/articles';
+
+const a = getArticle('change-order-template-subcontractors');
+const path = articleHref(a.slug);
+
+const template = `CHANGE ORDER REQUEST
+
+From: [Your company name, phone, email]
+To: [GC company], Attn: [project manager]
+Project: [project name and address]
+Subcontract #: [#]    Change Order Request #: [#]    Date: [date]
+
+DESCRIPTION OF CHANGE
+[What is added, removed or changed, in plain words. Reference the drawing, RFI or field direction if there is one.]
+
+REASON AND WHO REQUESTED IT
+[Who asked, when and how. Example: owner request through the GC superintendent at the 10/14 site walk.]
+
+COST BREAKDOWN
+Labor: [hours] hrs x $[rate] = $[amount]
+Materials: [item, quantity x unit price] = $[amount]
+Equipment: [item, days x rate] = $[amount]
+Lower-tier subs: [name, quote attached] = $[amount]
+Subtotal: $[amount]
+Markup at [x]% (per subcontract): $[amount]
+TOTAL THIS CHANGE: $[amount]
+
+SCHEDULE IMPACT
+[Number of working days added, or "None"]
+
+SUBCONTRACT AMOUNT
+Original subcontract amount: $[amount]
+Approved changes to date: $[amount]
+This change: $[amount]
+Revised subcontract amount: $[amount]
+
+BACKUP ATTACHED
+[Quotes, photos, signed time-and-material tickets]
+
+Work on this change starts after signed approval.
+
+Approved by (GC): ____________
+Name and title: ____________
+Date: ________
+
+Submitted by: ____________
+Name and title: ____________
+Date: ________`;
+
+const prompt = `You are the office manager for [Company], a [trade] subcontractor. Turn my notes below into a change order request for the general contractor.
+
+Include: project name and address, change order number [#], date, a plain description of the added or changed work, why it changed (who asked and when), itemized labor, material and equipment with quantities and prices, markup at [x]%, total, schedule impact in working days, the original subcontract amount, approved changes to date and the revised amount, and a line for the GC's signature and date. State that work starts only after signed approval.
+
+Keep it to one page and professional. Ask me for anything missing instead of guessing.
+
+My notes: [paste or dictate what happened]`;
+---
+<Base
+  title={`${a.title} | Cranes Consulting`}
+  description={a.description}
+  schema={[
+    articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
+    breadcrumbSchema([{ name: 'Insights', path: '/insights/' }, { name: a.title, path }]),
+  ]}
+>
+  <article>
+    <header class="border-b border-navy-100">
+      <div class="container-x py-20 md:py-24">
+        <a href="/insights/" class="text-sm text-amber-700 font-semibold hover:text-amber-800 inline-flex items-center gap-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All insights
+        </a>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="label-chip">{a.category}</span>
+          <span class="text-xs text-ink-mute">{a.read} · {displayDate(a.datePublished)}</span>
+        </div>
+        <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
+          {a.title}
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
+          Extra work you did without a signed change order is some of the hardest money to collect on a job. The fix isn't more paperwork. It's one clean page, sent before the work starts, with the numbers a GC needs to say yes. Here's the template we'd want to receive, and how to fill it out from a voice note in a few minutes.
+        </p>
+      </div>
+    </header>
+
+    <div class="container-x py-16 md:py-20 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-8 prose-custom max-w-prose-tight">
+        <h2>Why GCs push back on change orders</h2>
+        <p>
+          From our side of the desk, most change order fights have nothing to do with whether the work happened. They come from the paper:
+        </p>
+        <ul>
+          <li><strong>No signature before the work.</strong> Many subcontracts say added work isn't paid without written authorization. The GC usually can't bill the owner for a change the owner never approved, so an unsigned change has nowhere to go.</li>
+          <li><strong>A lump number with no breakdown.</strong> "$4,800 for the extra outlets" gets questioned. Hours, rates, materials and markup get approved.</li>
+          <li><strong>Sent late.</strong> Subcontracts often set a deadline for submitting change requests. A request that shows up at closeout competes with every other open item on the job.</li>
+          <li><strong>No schedule impact.</strong> If you don't ask for days, assume you didn't get any.</li>
+          <li><strong>The wrong person said yes.</strong> A superintendent's "go ahead" on site may not be an approval under your subcontract. Find out who can sign.</li>
+        </ul>
+
+        <h2>What goes on a change order</h2>
+        <ol>
+          <li>Project name and address, subcontract number, your change order number and the date.</li>
+          <li>A plain description of what was added, removed or changed, with the drawing, RFI or direction it came from.</li>
+          <li>Who requested it and when.</li>
+          <li>Cost broken out: labor hours and rate, materials, equipment, lower-tier subs, then markup.</li>
+          <li>Schedule impact in working days, even if it's zero.</li>
+          <li>The running subcontract amount: original, approved changes to date, this change, revised total.</li>
+          <li>Backup: quotes, photos and signed time-and-material tickets.</li>
+          <li>A signature and date line for the GC, and a sentence saying work starts after signed approval.</li>
+        </ol>
+
+        <h2>Free change order template</h2>
+        <p>Copy this into Word, Google Docs or your email. Fill in the brackets and delete what doesn't apply.</p>
+      </div>
+
+      <aside class="lg:col-span-4 lg:row-span-2">
+        <div class="sticky top-24 space-y-6">
+          <div class="rounded-xl bg-amber-50 border border-amber-200 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-800">Free</p>
+            <p class="mt-3 text-sm font-semibold text-navy-800">The GC-Approved Paperwork Pack</p>
+            <p class="mt-2 text-sm text-navy-700 leading-relaxed">Change orders, pay apps, delay notices, insurance requests and GC replies, ready to copy and paste.</p>
+            <a href="/paperwork-pack/" class="btn-accent mt-4 w-full justify-center">Get the pack</a>
+          </div>
+          <div class="card p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Run your numbers</p>
+            <p class="mt-3 text-sm text-ink-soft leading-relaxed">Estimate what unsigned change orders and office hours cost your business each year.</p>
+            <a href="/money-leak-calculator/" class="btn-primary mt-5 w-full justify-center">Money Leak Calculator</a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="lg:col-span-8 max-w-prose-tight min-w-0">
+        <div class="rounded-xl border border-navy-100 bg-white p-5 md:p-6">
+          <div class="flex items-center justify-between gap-4">
+            <p class="text-sm font-semibold text-navy-800">Change order request template</p>
+            <button type="button" class="btn-ghost shrink-0 !px-4 !py-2" data-copy="template" aria-label="Copy the change order template">Copy</button>
+          </div>
+          <pre id="copy-template" class="mt-4 whitespace-pre-wrap rounded-lg bg-bone-200/70 border border-navy-100 p-5 text-sm leading-relaxed text-ink-soft font-mono [overflow-wrap:anywhere]">{template}</pre>
+        </div>
+
+        <div class="prose-custom mt-12">
+          <h2>When the GC needs you to start before the price is agreed</h2>
+          <p>
+            Sometimes the work can't wait for pricing. In that case, ask for written direction to proceed before you start. On AIA contracts this is often a Construction Change Directive (AIA G714), which directs the change now and settles the price after. On other jobs, an email from the person authorized to approve changes, stating the scope and how it will be priced, is far better than a verbal yes.
+          </p>
+          <p>
+            Then track it as time and material: a ticket for each day with crew names, hours, materials and equipment, signed by the GC's superintendent that day. Signed tickets turn into a change order the GC can approve. Unsigned ones turn into an argument.
+          </p>
+
+          <h2>Price it so it gets approved</h2>
+          <ul>
+            <li><strong>Labor:</strong> hours by trade times your rate. If your subcontract lists rates, use them.</li>
+            <li><strong>Materials:</strong> quantities and unit prices, with a supplier quote or receipt attached.</li>
+            <li><strong>Equipment and lower-tier subs:</strong> list each one with its quote.</li>
+            <li><strong>Markup:</strong> check your subcontract first. Many define or cap overhead and profit on changes, and a markup above the cap gets cut.</li>
+            <li><strong>Time:</strong> ask for working days on the same page as the money.</li>
+          </ul>
+
+          <h2>The five-minute AI version</h2>
+          <p>
+            You don't need to type any of this at a desk. Before you leave the site, record a voice note of what changed, who asked and what it took. Then open ChatGPT, Claude, Copilot or Gemini on your phone and paste this prompt with your notes:
+          </p>
+        </div>
+
+        <div class="mt-6 rounded-xl border border-navy-100 bg-white p-5 md:p-6">
+          <div class="flex items-center justify-between gap-4">
+            <p class="text-sm font-semibold text-navy-800">Change order from a voice note</p>
+            <button type="button" class="btn-ghost shrink-0 !px-4 !py-2" data-copy="prompt" aria-label="Copy the change order AI prompt">Copy</button>
+          </div>
+          <pre id="copy-prompt" class="mt-4 whitespace-pre-wrap rounded-lg bg-bone-200/70 border border-navy-100 p-5 text-sm leading-relaxed text-ink-soft font-sans [overflow-wrap:anywhere]">{prompt}</pre>
+        </div>
+
+        <div class="prose-custom mt-8">
+          <p>
+            Check every number before you send it. AI drafts the page. You're responsible for the quantities and prices. This prompt and nine others are in the free <a href="/paperwork-pack/">GC-Approved Paperwork Pack</a>.
+          </p>
+
+          <h2>Keep a change order log</h2>
+          <p>
+            One list per job: change order number, date sent, amount, days, status, date signed, and the pay application it was billed on. Approved changes get added as their own lines on your schedule of values, so they show up on the next pay app instead of getting forgotten. If you want the billing side, read <a href="/insights/pay-app-approved-first-time/">how to get your pay app approved the first time</a>.
+          </p>
+          <p>
+            Once a week, send the GC the open items on the log. It's the easiest way to keep unsigned changes from piling up until closeout.
+          </p>
+
+          <p class="mt-8 text-sm text-ink-mute">
+            This is general guidance from a GC's perspective, not legal advice. Your subcontract controls how changes are requested, approved, priced and billed, and some disputes involve Florida lien law deadlines. Check with your attorney when money or time is at stake.
+          </p>
+
+          <p class="mt-6 text-sm text-ink-mute">
+            <em>Tyler Alexander is the founder of Cranes Consulting and co-owner of Alexander² Construction, a general contractor in Tampa and Naples. He teaches subcontractors and small businesses to use AI to cut office time.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+  <RelatedArticles slug={a.slug} />
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const pre = document.getElementById(`copy-${btn.dataset.copy}`);
+      if (!pre) return;
+      try {
+        await navigator.clipboard.writeText(pre.textContent ?? '');
+        btn.textContent = 'Copied';
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(pre);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+        btn.textContent = 'Selected';
+      }
+      setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+    });
+  });
+</script>
