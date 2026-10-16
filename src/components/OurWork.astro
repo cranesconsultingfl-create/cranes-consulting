@@ -27,15 +27,15 @@ const work = [
     logoWidth: 64,
     logoHeight: 64,
     label: 'Action Bass',
-    tag: 'Client: website, booking and local search',
-    listLabel: 'What we built',
-    body: 'Captain Jackson Williams runs guided bass fishing trips on the lakes around Orlando, Kissimmee and Winter Haven.',
+    tag: 'Client: software adoption, office time and local search',
+    listLabel: 'What we did',
+    body: "Captain Jackson Williams runs guided bass fishing trips around Orlando, Kissimmee and Winter Haven. He's on the water most mornings, not at a desk, which is the same problem our subs have.",
     did: [
-      'Rebuilt the website on a fast static host, with redirects from the old pages',
-      'Lake pages for Lake Toho, Lake Kissimmee and the Winter Haven Chain, plus Orlando and Kissimmee guide pages',
-      'Online booking through Vally, and Call, Text and Book buttons on every page',
-      'Google Analytics tracking for leads, calls, texts and booking clicks',
-      'Search Console setup, a fishing report section and a Google Ads keyword and budget plan',
+      { lane: 'Software Adoption', text: 'Set up online booking through Vally and Google Analytics, with every lead, call, text and booking click tracked so he can see what brings in trips.' },
+      { lane: 'Office time', text: 'Call, Text and Book buttons on every page, so trips get booked while he is on the water instead of waiting on a callback.' },
+      { lane: 'Margin', text: 'A Google Ads plan with a break-even rule: an ad stays on only if it books a trip for less than the 15 to 20% a booking marketplace takes.' },
+      { lane: 'Local search', text: 'Rebuilt the website with pages for Lake Toho, Lake Kissimmee, the Winter Haven Chain, Orlando and Kissimmee.' },
+      { lane: 'Hand off', text: 'An editor guide and a fishing report template, so his team can update the site without us.' },
     ],
     result: 'In mid-September Google had none of the site indexed. Three weeks after launch every page was indexed, and the average search position had moved from about 20 to about 11.',
   },
@@ -63,11 +63,15 @@ const work = [
         {'did' in w && (
           <div class="flex-1">
             <p class="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">{w.listLabel}</p>
-            <ul class="mt-3 space-y-2">
-              {w.did.map((d) => (
+            <ul class="mt-3 space-y-3">
+              {w.did.map((d) => typeof d === 'string' ? (
                 <li class="flex items-start gap-2.5 text-sm text-ink-soft leading-relaxed">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="text-amber-600 mt-1 shrink-0" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
                   {d}
+                </li>
+              ) : (
+                <li class="text-sm text-ink-soft leading-relaxed">
+                  <span class="label-chip mr-2 whitespace-nowrap">{d.lane}</span>{d.text}
                 </li>
               ))}
             </ul>
