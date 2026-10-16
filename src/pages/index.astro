@@ -2,6 +2,7 @@
 import { site, mailto } from '../config/site';
 import Base from '../layouts/Base.astro';
 import { faqSchema } from '../lib/schema';
+import OurWork from '../components/OurWork.astro';
 import { latestArticles, articleHref, displayDate } from '../data/articles';
 
 const services = [
@@ -289,6 +290,9 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <!-- OUR WORK -->
+  <OurWork />
 
   <!-- VALUE PROP -->
   <section class="container-x py-20 md:py-28">

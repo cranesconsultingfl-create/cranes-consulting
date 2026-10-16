@@ -1,0 +1,56 @@
+---
+// Real relationships only. Alexander² is co-owned, so it is labeled as our own company, not a client.
+const work = [
+  {
+    name: 'Alexander² Construction',
+    url: 'https://www.a2constructionfl.com/',
+    host: 'a2constructionfl.com',
+    logo: '/work/alexander2-wordmark.svg',
+    logoClass: 'h-5 w-auto',
+    logoWidth: 81,
+    logoHeight: 9,
+    tag: 'Our own general contractor',
+    body: 'Tyler and Collin co-own this Tampa and Naples custom home builder. Every change order, pay app and insurance template we teach runs on these jobs first.',
+  },
+  {
+    name: 'Action Bass Guide Service',
+    url: 'https://actionbassguides.com/',
+    host: 'actionbassguides.com',
+    logo: '/work/action-bass-mark.svg',
+    logoClass: 'h-11 w-11',
+    logoWidth: 64,
+    logoHeight: 64,
+    label: 'Action Bass',
+    tag: 'Client: website and local search',
+    body: 'A Central Florida bass fishing charter. We rebuilt the website, added a page for each lake, a fishing report and an online booking request form.',
+  },
+];
+---
+<section class="border-b border-navy-100" aria-labelledby="our-work">
+  <div class="container-x py-20 md:py-24">
+  <div class="max-w-2xl">
+    <span class="eyebrow">Our work</span>
+    <h2 id="our-work" class="mt-5 text-3xl md:text-4xl font-extrabold text-balance leading-[1.1]">
+      Built on our own jobs first.
+    </h2>
+  </div>
+
+  <div class="mt-12 grid md:grid-cols-2 gap-6">
+    {work.map((w) => (
+      <a href={w.url} class="card p-7 md:p-8 group flex flex-col">
+        <div class="h-12 flex items-center gap-3">
+          <img src={w.logo} alt="" width={w.logoWidth} height={w.logoHeight} class={w.logoClass} loading="lazy" decoding="async" />
+          {'label' in w && <span class="font-bold text-navy-800">{w.label}</span>}
+        </div>
+        <p class="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">{w.tag}</p>
+        <h3 class="mt-2 text-xl font-bold text-navy-800 group-hover:text-amber-700 transition-colors">{w.name}</h3>
+        <p class="mt-3 text-sm text-ink-soft leading-relaxed flex-1">{w.body}</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-700">
+          {w.host}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    ))}
+  </div>
+  </div>
+</section>
