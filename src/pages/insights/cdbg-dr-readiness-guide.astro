@@ -1,14 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
+import ArticleCta from '../../components/ArticleCta.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
-import { getArticle, articleHref } from '../../data/articles';
+import { getArticle, articleHref, articleTitle } from '../../data/articles';
 
 const a = getArticle('cdbg-dr-readiness-guide');
 const path = articleHref(a.slug);
 ---
 <Base
-  title={`${a.title} | Cranes Consulting`}
+  title={articleTitle(a)}
   description={a.description}
   schema={[
     articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
@@ -27,10 +28,10 @@ const path = articleHref(a.slug);
           <span class="text-xs text-ink-mute">10 min read · April 2026</span>
         </div>
         <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-          CDBG-DR Contractor Readiness Guide
+          {a.title}
         </h1>
         <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-          Hillsborough County's Rebuilding for Tomorrow program has set aside more than $211M for homeowner repair and rebuilding, part of a $709M HUD CDBG-DR award for Helene and Milton recovery. Here's what small GCs need in place before bidding, and the three mistakes that stop payment.
+          Hillsborough County's Rebuilding for Tomorrow program has set aside more than $211M for homeowner repair and rebuilding, part of a $709M HUD CDBG-DR award for Helene and Milton recovery. Here's what subcontractors and small GCs need in place before taking rebuild work, and the three mistakes that stop payment.
         </p>
       </div>
     </header>
@@ -92,6 +93,10 @@ const path = articleHref(a.slug);
           Homeowner asks you to "also do the back porch while you're here." You do it. You add it to the final draw. Administrator rejects it because it wasn't in the approved scope of work and there's no documented change-order approval in the file. You either eat the cost or chase the homeowner for it.
         </p>
 
+        <p>
+          Mistake 3 is the one every sub can fix today, because it's the same habit that protects you on private jobs: a <a href="/insights/change-order-template-subcontractors/">change order signed before the work</a>. Clean <a href="/insights/pay-app-approved-first-time/">pay applications</a> and <a href="/insights/certificate-of-insurance-gc-checklist/">current insurance certificates</a> are the other two paperwork habits worth having in place before you take federally funded work.
+        </p>
+
         <h2>The readiness checklist</h2>
         <p>
           Before bidding CDBG-DR work, have this in place:
@@ -114,8 +119,11 @@ const path = articleHref(a.slug);
           For most small GCs, the practical path is either (a) stay commercial or private and let someone else eat the compliance cost, or (b) commit to building the compliance capability properly and win the share that most competitors can't touch. The middle ground, bidding one CDBG-DR job to see how it goes, usually ends badly.
         </p>
 
-        <p class="mt-10 text-sm text-ink-mute">
-          <em>Tyler Alexander is the founder of Cranes Consulting. If you're weighing whether to bid CDBG-DR work, or you're already in and stuck on documentation, set up a 30-minute call.</em>
+        <ArticleCta />
+
+
+        <p class="mt-8 text-sm text-ink-mute">
+          <em>Tyler Alexander is the founder of Cranes Consulting and co-owner of Alexander² Construction, a general contractor in Tampa and Naples. He teaches subcontractors and small businesses to use AI to cut office time.</em>
         </p>
       </div>
 

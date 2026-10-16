@@ -1,4 +1,5 @@
 ---
+import { site, mailto } from '../config/site';
 import Base from '../layouts/Base.astro';
 import { breadcrumbSchema } from '../lib/schema';
 
@@ -70,7 +71,7 @@ const updated = 'October 15, 2026';
 
       <h2>Your choices</h2>
       <p>
-        Email <a href="mailto:cranesconsultingfl@gmail.com">cranesconsultingfl@gmail.com</a> to see, correct or delete the information you've sent us, or to stop hearing from us.
+        Email <a href={mailto()}>{site.email}</a> to see, correct or delete the information you've sent us, or to stop hearing from us.
       </p>
 
       <h2>Children</h2>
@@ -80,7 +81,7 @@ const updated = 'October 15, 2026';
       <p>If we change this policy, we'll update it here and change the date at the top.</p>
 
       <h2>Contact</h2>
-      <p>Cranes Consulting, Tampa, Florida. <a href="mailto:cranesconsultingfl@gmail.com">cranesconsultingfl@gmail.com</a></p>
+      <p>Cranes Consulting, Tampa, Florida. <a href={mailto()}>{site.email}</a></p>
     </div>
   </section>
 </Base>

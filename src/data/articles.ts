@@ -99,20 +99,20 @@ export const articles: Article[] = [
     category: 'AI & Automation',
     read: '5 min read',
     datePublished: '2026-09-25',
-    dateModified: '2026-10-08',
+    dateModified: '2026-10-15',
     services: ['back-office', 'software-adoption'],
     related: ['pay-app-approved-first-time', 'shelfware-software-audit', 'margin-leak-checklist'],
     paperworkPack: true,
   },
   {
     slug: 'shelfware-software-audit',
-    title: 'The Shelfware Construction Software Audit',
-    description: 'A 10-question audit for small GCs paying for Procore, Buildertrend or JobTread but using a fraction of it. Find the gap worth closing in 20 minutes.',
-    summary: 'A 10-question audit for small GCs paying $6–12K/year for Procore, Buildertrend, or JobTread but only using a fraction of what they bought. Diagnose the gap in 20 minutes.',
+    title: "Construction Software Audit for Subs: Cut What You Don't Use",
+    description: 'A 10-question audit for subs and small contractors paying for Procore, Buildertrend, JobTread or a trade app and using a fraction of it. Takes 20 minutes.',
+    summary: 'A 20-minute, 10-question audit for subs and small contractors paying for construction software their crew barely uses. Find the gaps worth closing before you buy more.',
     category: 'Software & Tech',
     read: '9 min read',
     datePublished: '2026-04-24',
-    dateModified: '2026-10-08',
+    dateModified: '2026-10-15',
     services: ['software-adoption'],
     related: ['ai-adoption-playbook', 'margin-leak-checklist', 'cdbg-dr-readiness-guide'],
   },
@@ -130,17 +130,20 @@ export const articles: Article[] = [
   },
   {
     slug: 'cdbg-dr-readiness-guide',
-    title: 'CDBG-DR Contractor Readiness Guide',
-    description: 'What small Tampa Bay GCs need in place before bidding Helene and Milton CDBG-DR rebuild work, and the three paperwork mistakes that stop payment.',
-    summary: 'What small Tampa GCs need to have in place before bidding federally-funded Helene / Milton rebuild work, and the three mistakes that stop payment.',
+    title: 'CDBG-DR Readiness for Florida Contractors (Helene & Milton)',
+    description: 'What Tampa Bay subcontractors and small GCs need in place before Helene and Milton CDBG-DR rebuild work, and the paperwork mistakes that stop payment.',
+    summary: 'What subs and small GCs need in place before working federally funded Helene and Milton rebuild jobs, and the three paperwork mistakes that stop payment.',
     category: 'Grants & Compliance',
     read: '10 min read',
     datePublished: '2026-04-24',
-    dateModified: '2026-10-08',
+    dateModified: '2026-10-15',
     services: ['grant-programs'],
     related: ['margin-leak-checklist', 'pay-app-approved-first-time', 'hurricane-delay-notice'],
   },
 ];
+
+/** Title tag: add the brand only when the full title stays near 60 characters. */
+export const articleTitle = (a: Article) => (a.title.length <= 40 ? `${a.title} | Cranes Consulting` : a.title);
 
 export const articleHref = (slug: string) => `/insights/${slug}/`;
 

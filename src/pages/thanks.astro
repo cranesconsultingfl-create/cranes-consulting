@@ -1,4 +1,5 @@
 ---
+import { site } from '../config/site';
 import Base from '../layouts/Base.astro';
 ---
 <Base
@@ -12,7 +13,7 @@ import Base from '../layouts/Base.astro';
       Thanks. Your message is in.
     </h1>
     <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-      We reply within one business day, usually the same day, from <span class="font-semibold text-navy-800">cranesconsultingfl@gmail.com</span>. If you don't see it, check your spam folder.
+      We reply within one business day, usually the same day, from <span class="font-semibold text-navy-800">{site.email}</span>. If you don't see it, check your spam folder.
     </p>
     <div class="mt-9 flex flex-wrap gap-4">
       <a href="/insights/" class="btn-primary">Read the field notes</a>

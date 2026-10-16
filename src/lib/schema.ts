@@ -1,6 +1,21 @@
 export const SITE = 'https://cranesconsultingfl.com';
 export const ORG_ID = `${SITE}/#organization`;
 export const LOGO_URL = `${SITE}/logo-512.png`;
+export const TYLER_ID = `${SITE}/about/#tyler`;
+
+/** Sitewide Person node for Tyler. Other nodes point at it by @id. */
+export const tylerSchema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': TYLER_ID,
+  name: 'Tyler Alexander',
+  url: `${SITE}/about/`,
+  jobTitle: 'Founder',
+  worksFor: [
+    { '@id': ORG_ID },
+    { '@type': 'GeneralContractor', name: 'Alexander² Construction', url: 'https://www.a2constructionfl.com/' },
+  ],
+};
 
 export interface ArticleInput {
   headline: string;
@@ -20,7 +35,7 @@ export function articleSchema(a: ArticleInput): Record<string, unknown> {
     dateModified: a.dateModified ?? a.datePublished,
     mainEntityOfPage: `${SITE}${a.path}`,
     image: `${SITE}/og-default.png`,
-    author: { '@type': 'Person', name: 'Tyler Alexander', url: `${SITE}/about/` },
+    author: { '@type': 'Person', '@id': TYLER_ID, name: 'Tyler Alexander', url: `${SITE}/about/` },
     publisher: { '@id': ORG_ID },
   };
 }

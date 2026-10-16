@@ -1,14 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
+import ArticleCta from '../../components/ArticleCta.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
-import { getArticle, articleHref } from '../../data/articles';
+import { getArticle, articleHref, articleTitle } from '../../data/articles';
 
 const a = getArticle('ai-adoption-playbook');
 const path = articleHref(a.slug);
 ---
 <Base
-  title={`${a.title} | Cranes Consulting`}
+  title={articleTitle(a)}
   description={a.description}
   schema={[
     articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
@@ -27,10 +28,10 @@ const path = articleHref(a.slug);
           <span class="text-xs text-ink-mute">5 min read · September 2026</span>
         </div>
         <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-          The Small Business AI Adoption Playbook
+          {a.title}
         </h1>
         <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-          Your team is already using AI. Somebody is drafting emails in ChatGPT, somebody else is summarizing a contract in Claude, and your software vendor just switched on an AI assistant nobody asked for. The question isn't whether to adopt AI. It's whether the adoption is organized enough to save real hours without creating new risk.
+          If you run a trade business or a small shop, AI is already on your phone and probably on whoever does your books. The question isn't whether to use it. It's whether it's set up to take real hours off change orders, pay apps, invoices and emails without creating new risk. This is the five-step plan we teach subcontractors and small businesses in Tampa Bay and Naples.
         </p>
       </div>
     </header>
@@ -79,6 +80,10 @@ const path = articleHref(a.slug);
         </p>
         <p>
           Two or three use cases done well beat twenty done halfway. Pick the few that save the most hours and put a named owner on each.
+        </p>
+
+        <p>
+          For most subs, the first use cases pick themselves: change orders, pay applications and insurance certificates. Start with the <a href="/insights/change-order-template-subcontractors/">change order template</a>, the <a href="/insights/pay-app-approved-first-time/">pay app checklist</a> and the <a href="/insights/certificate-of-insurance-gc-checklist/">certificate of insurance guide</a>. Each one includes a prompt you can use today.
         </p>
 
         <h2>Step 3: Write a one-page acceptable-use policy</h2>
@@ -131,8 +136,11 @@ const path = articleHref(a.slug);
           <li>You need a measured result you can show a partner, a board, or a lender.</li>
         </ul>
 
-        <p class="mt-10 text-sm text-ink-mute">
-          <em>Tyler Alexander is the founder of Cranes Consulting in Tampa, FL. If you want a second opinion on where AI would save your team the most time, set up a 30-minute call. No deck, no pitch.</em>
+        <ArticleCta />
+
+
+        <p class="mt-8 text-sm text-ink-mute">
+          <em>Tyler Alexander is the founder of Cranes Consulting and co-owner of Alexander² Construction, a general contractor in Tampa and Naples. He teaches subcontractors and small businesses to use AI to cut office time.</em>
         </p>
       </div>
 

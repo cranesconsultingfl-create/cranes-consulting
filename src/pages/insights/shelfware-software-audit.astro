@@ -1,14 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
+import ArticleCta from '../../components/ArticleCta.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
-import { getArticle, articleHref } from '../../data/articles';
+import { getArticle, articleHref, articleTitle } from '../../data/articles';
 
 const a = getArticle('shelfware-software-audit');
 const path = articleHref(a.slug);
 ---
 <Base
-  title={`${a.title} | Cranes Consulting`}
+  title={articleTitle(a)}
   description={a.description}
   schema={[
     articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
@@ -27,10 +28,10 @@ const path = articleHref(a.slug);
           <span class="text-xs text-ink-mute">9 min read · April 2026</span>
         </div>
         <h1 class="mt-5 max-w-4xl text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tightest text-balance leading-[1.05] text-navy-900">
-          The Shelfware Construction Software Audit
+          {a.title}
         </h1>
         <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-          You're paying $6K to $12K a year for Procore, Buildertrend, or JobTread. Your team is using a fraction of it. Here's a 20-minute audit to figure out exactly where the gap is, and which gaps are actually worth closing.
+          You pay every month for construction software, whether it's Procore, Buildertrend, JobTread or an app built for your trade, and your crew uses a fraction of it. This 20-minute audit is written for subs and small contractors. It shows where the gap is, and which gaps are worth closing before you buy anything else.
         </p>
       </div>
     </header>
@@ -46,6 +47,10 @@ const path = articleHref(a.slug);
         </p>
         <p>
           Most small GCs know they're under-using their software. Almost none have actually <em>measured</em> the gap. That's what this audit is for.
+        </p>
+
+        <p>
+          Software also can't fix paperwork habits. If unsigned change orders and bounced pay apps are where the money leaks, a <a href="/insights/change-order-template-subcontractors/">change order template</a> and a <a href="/insights/pay-app-approved-first-time/">first-time pay app checklist</a> may get you further than a new module.
         </p>
 
         <h2>How to run the audit</h2>
@@ -206,8 +211,11 @@ const path = articleHref(a.slug);
           The implementation pays for itself in the first project that doesn't run a CO leak. Everything after is upside.
         </p>
 
-        <p class="mt-10 text-sm text-ink-mute">
-          <em>Tyler Alexander runs Cranes Consulting in Tampa, FL. If you ran the audit and want a second opinion on what to fix first, set up a 30-minute call. No deck, no pitch.</em>
+        <ArticleCta />
+
+
+        <p class="mt-8 text-sm text-ink-mute">
+          <em>Tyler Alexander is the founder of Cranes Consulting and co-owner of Alexander² Construction, a general contractor in Tampa and Naples. He teaches subcontractors and small businesses to use AI to cut office time.</em>
         </p>
       </div>
 

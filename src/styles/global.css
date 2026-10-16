@@ -81,7 +81,7 @@
     @apply text-navy-800 font-semibold;
   }
 
-  .prose-custom a {
+  .prose-custom a:not([class*="btn-"]) {
     @apply text-amber-700 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500;
   }
 

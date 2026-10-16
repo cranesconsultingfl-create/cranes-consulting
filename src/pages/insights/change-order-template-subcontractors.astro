@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
-import { getArticle, articleHref, displayDate } from '../../data/articles';
+import { getArticle, articleHref, articleTitle, displayDate } from '../../data/articles';
 
 const a = getArticle('change-order-template-subcontractors');
 const path = articleHref(a.slug);
@@ -60,7 +60,7 @@ Keep it to one page and professional. Ask me for anything missing instead of gue
 My notes: [paste or dictate what happened]`;
 ---
 <Base
-  title={`${a.title} | Cranes Consulting`}
+  title={articleTitle(a)}
   description={a.description}
   schema={[
     articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),

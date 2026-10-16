@@ -1,10 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import { breadcrumbSchema } from '../lib/schema';
+import { getArticle, articleHref, SERVICE_LABELS, type ServiceAnchor } from '../data/articles';
 
 const industries = [
   {
     id: 'construction',
+    service: 'money-audit' as ServiceAnchor,
+    insight: 'change-order-template-subcontractors',
     name: 'Subcontractors & Trades',
     stat: '$211M+',
     statLabel: 'Set aside for homeowner rebuilding by Hillsborough County (2026)',
@@ -18,6 +21,8 @@ const industries = [
   },
   {
     id: 'professional-services',
+    service: 'back-office' as ServiceAnchor,
+    insight: 'ai-adoption-playbook',
     name: 'Professional Services',
     stat: 'Utilization',
     statLabel: 'The number that decides profit in a partner-led firm',
@@ -31,6 +36,8 @@ const industries = [
   },
   {
     id: 'healthcare',
+    service: 'fractional-pmo' as ServiceAnchor,
+    insight: 'ai-adoption-playbook',
     name: 'Healthcare',
     stat: 'Jan 2027',
     statLabel: 'CMS-0057-F FHIR API compliance deadline',
@@ -44,6 +51,8 @@ const industries = [
   },
   {
     id: 'logistics',
+    service: 'margin-recovery' as ServiceAnchor,
+    insight: 'margin-leak-checklist',
     name: 'Logistics & 3PL',
     stat: 'Dock to stock',
     statLabel: 'Where warehouse margin leaks: receiving, putaway, picking and labor',
@@ -57,6 +66,8 @@ const industries = [
   },
   {
     id: 'government',
+    service: 'grant-programs' as ServiceAnchor,
+    insight: 'cdbg-dr-readiness-guide',
     name: 'Government & Nonprofit',
     stat: 'Pass-through',
     statLabel: 'Federal funds that come with federal paperwork',
@@ -111,6 +122,17 @@ const industries = [
               </li>
             ))}
           </ul>
+
+          <div class="mt-6 flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-3 text-sm">
+            <a href={`/services/#${ind.service}`} class="font-semibold text-amber-700 hover:text-amber-800 inline-flex items-center gap-2">
+              Service: {SERVICE_LABELS[ind.service]}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href={articleHref(ind.insight)} class="font-semibold text-amber-700 hover:text-amber-800 inline-flex items-center gap-2">
+              Read: {getArticle(ind.insight).title}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
       </section>
     ))}

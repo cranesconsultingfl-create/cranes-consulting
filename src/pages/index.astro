@@ -1,4 +1,5 @@
 ---
+import { site, mailto } from '../config/site';
 import Base from '../layouts/Base.astro';
 import { faqSchema } from '../lib/schema';
 import { latestArticles, articleHref, displayDate } from '../data/articles';
@@ -511,7 +512,7 @@ const faqs = [
           The questions we get most often.
         </h2>
         <p class="mt-4 text-ink-soft">
-          Don't see yours? Email us at <a href="mailto:cranesconsultingfl@gmail.com" class="text-amber-700 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500">cranesconsultingfl@gmail.com</a>.
+          Don't see yours? Email us at <a href={mailto()} class="text-amber-700 underline decoration-amber-400/60 underline-offset-4 hover:decoration-amber-500">{site.email}</a>.
         </p>
       </div>
 
@@ -547,7 +548,7 @@ const faqs = [
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="/contact/" class="btn-accent">Request a free 30-min call</a>
-          <a href="mailto:cranesconsultingfl@gmail.com" class="btn-ghost !border-navy-600 !text-white hover:!bg-navy-800">Email us directly</a>
+          <a href={mailto()} class="btn-ghost !border-navy-600 !text-white hover:!bg-navy-800">Email us directly</a>
         </div>
       </div>
     </div>

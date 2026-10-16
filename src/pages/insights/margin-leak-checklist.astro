@@ -1,14 +1,15 @@
 ---
+import { site, mailto } from '../../config/site';
 import Base from '../../layouts/Base.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
-import { getArticle, articleHref } from '../../data/articles';
+import { getArticle, articleHref, articleTitle } from '../../data/articles';
 
 const a = getArticle('margin-leak-checklist');
 const path = articleHref(a.slug);
 ---
 <Base
-  title={`${a.title} | Cranes Consulting`}
+  title={articleTitle(a)}
   description={a.description}
   schema={[
     articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
@@ -129,7 +130,7 @@ const path = articleHref(a.slug);
             <p class="mt-2 text-sm text-navy-700 leading-relaxed">
               Email me and I'll send a one-page PDF of this checklist you can hand to a PM or foreman.
             </p>
-            <a href="mailto:cranesconsultingfl@gmail.com?subject=Margin%20Leak%20Checklist%20PDF" class="btn-accent mt-4 w-full justify-center">
+            <a href={mailto('Margin Leak Checklist PDF')} class="btn-accent mt-4 w-full justify-center">
               Email for PDF
             </a>
           </div>

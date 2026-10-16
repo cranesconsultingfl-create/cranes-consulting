@@ -2,13 +2,13 @@
 import Base from '../../layouts/Base.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
-import { getArticle, articleHref } from '../../data/articles';
+import { getArticle, articleHref, articleTitle } from '../../data/articles';
 
 const a = getArticle('pay-app-approved-first-time');
 const path = articleHref(a.slug);
 ---
 <Base
-  title={`${a.title} | Cranes Consulting`}
+  title={articleTitle(a)}
   description={a.description}
   schema={[
     articleSchema({ headline: a.title, description: a.description, path, datePublished: a.datePublished, dateModified: a.dateModified }),
