@@ -10,6 +10,12 @@ const work = [
     logoWidth: 81,
     logoHeight: 9,
     tag: 'Our own general contractor',
+    listLabel: 'About A2',
+    did: [
+      'Custom homes in Naples, Marco Island and Tampa Bay',
+      'Florida Certified Building Contractor license CBC1266523, held by Collin',
+      'The GC desk the change order, pay app and insurance articles on this site are written from',
+    ],
     body: 'Tyler and Collin co-own this Tampa and Naples custom home builder. Every change order, pay app and insurance template we teach runs on these jobs first.',
   },
   {
@@ -21,8 +27,17 @@ const work = [
     logoWidth: 64,
     logoHeight: 64,
     label: 'Action Bass',
-    tag: 'Client: website and local search',
-    body: 'A Central Florida bass fishing charter. We rebuilt the website, added a page for each lake, a fishing report and an online booking request form.',
+    tag: 'Client: website, booking and local search',
+    listLabel: 'What we built',
+    body: 'Captain Jackson Williams runs guided bass fishing trips on the lakes around Orlando, Kissimmee and Winter Haven.',
+    did: [
+      'Rebuilt the website on a fast static host, with redirects from the old pages',
+      'Lake pages for Lake Toho, Lake Kissimmee and the Winter Haven Chain, plus Orlando and Kissimmee guide pages',
+      'Online booking through Vally, and Call, Text and Book buttons on every page',
+      'Google Analytics tracking for leads, calls, texts and booking clicks',
+      'Search Console setup, a fishing report section and a Google Ads keyword and budget plan',
+    ],
+    result: 'In mid-September Google had none of the site indexed. Three weeks after launch every page was indexed, and the average search position had moved from about 20 to about 11.',
   },
 ];
 ---
@@ -35,7 +50,7 @@ const work = [
     </h2>
   </div>
 
-  <div class="mt-12 grid md:grid-cols-2 gap-6">
+  <div class="mt-12 grid lg:grid-cols-2 gap-6">
     {work.map((w) => (
       <a href={w.url} class="card p-7 md:p-8 group flex flex-col">
         <div class="h-12 flex items-center gap-3">
@@ -44,7 +59,26 @@ const work = [
         </div>
         <p class="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">{w.tag}</p>
         <h3 class="mt-2 text-xl font-bold text-navy-800 group-hover:text-amber-700 transition-colors">{w.name}</h3>
-        <p class="mt-3 text-sm text-ink-soft leading-relaxed flex-1">{w.body}</p>
+        <p class="mt-3 text-sm text-ink-soft leading-relaxed">{w.body}</p>
+        {'did' in w && (
+          <div class="flex-1">
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">{w.listLabel}</p>
+            <ul class="mt-3 space-y-2">
+              {w.did.map((d) => (
+                <li class="flex items-start gap-2.5 text-sm text-ink-soft leading-relaxed">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="text-amber-600 mt-1 shrink-0" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+                  {d}
+                </li>
+              ))}
+            </ul>
+            {'result' in w && (
+              <div class="mt-6 rounded-lg bg-navy-50 border border-navy-100 p-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">Result</p>
+                <p class="mt-1.5 text-sm text-navy-800 leading-relaxed">{w.result}</p>
+              </div>
+            )}
+          </div>
+        )}
         <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-700">
           {w.host}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
