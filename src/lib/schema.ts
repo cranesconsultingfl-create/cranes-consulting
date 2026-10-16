@@ -25,14 +25,17 @@ export interface ArticleInput {
   dateModified?: string;
 }
 
+/** Google wants a full ISO 8601 datetime with timezone; noon UTC matches the sitemap lastmod. */
+const isoDateTime = (date: string) => (date.length === 10 ? `${date}T12:00:00+00:00` : date);
+
 export function articleSchema(a: ArticleInput): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: a.headline,
     description: a.description,
-    datePublished: a.datePublished,
-    dateModified: a.dateModified ?? a.datePublished,
+    datePublished: isoDateTime(a.datePublished),
+    dateModified: isoDateTime(a.dateModified ?? a.datePublished),
     mainEntityOfPage: `${SITE}${a.path}`,
     image: `${SITE}/og-default.png`,
     author: { '@type': 'Person', '@id': TYLER_ID, name: 'Tyler Alexander', url: `${SITE}/about/` },
