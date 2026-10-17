@@ -73,6 +73,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       image: new URL('/og-default.png', Astro.site).toString(),
       logo: { '@type': 'ImageObject', url: LOGO_URL, width: 512, height: 512 },
       email: site.email,
+      telephone: site.phoneE164,
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Tampa',
